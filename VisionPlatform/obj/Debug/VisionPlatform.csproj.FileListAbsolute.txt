@@ -1,0 +1,10 @@
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\VisionPlatform.exe.config
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\VisionPlatform.exe
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\VisionPlatform.pdb
+D:\code\VisionPlatform\VisionPlatform\obj\Debug\VisionPlatform.csprojAssemblyReference.cache
+D:\code\VisionPlatform\VisionPlatform\obj\Debug\VisionPlatform.Form1.resources
+D:\code\VisionPlatform\VisionPlatform\obj\Debug\VisionPlatform.Properties.Resources.resources
+D:\code\VisionPlatform\VisionPlatform\obj\Debug\VisionPlatform.csproj.GenerateResource.cache
+D:\code\VisionPlatform\VisionPlatform\obj\Debug\VisionPlatform.csproj.CoreCompileInputs.cache
+D:\code\VisionPlatform\VisionPlatform\obj\Debug\VisionPlatform.exe
+D:\code\VisionPlatform\VisionPlatform\obj\Debug\VisionPlatform.pdb
