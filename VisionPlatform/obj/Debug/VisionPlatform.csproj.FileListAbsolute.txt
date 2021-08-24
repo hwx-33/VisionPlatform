@@ -52,3 +52,5 @@ D:\code\VisionPlatform\VisionPlatform\bin\Debug\MVDShape.Net.xml
 D:\code\VisionPlatform\VisionPlatform\bin\Debug\MVDXmlParse.NET.xml
 D:\code\VisionPlatform\VisionPlatform\bin\Debug\MvRenderActiveX.Net.xml
 D:\code\VisionPlatform\VisionPlatform\bin\Debug\MVDPreproMask.Net.xml
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\SunnyUI.Common.dll
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\SunnyUI.dll

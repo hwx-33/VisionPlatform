@@ -1,0 +1,15 @@
+D:\code\VisionPlatform\WPF\bin\Debug\WPF.exe.config
+D:\code\VisionPlatform\WPF\bin\Debug\WPF.exe
+D:\code\VisionPlatform\WPF\bin\Debug\WPF.pdb
+D:\code\VisionPlatform\WPF\obj\Debug\WPF.csprojAssemblyReference.cache
+D:\code\VisionPlatform\WPF\obj\Debug\MainWindow.g.cs
+D:\code\VisionPlatform\WPF\obj\Debug\App.g.cs
+D:\code\VisionPlatform\WPF\obj\Debug\WPF_MarkupCompile.cache
+D:\code\VisionPlatform\WPF\obj\Debug\WPF_MarkupCompile.lref
+D:\code\VisionPlatform\WPF\obj\Debug\MainWindow.baml
+D:\code\VisionPlatform\WPF\obj\Debug\WPF.g.resources
+D:\code\VisionPlatform\WPF\obj\Debug\WPF.Properties.Resources.resources
+D:\code\VisionPlatform\WPF\obj\Debug\WPF.csproj.GenerateResource.cache
+D:\code\VisionPlatform\WPF\obj\Debug\WPF.csproj.CoreCompileInputs.cache
+D:\code\VisionPlatform\WPF\obj\Debug\WPF.exe
+D:\code\VisionPlatform\WPF\obj\Debug\WPF.pdb

@@ -36,6 +36,8 @@
             this.ParamNameBoxCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ParamValueBoxCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.rtbInfoMessage = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,10 +45,10 @@
             // 
             this.mvdRenderActivex1.EnableRetainShape = false;
             this.mvdRenderActivex1.InteractType = VisionDesigner.MVDRenderInteractType.Standard;
-            this.mvdRenderActivex1.Location = new System.Drawing.Point(12, 12);
+            this.mvdRenderActivex1.Location = new System.Drawing.Point(11, 11);
             this.mvdRenderActivex1.MenuLanguage = VisionDesigner.MVDRenderMenuLangType.Default;
             this.mvdRenderActivex1.Name = "mvdRenderActivex1";
-            this.mvdRenderActivex1.Size = new System.Drawing.Size(568, 509);
+            this.mvdRenderActivex1.Size = new System.Drawing.Size(570, 460);
             this.mvdRenderActivex1.TabIndex = 13;
             this.mvdRenderActivex1.MVDShapeChangedEvent += new VisionDesigner.MVDRenderActivex.MVDShapesChangedEventHandler(this.mvdRenderActivex1_MVDShapeChangedEvent);
             this.mvdRenderActivex1.MVDMouseEvent += new VisionDesigner.MVDRenderActivex.MVDMouseEventHandler(this.mvdRenderActivex1_MVDMouseEvent);
@@ -54,7 +56,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(604, 28);
+            this.button1.Location = new System.Drawing.Point(649, 15);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 46);
             this.button1.TabIndex = 14;
@@ -64,7 +66,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(604, 91);
+            this.button2.Location = new System.Drawing.Point(649, 78);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 49);
             this.button2.TabIndex = 15;
@@ -79,7 +81,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ParamNameBoxCol,
             this.ParamValueBoxCol});
-            this.dataGridView1.Location = new System.Drawing.Point(586, 173);
+            this.dataGridView1.Location = new System.Drawing.Point(631, 160);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(225, 277);
@@ -101,7 +103,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(716, 28);
+            this.button3.Location = new System.Drawing.Point(761, 15);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(83, 46);
             this.button3.TabIndex = 17;
@@ -109,11 +111,31 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(761, 78);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(83, 49);
+            this.button4.TabIndex = 18;
+            this.button4.Text = "找线";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // rtbInfoMessage
+            // 
+            this.rtbInfoMessage.Location = new System.Drawing.Point(11, 477);
+            this.rtbInfoMessage.Name = "rtbInfoMessage";
+            this.rtbInfoMessage.Size = new System.Drawing.Size(570, 203);
+            this.rtbInfoMessage.TabIndex = 19;
+            this.rtbInfoMessage.Text = "";
+            // 
             // MatchTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(820, 548);
+            this.ClientSize = new System.Drawing.Size(966, 764);
+            this.Controls.Add(this.rtbInfoMessage);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
@@ -135,5 +157,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ParamNameBoxCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn ParamValueBoxCol;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.RichTextBox rtbInfoMessage;
     }
 }

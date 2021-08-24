@@ -16,7 +16,7 @@ namespace VisionPlatform
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MatchTemplate());
+            Application.Run(new Form1());
         }
     }
 }
