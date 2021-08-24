@@ -13,3 +13,14 @@ D:\code\VisionPlatform\WPF\obj\Debug\WPF.csproj.GenerateResource.cache
 D:\code\VisionPlatform\WPF\obj\Debug\WPF.csproj.CoreCompileInputs.cache
 D:\code\VisionPlatform\WPF\obj\Debug\WPF.exe
 D:\code\VisionPlatform\WPF\obj\Debug\WPF.pdb
+D:\code\VisionPlatform\WPF\bin\Debug\ControlzEx.dll
+D:\code\VisionPlatform\WPF\bin\Debug\Fluent.dll
+D:\code\VisionPlatform\WPF\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\code\VisionPlatform\WPF\bin\Debug\ControlzEx.pdb
+D:\code\VisionPlatform\WPF\bin\Debug\ControlzEx.xml
+D:\code\VisionPlatform\WPF\bin\Debug\Fluent.pdb
+D:\code\VisionPlatform\WPF\bin\Debug\Fluent.xml
+D:\code\VisionPlatform\WPF\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\code\VisionPlatform\WPF\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\code\VisionPlatform\WPF\obj\Debug\WPF.csproj.CopyComplete
+D:\code\VisionPlatform\WPF\obj\Debug\App.baml

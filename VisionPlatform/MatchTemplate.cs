@@ -9,64 +9,379 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VisionDesigner;
 using VisionDesigner.CircleFind;
+using VisionDesigner.LineFind;
 using System.Diagnostics;
 using MvdXmlParse;
+using System.IO;
 
 namespace VisionPlatform
 {
     public partial class MatchTemplate : Form
     {
-        int TRUE_RESULT = 0;
-        int FALSE_RESULT = -1;
         readonly Int32 _Scale = 5;        // 轮廓点放大倍数
-        Stopwatch _StopWatch = null;     // 计时工具
-        CCircleFindTool _CircleFindTool = null;     // 圆查找工具
-        CMvdXmlParseTool _XmlParseTool = null;     // 运行参数解析工具
-        CMvdImage _InputImage = null;     // 输入图像
-        CMvdShape _ROI = null;     // ROI图形
-        List<CMvdShape> _MaskShapeList = null;     // 屏蔽区图形列表
-        CMvdAnnularSectorF _DrawArc = null;     // 绘制圆弧
-        List<CMvdLineSegmentF> _DrawOutlineList = null;     // 绘制轮廓
-        List<CMvdRectangleF> _DrawCaliperBoxList = null;     // 绘制卡尺框
+        private CLineFindTool m_stLineFindToolObj = null;
+        private CMvdImage m_stInputImage = null;
+        private CMvdShape m_stROIShape = null;
+        List<VisionDesigner.CMvdShape> m_lMaskShapes = new List<VisionDesigner.CMvdShape>();
+        private VisionDesigner.CMvdLineSegmentF m_stResLineShape = null;
+        private CMvdXmlParseTool m_stXmlParseToolObj = null;
+        List<CMvdLineSegmentF> _DrawOutlineList = new List<CMvdLineSegmentF>();     // 绘制轮廓
+        List<CMvdRectangleF> _DrawCaliperBoxList = new List<CMvdRectangleF>();     // 绘制卡尺框
 
-        /// <summary>
-        /// 清理圆弧
-        /// </summary>
-        /// <param name="drawArc"></param>
-        private void ClearArc(ref CMvdAnnularSectorF drawArc)
+        public MatchTemplate()
         {
-            if (null != drawArc)
-            {
-                mvdRenderActivex1.DeleteShape(drawArc);
-                drawArc = null;
-            }
-        }
-        /// <summary>
-        /// 清理轮廓
-        /// </summary>
-        /// <param name="drawEdgePointList"></param>
-        private void ClearOutline(List<CMvdLineSegmentF> drawEdgePointList)
-        {
-            foreach (var item in drawEdgePointList)
-            {
-                mvdRenderActivex1.DeleteShape(item);
-            }
-            drawEdgePointList.Clear();
+            InitializeComponent();
         }
 
         /// <summary>
-        /// 清理卡尺
+        /// Response function of "Init" button. Create resource for the algorithm tool.
         /// </summary>
-        /// <param name="caliperBoxList"></param>
-        private void ClearCaliperBoxList(List<CMvdRectangleF> caliperBoxList)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnInitTool_Click(object sender, EventArgs e)
         {
-            foreach (var item in caliperBoxList)
-            {
-                mvdRenderActivex1.DeleteShape(item);
-            }
-            caliperBoxList.Clear();
+            
         }
 
+        /// <summary>
+        /// Load image from local file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnLoadImg_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        /// <summary>
+        /// Finish processing of the specific algorithm tool.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRunTool_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if ((null == m_stLineFindToolObj) || (null == m_stInputImage))
+                {
+                    throw new MvdException(MVD_MODULE_TYPE.MVD_MODUL_TOOL, MVD_ERROR_CODE.MVD_E_CALLORDER);
+                }
+
+                // 清理绘制结果
+                if (null != m_stResLineShape)
+                {
+                    mvdRenderActivex1.DeleteShape(m_stResLineShape);
+                    m_stResLineShape = null;
+                }
+                ClearCaliperBoxList(_DrawCaliperBoxList);
+                ClearOutline(_DrawOutlineList);
+
+                m_stLineFindToolObj.InputImage = m_stInputImage;
+                if (null == m_stROIShape)
+                {
+                    m_stLineFindToolObj.ROI = new VisionDesigner.CMvdRectangleF(m_stInputImage.Width / 2, m_stInputImage.Height / 2, m_stInputImage.Width, m_stInputImage.Height);
+                }
+                else
+                {
+                    m_stLineFindToolObj.ROI = m_stROIShape;
+                }
+
+                m_stLineFindToolObj.ClearMasks();
+                foreach (var item in m_lMaskShapes)
+                {
+                    m_stLineFindToolObj.AddMask(item);
+                }
+                double fStartTime = GetTimeStamp();
+                m_stLineFindToolObj.Run();
+                double fCostTime = GetTimeStamp() - fStartTime;
+                this.rtbInfoMessage.Text += "Running cost: " + fCostTime.ToString() + "\r\n";
+
+                CLineFindResult stLineFindRes = m_stLineFindToolObj.Result;
+                this.rtbInfoMessage.Text += "Recognition status: " + stLineFindRes.Status + "\r\n";
+                if (1 == stLineFindRes.Status)
+                {
+                    this.rtbInfoMessage.Text += "Start point of line: (" + stLineFindRes.LineStartPoint.fX + ", " + stLineFindRes.LineStartPoint.fY + ")\r\n";
+                    this.rtbInfoMessage.Text += "End point of line: (" + stLineFindRes.LineEndPoint.fX + ", " + stLineFindRes.LineEndPoint.fY + ")\r\n";
+                    this.rtbInfoMessage.Text += "Angle: " + stLineFindRes.LineAngle + "\r\n";
+                    this.rtbInfoMessage.Text += "Straightness: " + stLineFindRes.LineStraightness + "\r\n";
+                    this.rtbInfoMessage.Text += "The number of edge point: " + stLineFindRes.EdgePointInfo.Count + "\r\n";
+
+                    m_stResLineShape = new CMvdLineSegmentF(stLineFindRes.LineStartPoint, stLineFindRes.LineEndPoint);
+                    m_stResLineShape.BorderColor = new MVD_COLOR(0, 255, 0, 255);
+                    mvdRenderActivex1.AddShape(m_stResLineShape);
+                }
+
+                // 绘制轮廓点
+                List<CLineFindEdgePointInfo> lineFindEdgePointList = stLineFindRes.EdgePointInfo;
+                DrawOutline(lineFindEdgePointList, m_stInputImage.Width, m_stInputImage.Height);
+
+                // 绘制卡尺
+                DrawCaliperBoxList(stLineFindRes.CaliperBoxList, m_stInputImage.Width, m_stInputImage.Height);
+            }
+            catch (MvdException ex)
+            {
+                this.rtbInfoMessage.Text += "An error occurred while running the tool. ErrorCode: 0x" + ex.ErrorCode.ToString("X") + "\r\n";
+            }
+            catch (System.Exception ex)
+            {
+                this.rtbInfoMessage.Text += "An error occurred while running the tool with ' " + ex.Message + " '\r\n";
+            }
+            finally
+            {
+                mvdRenderActivex1.Display();
+            }
+        }
+
+        /// <summary>
+        /// Response function of "ExportXml" button. Save current parameters in local file as XML.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnExpXml_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.SaveFileDialog fileDlg = null;
+            FileStream fileStr = null;
+            try
+            {
+                fileDlg = new System.Windows.Forms.SaveFileDialog();
+                fileDlg.Filter = @"XMl Files(*.xml)|*.xml";
+                fileDlg.RestoreDirectory = true;
+                if (fileDlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string filePath = fileDlg.FileName;
+                    if (File.Exists(filePath))
+                    {
+                        File.Delete(filePath);
+                    }
+                    fileStr = new FileStream(filePath, FileMode.Create);
+
+                    /* Save parameters in local file as XML. */
+                    byte[] fileBytes = new byte[256];
+                    uint nConfigDataSize = 256;
+                    uint nConfigDataLen = 0;
+                    try
+                    {
+                        m_stLineFindToolObj.SaveConfiguration(fileBytes, nConfigDataSize, ref nConfigDataLen);
+                    }
+                    catch (MvdException ex)
+                    {
+                        if (MVD_ERROR_CODE.MVD_E_NOENOUGH_BUF == ex.ErrorCode)
+                        {
+                            fileBytes = new byte[nConfigDataLen];
+                            nConfigDataSize = nConfigDataLen;
+                            m_stLineFindToolObj.SaveConfiguration(fileBytes, nConfigDataSize, ref nConfigDataLen);
+                        }
+                        else
+                        {
+                            throw ex;
+                        }
+                    }
+
+                    fileStr.Write(fileBytes, 0, Convert.ToInt32(nConfigDataLen));
+                    fileStr.Flush();
+                    fileStr.Close();
+                    fileStr.Dispose();
+                    this.rtbInfoMessage.Text += "Finish exporting xml file.\r\n";
+                }
+                fileDlg.Dispose();
+            }
+            catch (MvdException ex)
+            {
+                this.rtbInfoMessage.Text += "Fail to export xml file. ErrorCode: 0x" + ex.ErrorCode.ToString("X") + "\r\n";
+            }
+            catch (System.Exception ex)
+            {
+                this.rtbInfoMessage.Text += "Fail to export xml file with error ' " + ex.Message + " '\r\n";
+            }
+            finally
+            {
+                if (null != fileDlg)
+                {
+                    fileDlg.Dispose();
+                }
+                if (null != fileStr)
+                {
+                    fileStr.Close();
+                    fileStr.Dispose();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Response function of "ImportXml" button. Load parameters from local XML file.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnImpXml_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.OpenFileDialog fileDlg = null;
+            FileStream fileStr = null;
+            try
+            {
+                fileDlg = new System.Windows.Forms.OpenFileDialog();
+                fileDlg.Filter = @"XMl Files(*.xml)|*.xml";
+                fileDlg.FilterIndex = 2;
+                fileDlg.RestoreDirectory = true;
+                if (fileDlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string filePath = fileDlg.FileName;
+                    if (File.Exists(filePath))
+                    {
+                        fileStr = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+                        Int64 nFileLen = fileStr.Length;
+                        byte[] fileBytes = new byte[nFileLen];
+                        uint nReadLen = Convert.ToUInt32(fileStr.Read(fileBytes, 0, fileBytes.Length));
+                        fileStr.Close();
+                        fileStr.Dispose();
+                        m_stLineFindToolObj.LoadConfiguration(fileBytes, nReadLen);
+                        UpdateParamList(fileBytes, nReadLen);
+                        this.rtbInfoMessage.Text += "Finish importing xml file.\r\n";
+                    }
+                }
+                fileDlg.Dispose();
+            }
+            catch (MvdException ex)
+            {
+                this.rtbInfoMessage.Text += "Fail to import xml file. ErrorCode: 0x" + ex.ErrorCode.ToString("X") + "\r\n";
+            }
+            catch (System.Exception ex)
+            {
+                this.rtbInfoMessage.Text += "Fail to import xml file with error ' " + ex.Message + " '\r\n";
+            }
+            finally
+            {
+                if (null != fileDlg)
+                {
+                    fileDlg.Dispose();
+                }
+                if (null != fileStr)
+                {
+                    fileStr.Close();
+                    fileStr.Dispose();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Response function of "DeInit" button. Only release the resource of algorithm tool.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDeInit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (null != m_stROIShape)
+                {
+                    mvdRenderActivex1.DeleteShape(m_stROIShape);
+                    m_stROIShape = null;
+                }
+                if (null != m_stResLineShape)
+                {
+                    mvdRenderActivex1.DeleteShape(m_stResLineShape);
+                    m_stResLineShape = null;
+                }
+                foreach (var item in m_lMaskShapes)
+                {
+                    mvdRenderActivex1.DeleteShape(item);
+                }
+                m_lMaskShapes.Clear();
+
+                ClearCaliperBoxList(_DrawCaliperBoxList);
+                ClearOutline(_DrawOutlineList);
+
+                if (null != m_stLineFindToolObj)
+                {
+                    m_stLineFindToolObj.Dispose();
+                    m_stLineFindToolObj = null;
+                }
+
+                dataGridView1.Rows.Clear();
+                m_stXmlParseToolObj.ClearXmlBuf();
+
+                this.rtbInfoMessage.Text += "DeInit finish.\r\n";
+            }
+            catch (MvdException ex)
+            {
+                this.rtbInfoMessage.Text += "An error occurred while releasing the resource. ErrorCode: 0x" + ex.ErrorCode.ToString("X") + "\r\n";
+            }
+            catch (System.Exception ex)
+            {
+                this.rtbInfoMessage.Text += "An error occurred while releasing the resource with ' " + ex.Message + " '\r\n";
+            }
+            finally
+            {
+                mvdRenderActivex1.Display();
+            }
+        }
+
+        /// <summary>
+        /// Response function of ALLRegion radio checked event.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AllROIRadioButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Set value of algorithm parameter
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            String strName = dataGridView1.Rows[e.RowIndex].Cells[dataGridView1.Columns["ParamNameBoxCol"].Index].Value.ToString();
+            string strCurParamVal = null;
+            for (int i = 0; i < m_stXmlParseToolObj.IntValueList.Count; ++i)
+            {
+                if (strName == m_stXmlParseToolObj.IntValueList[i].Name)
+                {
+                    strCurParamVal = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                }
+            }
+            for (int i = 0; i < m_stXmlParseToolObj.EnumValueList.Count; ++i)
+            {
+                if (strName == m_stXmlParseToolObj.EnumValueList[i].Name)
+                {
+                    String strEnumEntryName = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                    strCurParamVal = strEnumEntryName;
+                }
+            }
+            try
+            {
+                double fStartTime = GetTimeStamp();
+                m_stLineFindToolObj.SetRunParam(strName, strCurParamVal);
+                double fCostTime = GetTimeStamp() - fStartTime;
+                this.rtbInfoMessage.Text += "SetRunParam success. Cost: " + fCostTime.ToString() + "\r\n";
+            }
+            catch (MvdException ex)
+            {
+                this.rtbInfoMessage.Text += "Fail to set run param. ErrorCode: 0x" + ex.ErrorCode.ToString("X") + "\r\n";
+            }
+            catch (System.Exception ex)
+            {
+                this.rtbInfoMessage.Text += "Fail to set run param with error " + ex.Message + "\r\n";
+            }
+        }
+
+        /// <summary>
+        /// Response function of double-click event on information box
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void rtbInfoMessage_DoubleClick(object sender, EventArgs e)
+        {
+            this.rtbInfoMessage.Clear();
+        }
+
+        /// <summary>
+        /// Response function of ShapeChanged event from the MvRenderOCX
+        /// </summary>
+        /// <param name="enEventType"></param>
+        /// <param name="enShapeType"></param>
+        /// <param name="cShapeObj"></param>
         private void mvdRenderActivex1_MVDShapeChangedEvent(MVDRenderActivex.MVD_SHAPE_EVENT_TYPE enEventType, MVD_SHAPE_TYPE enShapeType, CMvdShape cShapeObj)
         {
             if (MVDRenderActivex.MVD_SHAPE_EVENT_TYPE.MVD_SHAPE_SELECTED == enEventType)
@@ -80,14 +395,20 @@ namespace VisionPlatform
 
             if (MVD_SHAPE_TYPE.MvdShapePolygon == enShapeType)
             {
-
+                if ((MVDRenderActivex.MVD_SHAPE_EVENT_TYPE.MVD_SHAPE_ADDED == enEventType) && (true != PolyMaskRadioButton.Checked))
+                {
+                    MessageBox.Show("Polygon is only allowed to be added only when adding masks.");
+                    mvdRenderActivex1.DeleteShape(cShapeObj);
+                    mvdRenderActivex1.Display();
+                    return;
+                }
                 if (MVDRenderActivex.MVD_SHAPE_EVENT_TYPE.MVD_SHAPE_ADDED == enEventType)
                 {
-                    _MaskShapeList.Add(cShapeObj);
+                    m_lMaskShapes.Add(cShapeObj);
                 }
                 else if (MVDRenderActivex.MVD_SHAPE_EVENT_TYPE.MVD_SHAPE_DELETED == enEventType)
                 {
-                    _MaskShapeList.Remove(cShapeObj);
+                    m_lMaskShapes.Remove(cShapeObj);
                 }
                 return;
             }
@@ -95,13 +416,13 @@ namespace VisionPlatform
             /* ROI or result shape may be delete */
             if (MVDRenderActivex.MVD_SHAPE_EVENT_TYPE.MVD_SHAPE_DELETED == enEventType)
             {
-                if (_ROI == cShapeObj)
+                if (m_stROIShape == cShapeObj)
                 {
-                    _ROI = null;
+                    m_stROIShape = null;
                 }
-                else if (_DrawArc == cShapeObj)
+                else if (m_stResLineShape == cShapeObj)
                 {
-                    _DrawArc = null;
+                    m_stResLineShape = null;
                 }
                 else
                 {
@@ -126,24 +447,141 @@ namespace VisionPlatform
                 return;
             }
 
+            /* MvdShapeAdded event will be processed here */
+            if (AllROIRadioButton.Checked)
+            {
+                MessageBox.Show("Shapes are not allowed to be added in the AllRegion Mode\r\n");
+                mvdRenderActivex1.DeleteShape(cShapeObj);
+                mvdRenderActivex1.Display();
+                return;
+            }
+            if ((RectROIRadioButton.Checked) && (MVD_SHAPE_TYPE.MvdShapeRectangle == enShapeType))
+            {
+                if (null != m_stROIShape)
+                {
+                    mvdRenderActivex1.DeleteShape(m_stROIShape);
+                    mvdRenderActivex1.Display();
+                }
+                m_stROIShape = cShapeObj;
+                return;
+            }
 
             MessageBox.Show("The shape that is inconsistent with the checked type will be deleted.\r\n");
             mvdRenderActivex1.DeleteShape(cShapeObj);
             mvdRenderActivex1.Display();
         }
 
-        private void mvdRenderActivex1_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Update paramters
+        /// </summary>
+        /// <param name="bufXml"></param>
+        /// <param name="nXmlLen"></param>
+        private void UpdateParamList(Byte[] bufXml, uint nXmlLen)
+        {
+            if (null == m_stXmlParseToolObj)
+            {
+                m_stXmlParseToolObj = new CMvdXmlParseTool(bufXml, nXmlLen);
+            }
+            else
+            {
+                m_stXmlParseToolObj.UpdateXmlBuf(bufXml, nXmlLen);
+            }
+            dataGridView1.Rows.Clear();
+            for (int i = 0; i < m_stXmlParseToolObj.IntValueList.Count; ++i)
+            {
+                int nIndex = dataGridView1.Rows.Add();
+                dataGridView1.Rows[nIndex].Cells[dataGridView1.Columns["ParamNameBoxCol"].Index].Value = m_stXmlParseToolObj.IntValueList[i].Name;
+                dataGridView1.Rows[nIndex].Cells[dataGridView1.Columns["ParamValueBoxCol"].Index].Value = m_stXmlParseToolObj.IntValueList[i].CurValue;
+            }
+
+            for (int i = 0; i < m_stXmlParseToolObj.EnumValueList.Count; ++i)
+            {
+                int nIndex = dataGridView1.Rows.Add();
+                DataGridViewTextBoxCell textboxcell = new DataGridViewTextBoxCell();
+                textboxcell.Value = m_stXmlParseToolObj.EnumValueList[i].Name;
+                dataGridView1.Rows[nIndex].Cells[dataGridView1.Columns["ParamNameBoxCol"].Index] = textboxcell;
+                DataGridViewComboBoxCell comboxcell = new DataGridViewComboBoxCell();
+                for (int j = 0; j < m_stXmlParseToolObj.EnumValueList[i].EnumRange.Count; ++j)
+                {
+                    comboxcell.Items.Add(m_stXmlParseToolObj.EnumValueList[i].EnumRange[j].Name);
+                }
+                comboxcell.Value = m_stXmlParseToolObj.EnumValueList[i].CurValue.Name;
+                dataGridView1.Rows[nIndex].Cells[dataGridView1.Columns["ParamValueBoxCol"].Index] = comboxcell;
+            }
+        }
+
+        private double GetTimeStamp()
+        {
+            TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return ts.TotalMilliseconds;
+        }
+
+        private void RectROIRadioButton_Click(object sender, EventArgs e)
         {
 
         }
-        /// <summary>
-        /// 绘制圆弧
-        /// </summary>
-        /// <param name="drawArc"></param>
-        private void DrawArc(CMvdAnnularSectorF drawArc)
+
+        private void AnnulROIRadioButton_Click(object sender, EventArgs e)
         {
-            drawArc.BorderColor = new MVD_COLOR(0, 255, 0, 255);
-            mvdRenderActivex1.AddShape(drawArc);
+            this.PolyMaskRadioButton.Checked = false;
+        }
+
+        private void PolyMaskRadioButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 绘制卡尺
+        /// </summary>
+        /// <param name="caliperBoxList"></param>
+        private void DrawCaliperBoxList(List<CMvdRectangleF> caliperBoxList, UInt32 imageWidth, UInt32 imageHeight)
+        {
+            foreach (var item in caliperBoxList)
+            {
+                if (IsPointOutOfImage(new MVD_POINT_F(item.CenterX, item.CenterY), imageWidth, imageHeight))
+                {
+                    continue;
+                }
+
+                CMvdRectangleF drawCaliperBox = new CMvdRectangleF(item);
+                drawCaliperBox.BorderColor = new MVD_COLOR(0, 0, 255, 255);
+                mvdRenderActivex1.AddShape(drawCaliperBox);
+                _DrawCaliperBoxList.Add(drawCaliperBox);
+            }
+        }
+
+        /// <summary>
+        /// 清理卡尺
+        /// </summary>
+        /// <param name="caliperBoxList"></param>
+        private void ClearCaliperBoxList(List<CMvdRectangleF> caliperBoxList)
+        {
+            foreach (var item in caliperBoxList)
+            {
+                mvdRenderActivex1.DeleteShape(item);
+            }
+            caliperBoxList.Clear();
+        }
+
+        /// <summary>
+        /// 点是否在图像外
+        /// </summary>
+        /// <param name="point"></param>
+        /// <param name="imageWidth"></param>
+        /// <param name="imageHeight"></param>
+        /// <returns></returns>
+        private bool IsPointOutOfImage(MVD_POINT_F point, float imageWidth, float imageHeight)
+        {
+            if ((point.fX - 0 < Single.Epsilon)
+            || (point.fY - 0 < Single.Epsilon)
+            || (imageWidth - point.fX < Single.Epsilon)
+            || (imageHeight - point.fY < Single.Epsilon))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -169,30 +607,12 @@ namespace VisionPlatform
             verticalLine.StartPoint = new MVD_POINT_F(edgePoint.fX, minY);
             verticalLine.EndPoint = new MVD_POINT_F(edgePoint.fX, maxY);
         }
-        /// <summary>
-        /// 点是否在图像外
-        /// </summary>
-        /// <param name="point"></param>
-        /// <param name="imageWidth"></param>
-        /// <param name="imageHeight"></param>
-        /// <returns></returns>
-        private bool IsPointOutOfImage(MVD_POINT_F point, float imageWidth, float imageHeight)
-        {
-            if ((point.fX - 0 < Single.Epsilon)
-            || (point.fY - 0 < Single.Epsilon)
-            || (imageWidth - point.fX < Single.Epsilon)
-            || (imageHeight - point.fY < Single.Epsilon))
-            {
-                return true;
-            }
 
-            return false;
-        }
         /// <summary>
         /// 绘制轮廓
         /// </summary>
         /// <param name="drawEdgePointList"></param>
-        private void DrawOutline(List<CCircleFindEdgePointInfo> drawEdgePointList, UInt32 imageWidth, UInt32 imageHeight)
+        private void DrawOutline(List<CLineFindEdgePointInfo> drawEdgePointList, UInt32 imageWidth, UInt32 imageHeight)
         {
             foreach (var item in drawEdgePointList)
             {
@@ -210,7 +630,7 @@ namespace VisionPlatform
 
                 switch (item.Status)
                 {
-                    case MVD_EDGEPOINT_STATUS.MVD_EDGEPOINT_STATUS_USED:
+                    case VisionDesigner.LineFind.MVD_EDGEPOINT_STATUS.MVD_EDGEPOINT_STATUS_USED:
                         {
                             horizontalLine.BorderColor = new MVD_COLOR(0, 255, 0, 255);
                             mvdRenderActivex1.AddShape(horizontalLine);
@@ -221,7 +641,7 @@ namespace VisionPlatform
                             _DrawOutlineList.Add(verticalLine);
                         }
                         break;
-                    case MVD_EDGEPOINT_STATUS.MVD_EDGEPOINT_STATUS_NO_USED:
+                    case VisionDesigner.LineFind.MVD_EDGEPOINT_STATUS.MVD_EDGEPOINT_STATUS_NO_USED:
                         {
                             horizontalLine.BorderColor = new MVD_COLOR(255, 255, 0, 255);
                             mvdRenderActivex1.AddShape(horizontalLine);
@@ -232,7 +652,7 @@ namespace VisionPlatform
                             _DrawOutlineList.Add(verticalLine);
                         }
                         break;
-                    case MVD_EDGEPOINT_STATUS.MVD_EDGEPOINT_STATUS_NO_FIND:
+                    case VisionDesigner.LineFind.MVD_EDGEPOINT_STATUS.MVD_EDGEPOINT_STATUS_NO_FIND:
                         {
                             horizontalLine.BorderColor = new MVD_COLOR(255, 0, 0, 255);
                             mvdRenderActivex1.AddShape(horizontalLine);
@@ -248,348 +668,177 @@ namespace VisionPlatform
                 }
             }
         }
-        /// <summary>
-        /// .NET渲染控件鼠标事件
-        /// </summary>
-        /// <param name="enMouseEventType">鼠标事件类型</param>
-        /// <param name="nPointX">窗口坐标X值</param>
-        /// <param name="nPointY">窗口坐标Y值</param>
-        /// <param name="nZDelta">标识鼠标滚轮方向</param>
-        private void mvdRenderActivex1_MVDMouseEvent(MVDMouseEventType enMouseEventType, int nPointX, int nPointY, short nZDelta)
-        {
-            //用户想要实现自定义交互需通过SetConfiguration接口启用自定义交互
-            //用户可根据enMouseEventType判断鼠标事件类型，编写对应的响应函数
-            //示例：实时显示鼠标所在位置的图像坐标和像素值
-            try
-            {
-                //窗口坐标转图像坐标
-                float fImgX = 0.0f, fImgY = 0.0f;
-                mvdRenderActivex1.TransformCoordinate(nPointX, nPointY, ref fImgX, ref fImgY, MVDCoordTransType.Wnd2Img);
-
-                //获取像素信息显示
-                do
-                {
-                    if (null == _InputImage)
-                    {
-                        break;
-                    }
-
-                    int nImagePointX = (int)fImgX;
-                    int nImagePointY = (int)fImgY;
-                    int nWidth = (int)_InputImage.Width;
-                    int nHeight = (int)_InputImage.Height;
-                    if (nImagePointX < 0 || nImagePointX >= nWidth
-                        || nImagePointY < 0 || nImagePointY >= nHeight)
-                    {
-                        break;
-                    }
-
-                    string pixelInfo = string.Empty;
-                    List<byte> pixelValue = _InputImage.GetPixel(nImagePointX, nImagePointY);
-                    MVD_PIXEL_FORMAT enPixelFormat = _InputImage.PixelFormat;
-                    if (MVD_PIXEL_FORMAT.MVD_PIXEL_MONO_08 == enPixelFormat)
-                    {
-                        pixelInfo = string.Format("X:{0:D4} Y:{1:D4} | R:{2:D3} G:{3:D3} B:{4:D3}", nImagePointX, nImagePointY, pixelValue[0], pixelValue[0], pixelValue[0]);
-                    }
-                    else if (MVD_PIXEL_FORMAT.MVD_PIXEL_RGB_RGB24_C3 == enPixelFormat)
-                    {
-                        pixelInfo = string.Format("X:{0:D4} Y:{1:D4} | R:{2:D3} G:{3:D3} B:{4:D3}", nImagePointX, nImagePointY, pixelValue[0], pixelValue[1], pixelValue[2]);
-                    }
-                    else
-                    {
-                        throw new MvdException(MVD_MODULE_TYPE.MVD_MODUL_APP, MVD_ERROR_CODE.MVD_E_SUPPORT, "Unsupported pixel format.");
-                    }
-
-                } while (false);
-            }
-            catch (MvdException ex)
-            {
-                
-            }
-            catch (System.Exception ex)
-            {
-
-            }
-        }
-
-
-        //直线查找
-        public int HYFindLine(int PlatFormType, int CameraType)
-        {
-            return 0;
-        }
-
-
 
         /// <summary>
-        /// 绘制卡尺
+        /// 清理轮廓
         /// </summary>
-        /// <param name="caliperBoxList"></param>
-        private void DrawCaliperBoxList(List<CMvdRectangleF> caliperBoxList, UInt32 imageWidth, UInt32 imageHeight)
+        /// <param name="drawEdgePointList"></param>
+        private void ClearOutline(List<CMvdLineSegmentF> drawEdgePointList)
         {
-            foreach (var item in caliperBoxList)
+            foreach (var item in drawEdgePointList)
             {
-                if (IsPointOutOfImage(new MVD_POINT_F(item.CenterX, item.CenterY), imageWidth, imageHeight))
-                {
-                    continue;
-                }
-
-                CMvdRectangleF drawCaliperBox = new CMvdRectangleF(item);
-                drawCaliperBox.BorderColor = new MVD_COLOR(0, 0, 255, 255);
-                mvdRenderActivex1.AddShape(drawCaliperBox);
-                _DrawCaliperBoxList.Add(drawCaliperBox);
+                mvdRenderActivex1.DeleteShape(item);
             }
-        }
-
-        //圆查找
-        public int HYFindCircle()
-        {
-            
-
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.Filter = @"image(*.bmp;*.jpeg;*.jpg;*.png)|*.bmp;*.jpeg;*.jpg;*.png||";
-                openFileDialog.RestoreDirectory = true;
-
-                if (DialogResult.OK == openFileDialog.ShowDialog())
-                {
-                    try
-                    {
-                        if (null == _InputImage)
-                        {
-                            _InputImage = new CMvdImage();
-                        }
-                        _InputImage.InitImage(openFileDialog.FileName);
-                        if (MVD_PIXEL_FORMAT.MVD_PIXEL_RGB_RGB24_C3 == _InputImage.PixelFormat
-                         || MVD_PIXEL_FORMAT.MVD_PIXEL_RGB_RGB24_P3 == _InputImage.PixelFormat)
-                        {
-                            _InputImage.ConvertImagePixelFormat(MVD_PIXEL_FORMAT.MVD_PIXEL_MONO_08);
-
-                        }
-
-                        mvdRenderActivex1.LoadImageFromObject(_InputImage);
-                        mvdRenderActivex1.Display();
-
-                        _ROI = null;
-                        _MaskShapeList.Clear();
-                        _DrawArc = null;
-                        _DrawOutlineList.Clear();
-                        _DrawCaliperBoxList.Clear();
-
-
-                    }
-                    catch (MvdException ex)
-                    {
-                        return -1;
-                    }
-                    catch (System.Exception ex)
-                    {
-                        return -1;
-                    }
-                }
-            }
-
-
-            //try
-            //{
-            //    if ((null == _CircleFindTool) || (null == _InputImage))
-            //    {
-            //        throw new MvdException(MVD_MODULE_TYPE.MVD_MODUL_APP, MVD_ERROR_CODE.MVD_E_CALLORDER);
-            //    }
-
-            //    // 清理绘制结果
-            //    ClearArc(ref _DrawArc);
-            //    ClearCaliperBoxList(_DrawCaliperBoxList);
-            //    ClearOutline(_DrawOutlineList);
-
-            //    // 算法处理
-            //    _CircleFindTool.InputImage = _InputImage;
-            //    _CircleFindTool.ROI = _ROI;
-
-            //    _CircleFindTool.ClearMasks();
-            //    foreach (var item in _MaskShapeList)
-            //    {
-            //        _CircleFindTool.AddMask(item);
-            //    }
-
-            //    _StopWatch.Restart();
-            //    _CircleFindTool.Run();
-            //    _StopWatch.Stop();
-
-            //    CCircleFindResult circleFindResult = _CircleFindTool.Result;
-
-            //    if (1 == circleFindResult.Status)
-            //    {
-
-            //        _DrawArc = new CMvdAnnularSectorF(circleFindResult.Arc);
-            //        DrawArc(_DrawArc);
-            //    }
-
-            //    // 绘制轮廓点
-            //    List<CCircleFindEdgePointInfo> circleFindEdgePointList = circleFindResult.EdgePointInfo;
-            //    DrawOutline(circleFindEdgePointList, _InputImage.Width, _InputImage.Height);
-
-            //    // 绘制卡尺
-            //    DrawCaliperBoxList(circleFindResult.CaliperBoxList, _InputImage.Width, _InputImage.Height);
-            //}
-            //catch (MvdException ex)
-            //{
-            //    return FALSE_RESULT;
-            //}
-            //catch (System.Exception ex)
-            //{
-            //    return FALSE_RESULT;
-            //}
-            //finally
-            //{
-            //    mvdRenderActivex1.Display();
-            //}
-            return 0;
-        }
-
-        //模板匹配
-        public int HYMatchTemplate(int PlatFormType, int CameraType)
-        {
-            return 0;
-        }
-
-        public MatchTemplate()
-        {
-            
-            InitializeComponent();
-            //HYFindCircle();
-        }
-
-        /// <summary>
-        /// 更新DataGridView参数列表
-        /// </summary>
-        /// <param name="bufXml"></param>
-        /// <param name="nXmlLen"></param>
-        private void UpdateParamList(Byte[] bufXml, uint nXmlLen)
-        {
-            if (null == _XmlParseTool)
-            {
-                _XmlParseTool = new CMvdXmlParseTool(bufXml, nXmlLen);
-            }
-            else
-            {
-                _XmlParseTool.UpdateXmlBuf(bufXml, nXmlLen);
-            }
-
-            dataGridView1.Rows.Clear();
-            for (int i = 0; i < _XmlParseTool.IntValueList.Count; ++i)
-            {
-                int index = dataGridView1.Rows.Add();
-                dataGridView1.Rows[index].Cells[dataGridView1.Columns["ParamNameBoxCol"].Index].Value = _XmlParseTool.IntValueList[i].Name;
-                dataGridView1.Rows[index].Cells[dataGridView1.Columns["ParamValueBoxCol"].Index].Value = _XmlParseTool.IntValueList[i].CurValue;
-            }
-
-            for (int i = 0; i < _XmlParseTool.EnumValueList.Count; ++i)
-            {
-                int index = dataGridView1.Rows.Add();
-                DataGridViewTextBoxCell textBoxCell = new DataGridViewTextBoxCell();
-                textBoxCell.Value = _XmlParseTool.EnumValueList[i].Name;
-                dataGridView1.Rows[index].Cells[dataGridView1.Columns["ParamNameBoxCol"].Index] = textBoxCell;
-
-                DataGridViewComboBoxCell comboBoxCell = new DataGridViewComboBoxCell();
-                for (int j = 0; j < _XmlParseTool.EnumValueList[i].EnumRange.Count; ++j)
-                {
-                    comboBoxCell.Items.Add(_XmlParseTool.EnumValueList[i].EnumRange[j].Name);
-                }
-                comboBoxCell.Value = _XmlParseTool.EnumValueList[i].CurValue.Name;
-                dataGridView1.Rows[index].Cells[dataGridView1.Columns["ParamValueBoxCol"].Index] = comboBoxCell;
-            }
+            drawEdgePointList.Clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                _CircleFindTool = new CCircleFindTool();
-                byte[] runParamConfigBytes = new byte[256];
-                uint runParamConfigDataSize = 256;
-                uint runParamConfigDataLength = 0;
-
+                m_stLineFindToolObj = new CLineFindTool();
+                byte[] fileBytes = new byte[256];
+                uint nConfigDataSize = 256;
+                uint nConfigDataLen = 0;
                 try
                 {
-                    _CircleFindTool.SaveConfiguration(runParamConfigBytes, runParamConfigDataSize, ref runParamConfigDataLength);
+                    m_stLineFindToolObj.SaveConfiguration(fileBytes, nConfigDataSize, ref nConfigDataLen);
                 }
                 catch (MvdException ex)
                 {
                     if (MVD_ERROR_CODE.MVD_E_NOENOUGH_BUF == ex.ErrorCode)
                     {
-                        runParamConfigBytes = new byte[runParamConfigDataLength];
-                        runParamConfigDataSize = runParamConfigDataLength;
-                        _CircleFindTool.SaveConfiguration(runParamConfigBytes, runParamConfigDataSize, ref runParamConfigDataLength);
-
+                        fileBytes = new byte[nConfigDataLen];
+                        nConfigDataSize = nConfigDataLen;
+                        m_stLineFindToolObj.SaveConfiguration(fileBytes, nConfigDataSize, ref nConfigDataLen);
                     }
                     else
                     {
                         throw ex;
-
                     }
                 }
-                UpdateParamList(runParamConfigBytes, runParamConfigDataLength);
+                UpdateParamList(fileBytes, nConfigDataLen);
 
+                this.rtbInfoMessage.Text += "Init finish.\r\n";
             }
             catch (MvdException ex)
             {
-                MessageBox.Show(ex.Message);
-
+                this.rtbInfoMessage.Text += "Fail to initialize the tool. ErrorCode: 0x" + ex.ErrorCode.ToString("X") + "\r\n";
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.Message);
-
+                this.rtbInfoMessage.Text += "Fail with error " + ex.Message + "\r\n";
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            System.Windows.Forms.OpenFileDialog fileDlg = null;
+            try
             {
-                openFileDialog.Filter = @"image(*.bmp;*.jpeg;*.jpg;*.png)|*.bmp;*.jpeg;*.jpg;*.png||";
-                openFileDialog.RestoreDirectory = true;
+                fileDlg = new System.Windows.Forms.OpenFileDialog();
+                fileDlg.Filter = @"image(*.bmp;*.jpeg;*.jpg;*.png)|*.bmp;*.jpeg;*.jpg;*.png||";
+                fileDlg.RestoreDirectory = true;
 
-                if (DialogResult.OK == openFileDialog.ShowDialog())
+                if (fileDlg.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
-                    try
+                    if (null == m_stInputImage)
                     {
-                        if (null == _InputImage)
-                        {
-                            _InputImage = new CMvdImage();
-                        }
-                        _InputImage.InitImage(openFileDialog.FileName);
-                        if (MVD_PIXEL_FORMAT.MVD_PIXEL_RGB_RGB24_C3 == _InputImage.PixelFormat
-                         || MVD_PIXEL_FORMAT.MVD_PIXEL_RGB_RGB24_P3 == _InputImage.PixelFormat)
-                        {
-                            _InputImage.ConvertImagePixelFormat(MVD_PIXEL_FORMAT.MVD_PIXEL_MONO_08);
-                        }
-
-                        mvdRenderActivex1.LoadImageFromObject(_InputImage);
-                        mvdRenderActivex1.Display();
-
-                        _ROI = null;
-                        //_MaskShapeList.Clear();
-                        _DrawArc = null;
-                        //_DrawOutlineList.Clear();
-                        //_DrawCaliperBoxList.Clear();
-
-
+                        m_stInputImage = new CMvdImage();
                     }
-                    catch (MvdException ex)
-                    {
-                    }
-                    catch (System.Exception ex)
-                    {
-                    }
+                    m_stInputImage.InitImage(fileDlg.FileName);
+                    mvdRenderActivex1.LoadImageFromObject(m_stInputImage);
+                    mvdRenderActivex1.Display();
+
+                    /* Shapes on the canvas are cleared by the render activeX when different images are switched */
+                    m_lMaskShapes.Clear();
+                    m_stROIShape = null;
+                    m_stResLineShape = null;
+                    _DrawOutlineList.Clear();
+                    _DrawCaliperBoxList.Clear();
+                    this.rtbInfoMessage.Text += "Finish loading image from [" + fileDlg.FileName + "].\r\n";
+                }
+                fileDlg.Dispose();
+            }
+            catch (MvdException ex)
+            {
+                this.rtbInfoMessage.Text += "Fail to load image from [" + fileDlg.FileName + "]. ErrorCode: 0x" + ex.ErrorCode.ToString("X") + "\r\n";
+            }
+            catch (System.Exception ex)
+            {
+                this.rtbInfoMessage.Text += "Fail to load image from [" + fileDlg.FileName + "]. Error: " + ex.Message + "\r\n";
+            }
+            finally
+            {
+                if (null != fileDlg)
+                {
+                    fileDlg.Dispose();
                 }
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if ((null == m_stLineFindToolObj) || (null == m_stInputImage))
+                {
+                    throw new MvdException(MVD_MODULE_TYPE.MVD_MODUL_TOOL, MVD_ERROR_CODE.MVD_E_CALLORDER);
+                }
 
+                // 清理绘制结果
+                if (null != m_stResLineShape)
+                {
+                    mvdRenderActivex1.DeleteShape(m_stResLineShape);
+                    m_stResLineShape = null;
+                }
+                ClearCaliperBoxList(_DrawCaliperBoxList);
+                ClearOutline(_DrawOutlineList);
+
+                m_stLineFindToolObj.InputImage = m_stInputImage;
+                if (null == m_stROIShape)
+                {
+                    m_stLineFindToolObj.ROI = new VisionDesigner.CMvdRectangleF(m_stInputImage.Width / 2, m_stInputImage.Height / 2, m_stInputImage.Width, m_stInputImage.Height);
+                }
+                else
+                {
+                    m_stLineFindToolObj.ROI = m_stROIShape;
+                }
+
+                m_stLineFindToolObj.ClearMasks();
+                foreach (var item in m_lMaskShapes)
+                {
+                    m_stLineFindToolObj.AddMask(item);
+                }
+                double fStartTime = GetTimeStamp();
+                m_stLineFindToolObj.Run();
+                double fCostTime = GetTimeStamp() - fStartTime;
+                this.rtbInfoMessage.Text += "Running cost: " + fCostTime.ToString() + "\r\n";
+
+                CLineFindResult stLineFindRes = m_stLineFindToolObj.Result;
+                this.rtbInfoMessage.Text += "Recognition status: " + stLineFindRes.Status + "\r\n";
+                if (1 == stLineFindRes.Status)
+                {
+                    this.rtbInfoMessage.Text += "Start point of line: (" + stLineFindRes.LineStartPoint.fX + ", " + stLineFindRes.LineStartPoint.fY + ")\r\n";
+                    this.rtbInfoMessage.Text += "End point of line: (" + stLineFindRes.LineEndPoint.fX + ", " + stLineFindRes.LineEndPoint.fY + ")\r\n";
+                    this.rtbInfoMessage.Text += "Angle: " + stLineFindRes.LineAngle + "\r\n";
+                    this.rtbInfoMessage.Text += "Straightness: " + stLineFindRes.LineStraightness + "\r\n";
+                    this.rtbInfoMessage.Text += "The number of edge point: " + stLineFindRes.EdgePointInfo.Count + "\r\n";
+
+                    m_stResLineShape = new CMvdLineSegmentF(stLineFindRes.LineStartPoint, stLineFindRes.LineEndPoint);
+                    m_stResLineShape.BorderColor = new MVD_COLOR(0, 255, 0, 255);
+                    mvdRenderActivex1.AddShape(m_stResLineShape);
+                }
+
+                // 绘制轮廓点
+                List<CLineFindEdgePointInfo> lineFindEdgePointList = stLineFindRes.EdgePointInfo;
+                DrawOutline(lineFindEdgePointList, m_stInputImage.Width, m_stInputImage.Height);
+
+                // 绘制卡尺
+                DrawCaliperBoxList(stLineFindRes.CaliperBoxList, m_stInputImage.Width, m_stInputImage.Height);
+            }
+            catch (MvdException ex)
+            {
+                this.rtbInfoMessage.Text += "An error occurred while running the tool. ErrorCode: 0x" + ex.ErrorCode.ToString("X") + "\r\n";
+            }
+            catch (System.Exception ex)
+            {
+                this.rtbInfoMessage.Text += "An error occurred while running the tool with ' " + ex.Message + " '\r\n";
+            }
+            finally
+            {
+                mvdRenderActivex1.Display();
+            }
         }
     }
 }

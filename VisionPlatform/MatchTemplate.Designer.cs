@@ -38,7 +38,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.rtbInfoMessage = new System.Windows.Forms.RichTextBox();
+            this.MaskGroupBox = new System.Windows.Forms.GroupBox();
+            this.PolyMaskRadioButton = new System.Windows.Forms.RadioButton();
+            this.ROIGroupBox = new System.Windows.Forms.GroupBox();
+            this.RectROIRadioButton = new System.Windows.Forms.RadioButton();
+            this.AllROIRadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.MaskGroupBox.SuspendLayout();
+            this.ROIGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // mvdRenderActivex1
@@ -51,8 +58,6 @@
             this.mvdRenderActivex1.Size = new System.Drawing.Size(570, 460);
             this.mvdRenderActivex1.TabIndex = 13;
             this.mvdRenderActivex1.MVDShapeChangedEvent += new VisionDesigner.MVDRenderActivex.MVDShapesChangedEventHandler(this.mvdRenderActivex1_MVDShapeChangedEvent);
-            this.mvdRenderActivex1.MVDMouseEvent += new VisionDesigner.MVDRenderActivex.MVDMouseEventHandler(this.mvdRenderActivex1_MVDMouseEvent);
-            this.mvdRenderActivex1.Load += new System.EventHandler(this.mvdRenderActivex1_Load);
             // 
             // button1
             // 
@@ -81,7 +86,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ParamNameBoxCol,
             this.ParamValueBoxCol});
-            this.dataGridView1.Location = new System.Drawing.Point(631, 160);
+            this.dataGridView1.Location = new System.Drawing.Point(634, 148);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(225, 277);
@@ -129,11 +134,67 @@
             this.rtbInfoMessage.TabIndex = 19;
             this.rtbInfoMessage.Text = "";
             // 
+            // MaskGroupBox
+            // 
+            this.MaskGroupBox.Controls.Add(this.PolyMaskRadioButton);
+            this.MaskGroupBox.Location = new System.Drawing.Point(634, 509);
+            this.MaskGroupBox.Name = "MaskGroupBox";
+            this.MaskGroupBox.Size = new System.Drawing.Size(234, 45);
+            this.MaskGroupBox.TabIndex = 24;
+            this.MaskGroupBox.TabStop = false;
+            this.MaskGroupBox.Text = "Mask";
+            // 
+            // PolyMaskRadioButton
+            // 
+            this.PolyMaskRadioButton.AutoSize = true;
+            this.PolyMaskRadioButton.Location = new System.Drawing.Point(21, 20);
+            this.PolyMaskRadioButton.Name = "PolyMaskRadioButton";
+            this.PolyMaskRadioButton.Size = new System.Drawing.Size(65, 16);
+            this.PolyMaskRadioButton.TabIndex = 0;
+            this.PolyMaskRadioButton.TabStop = true;
+            this.PolyMaskRadioButton.Text = "Polygon";
+            this.PolyMaskRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // ROIGroupBox
+            // 
+            this.ROIGroupBox.Controls.Add(this.RectROIRadioButton);
+            this.ROIGroupBox.Controls.Add(this.AllROIRadioButton);
+            this.ROIGroupBox.Location = new System.Drawing.Point(634, 458);
+            this.ROIGroupBox.Name = "ROIGroupBox";
+            this.ROIGroupBox.Size = new System.Drawing.Size(234, 45);
+            this.ROIGroupBox.TabIndex = 23;
+            this.ROIGroupBox.TabStop = false;
+            this.ROIGroupBox.Text = "ROI";
+            // 
+            // RectROIRadioButton
+            // 
+            this.RectROIRadioButton.AutoSize = true;
+            this.RectROIRadioButton.Location = new System.Drawing.Point(69, 19);
+            this.RectROIRadioButton.Name = "RectROIRadioButton";
+            this.RectROIRadioButton.Size = new System.Drawing.Size(47, 16);
+            this.RectROIRadioButton.TabIndex = 1;
+            this.RectROIRadioButton.Text = "Rect";
+            this.RectROIRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // AllROIRadioButton
+            // 
+            this.AllROIRadioButton.AutoSize = true;
+            this.AllROIRadioButton.Checked = true;
+            this.AllROIRadioButton.Location = new System.Drawing.Point(21, 19);
+            this.AllROIRadioButton.Name = "AllROIRadioButton";
+            this.AllROIRadioButton.Size = new System.Drawing.Size(41, 16);
+            this.AllROIRadioButton.TabIndex = 0;
+            this.AllROIRadioButton.TabStop = true;
+            this.AllROIRadioButton.Text = "All";
+            this.AllROIRadioButton.UseVisualStyleBackColor = true;
+            // 
             // MatchTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 764);
+            this.Controls.Add(this.MaskGroupBox);
+            this.Controls.Add(this.ROIGroupBox);
             this.Controls.Add(this.rtbInfoMessage);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -144,6 +205,10 @@
             this.Name = "MatchTemplate";
             this.Text = "MatchTemplate";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.MaskGroupBox.ResumeLayout(false);
+            this.MaskGroupBox.PerformLayout();
+            this.ROIGroupBox.ResumeLayout(false);
+            this.ROIGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -159,5 +224,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.RichTextBox rtbInfoMessage;
+        private System.Windows.Forms.GroupBox MaskGroupBox;
+        private System.Windows.Forms.RadioButton PolyMaskRadioButton;
+        private System.Windows.Forms.GroupBox ROIGroupBox;
+        private System.Windows.Forms.RadioButton RectROIRadioButton;
+        private System.Windows.Forms.RadioButton AllROIRadioButton;
     }
 }

@@ -52,5 +52,15 @@ D:\code\VisionPlatform\VisionPlatform\bin\Debug\MVDShape.Net.xml
 D:\code\VisionPlatform\VisionPlatform\bin\Debug\MVDXmlParse.NET.xml
 D:\code\VisionPlatform\VisionPlatform\bin\Debug\MvRenderActiveX.Net.xml
 D:\code\VisionPlatform\VisionPlatform\bin\Debug\MVDPreproMask.Net.xml
-D:\code\VisionPlatform\VisionPlatform\bin\Debug\SunnyUI.Common.dll
 D:\code\VisionPlatform\VisionPlatform\bin\Debug\SunnyUI.dll
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\ControlzEx.dll
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\Fluent.dll
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\MVDLineFind.Net.dll
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\ControlzEx.pdb
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\ControlzEx.xml
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\Fluent.pdb
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\Fluent.xml
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\code\VisionPlatform\VisionPlatform\bin\Debug\MVDLineFind.Net.xml
