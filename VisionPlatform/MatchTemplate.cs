@@ -28,6 +28,7 @@ namespace VisionPlatform
         List<CMvdLineSegmentF> _DrawOutlineList = new List<CMvdLineSegmentF>();     // 绘制轮廓
         List<CMvdRectangleF> _DrawCaliperBoxList = new List<CMvdRectangleF>();     // 绘制卡尺框
 
+
         public MatchTemplate()
         {
             InitializeComponent();
@@ -840,5 +841,6 @@ namespace VisionPlatform
                 mvdRenderActivex1.Display();
             }
         }
+
     }
 }

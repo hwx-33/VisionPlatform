@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("image/start.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("themes/effects/grayscale.fx")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("themes/xamlcombine.exe")]
 
 

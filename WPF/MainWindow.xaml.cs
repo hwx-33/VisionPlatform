@@ -21,10 +21,26 @@ namespace WPF
     /// </summary>
     public partial class MainWindow : RibbonWindow
     {
-        
         public MainWindow()
+            {
+                InitializeComponent();
+            }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
+
+        }
+        private void DrawLine(object sender, RoutedEventArgs e)
+        {
+            
+        }
+        private void DrawCircle(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("test");
+        }
+        private void DrawRect(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("test");
         }
     }
 }

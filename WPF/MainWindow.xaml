@@ -5,61 +5,99 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF"
         xmlns:Fluent="urn:fluent-ribbon"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:wfi ="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+        xmlns:hik ="clr-namespace:VisionDesigner;assembly=MVDXmlParse.NET"
+        xmlns:hik2 ="clr-namespace:MvRenderActivexLib;assembly=Interop.MvRenderActivexLib"
+        xmlns:hik3 ="clr-namespace:MVD.Internal.Comm;assembly=MvRenderActiveX.Net"    
+        xmlns:hik4 ="clr-namespace:AxMvRenderActivexLib;assembly=AxInterop.MvRenderActivexLib"
+
         mc:Ignorable="d"
         Title="VisionPlatform" Height="517" Width="920" WindowState="Maximized">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="454*"/>
+            <ColumnDefinition Width="459*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Fluent:Ribbon Grid.Row="0" AutomaticStateManagement="True"
-                       x:Name="ribbon">
-            <Fluent:Ribbon.QuickAccessItems>
-                <Fluent:QuickAccessMenuItem Target="{Binding ElementName=BtnSecManager}"/>
-                <Fluent:QuickAccessMenuItem Target="{Binding ElementName=BtnModifyPassword}"/>
-            </Fluent:Ribbon.QuickAccessItems>
+        <Fluent:Ribbon Grid.Row="0" Grid.Column ="0" Grid.ColumnSpan="2">
+            <!--<Fluent:RibbonTabItem Header="文件" IsSelected="False">
+                <Fluent:RibbonGroupBox KeyTip="FG" Header="项目创建" IsLauncherVisible="False" x:Name="groupLL" Width="94">
+                    <Fluent:Button LargeIcon="D:\download\start.png" Size="Large" Header="新建" Width="84"></Fluent:Button>
+                </Fluent:RibbonGroupBox>-->
 
-            <Fluent:RibbonTabItem Header="用户管理" ReduceOrder="(P),(P),(P),(P),(P)">
-                <Fluent:RibbonGroupBox Header="User Group">
-                    <Fluent:Button Header="查询用户" Command="{Binding OpenCommand}" Icon="Images/start.png" LargeIcon="Images\start.png" Name="BtnQueryUser" />
-                    <Fluent:Button Header="添加用户" Command="{Binding AddFunctionCommand}" Icon="Images\Green.png"  Name="BtnAddUser" />
-                    <Fluent:Button Header="更新用户" Command="{Binding OpenCommand}" Icon="Images\Gray.png" LargeIcon="Images\GrayLarge.png" Name="BtnModifyUser" />
+
+            <!--<Fluent:RibbonGroupBox Header="选择框" >
+
+                    <Fluent:CheckBox x:Name="IsCheckBox1" Size="Large" IsChecked="True" Header="选择1"></Fluent:CheckBox>
+
+                    <Fluent:CheckBox x:Name="IsCheckBox2" Header="选择1"></Fluent:CheckBox>
+
+                    <Fluent:CheckBox x:Name="IsCheckBox3" Header="选择1"></Fluent:CheckBox>
+
+                </Fluent:RibbonGroupBox>-->
+
+
+            <!--<Fluent:RibbonGroupBox Header="下拉框" >
+
+                    <Fluent:ComboBox IsEditable="true"
+                            InputWidth="150"
+                            Header="字体"
+                            ItemsSource="{Binding FontsViewModel.FontsData}"
+                            KeyTip="FD"></Fluent:ComboBox>
+
+                    <Fluent:ComboBox IsEditable="False"
+                            InputWidth="150"
+                            Header="字体"
+                            ItemsSource="{Binding FontsViewModel.FontsData}"
+                            KeyTip="FD"></Fluent:ComboBox>
+
+                    <Fluent:ComboBox IsEditable="False"
+                            InputWidth="150"
+                            Header="字体"
+                            ItemsSource="{Binding FontsViewModel.FontsData}"
+                            KeyTip="FD"></Fluent:ComboBox>
+                </Fluent:RibbonGroupBox>-->
+
+            <!--</Fluent:RibbonTabItem>-->
+            <Fluent:RibbonTabItem Header="工具" IsSelected="True">
+                <Fluent:RibbonGroupBox KeyTip="FG" Header="文件" IsLauncherVisible="False" x:Name="file" Width="94">
+                    <Fluent:Button LargeIcon="D:\download\new.png" Size="Large" Header="新建" Width="84"></Fluent:Button>
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox KeyTip="FG" Header="工具包" IsLauncherVisible="False" x:Name="tools2" Width="94">
+                    <Fluent:DropDownButton Header="ROI"  LargeIcon="D:\download\rect.png" Width="84">
+                        <Fluent:Gallery>
+                            <Fluent:Button LargeIcon="D:\download\line.png" Size="Large" Header="直线工具" Width="80" Click="DrawLine"></Fluent:Button>
+                            <Fluent:Button LargeIcon="D:\download\circle.png" Size="Large" Header="圆形工具" Width="80" Click="DrawCircle"></Fluent:Button>
+                            <Fluent:Button LargeIcon="D:\download\rect.png" Size="Large" Header="矩形工具" Width="80" Click="DrawRect"></Fluent:Button>
+                        </Fluent:Gallery>
+                    </Fluent:DropDownButton>
+                </Fluent:RibbonGroupBox>
+
+                <Fluent:RibbonGroupBox KeyTip="FG" Header="测试" IsLauncherVisible="False" x:Name="cali" Width="94">
+                    <Fluent:DropDownButton Header="ROI"  LargeIcon="D:\download\start.png" Width="84">
+                        <Fluent:Gallery>
+                            <Fluent:Button LargeIcon="D:\download\line.png" Size="Large" Header="直线工具" Width="80"></Fluent:Button>
+                            <Fluent:Button LargeIcon="D:\download\circle.png" Size="Large" Header="圆形工具" Width="80"></Fluent:Button>
+                            <Fluent:Button LargeIcon="D:\download\rect.png" Size="Large" Header="矩形工具" Width="80"></Fluent:Button>
+                        </Fluent:Gallery>
+                    </Fluent:DropDownButton>
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
 
-            <Fluent:RibbonTabItem Header="角色管理" ReduceOrder="(P),(P),(P),(P),(P)">
-                <Fluent:RibbonGroupBox Header="Role Group">
-                    <Fluent:Button Header="查询角色" Command="{Binding OpenCommand}" Icon="Images\Gray.png" LargeIcon="Images\GrayLarge.png" Name="BtnQueryRole" />
-                    <Fluent:Button Header="添加角色" Command="{Binding AddFunctionCommand}" Icon="Images\Green.png" LargeIcon="Images\GreenLarge.png" Name="BtnAddRole" />
-                    <Fluent:Button Header="更新角色" Command="{Binding OpenCommand}" Icon="Images\Gray.png" LargeIcon="Images\GrayLarge.png" Name="BtnModifyRole" />
-                </Fluent:RibbonGroupBox>
-            </Fluent:RibbonTabItem>
-
-            <Fluent:RibbonTabItem Header="部门管理" ReduceOrder="(P),(P),(P),(P),(P)">
-                <Fluent:RibbonGroupBox Header="Department Group">
-                    <Fluent:Button Header="查询部门" Command="{Binding OpenCommand}" Icon="Images\Gray.png" LargeIcon="Images\GrayLarge.png" Name="BtnQueryDept" />
-                    <Fluent:Button Header="添加部门" Command="{Binding AddFunctionCommand}" Icon="Images\Green.png" LargeIcon="Images\GreenLarge.png" Name="BtnAddDept" />
-                    <Fluent:Button Header="更新部门" Command="{Binding OpenCommand}" Icon="Images\Gray.png" LargeIcon="Images\GrayLarge.png" Name="BtnModifyDept" />
-                </Fluent:RibbonGroupBox>
-            </Fluent:RibbonTabItem>
-
-            <Fluent:RibbonTabItem Header="系统管理" ReduceOrder="(P),(P),(P),(P),(P)">
-                <Fluent:RibbonGroupBox Header="Security Group">
-                    <Fluent:Button Header="系统日志" Command="{Binding AddFunctionCommand}" Icon="Images\systemlog.ico" LargeIcon="Images\systemlog.ico" Name="BtnSecManager" />
-                    <Fluent:Button Header="更改密码" Command="{Binding OpenCommand}" Icon="Images\changePassword.ico" LargeIcon="Images\changePassword.ico" Name="BtnModifyPassword" />
-                </Fluent:RibbonGroupBox>
-                <Fluent:RibbonGroupBox Header="System Group">
-                    <Fluent:Button Header="   退出系统  " Width="80" Command="{Binding AddFunctionCommand}" Icon="Images\close.png" LargeIcon="Images\close.png"/>
-                </Fluent:RibbonGroupBox>
-            </Fluent:RibbonTabItem>
+            <Fluent:RibbonTabItem Header="帮助" IsSelected="False"></Fluent:RibbonTabItem>
         </Fluent:Ribbon>
-        <Fluent:StatusBar HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Grid.Row="2">
-            <Fluent:StatusBarItem Title="Words Width"
-                                  Value="150"
-                                  HorizontalAlignment="Left">
-                <TextBlock Text="Message" />
-            </Fluent:StatusBarItem>
-        </Fluent:StatusBar>
+        <Image HorizontalAlignment="Left" Height="346" Source="D:\download\line.png" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="434" Grid.RowSpan="2"/>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="16,89,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <!--<Fluent:Ribbon Grid.Row="1" Grid.Column ="0" Grid.ColumnSpan="2" Height="183">
+
+        </Fluent:Ribbon>-->
+
+
     </Grid>
+
 </Fluent:RibbonWindow>

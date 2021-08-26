@@ -24,3 +24,16 @@ D:\code\VisionPlatform\WPF\bin\Debug\Microsoft.Xaml.Behaviors.pdb
 D:\code\VisionPlatform\WPF\bin\Debug\Microsoft.Xaml.Behaviors.xml
 D:\code\VisionPlatform\WPF\obj\Debug\WPF.csproj.CopyComplete
 D:\code\VisionPlatform\WPF\obj\Debug\App.baml
+D:\code\VisionPlatform\WPF\bin\Debug\AxInterop.MvRenderActivexLib.dll
+D:\code\VisionPlatform\WPF\bin\Debug\MVDCore.Net.dll
+D:\code\VisionPlatform\WPF\bin\Debug\MVDImage.Net.dll
+D:\code\VisionPlatform\WPF\bin\Debug\MVDSDKLog.Net.dll
+D:\code\VisionPlatform\WPF\bin\Debug\MVDShape.Net.dll
+D:\code\VisionPlatform\WPF\bin\Debug\MVDXmlParse.NET.dll
+D:\code\VisionPlatform\WPF\bin\Debug\MvRenderActiveX.Net.dll
+D:\code\VisionPlatform\WPF\bin\Debug\MVDCore.Net.xml
+D:\code\VisionPlatform\WPF\bin\Debug\MVDImage.Net.xml
+D:\code\VisionPlatform\WPF\bin\Debug\MVDSDKLog.Net.xml
+D:\code\VisionPlatform\WPF\bin\Debug\MVDShape.Net.xml
+D:\code\VisionPlatform\WPF\bin\Debug\MVDXmlParse.NET.xml
+D:\code\VisionPlatform\WPF\bin\Debug\MvRenderActiveX.Net.xml

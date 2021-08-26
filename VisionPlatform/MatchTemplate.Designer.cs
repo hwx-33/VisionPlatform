@@ -38,14 +38,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.rtbInfoMessage = new System.Windows.Forms.RichTextBox();
-            this.MaskGroupBox = new System.Windows.Forms.GroupBox();
-            this.PolyMaskRadioButton = new System.Windows.Forms.RadioButton();
             this.ROIGroupBox = new System.Windows.Forms.GroupBox();
             this.RectROIRadioButton = new System.Windows.Forms.RadioButton();
             this.AllROIRadioButton = new System.Windows.Forms.RadioButton();
+            this.PolyMaskRadioButton = new System.Windows.Forms.RadioButton();
+            this.MaskGroupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.MaskGroupBox.SuspendLayout();
             this.ROIGroupBox.SuspendLayout();
+            this.MaskGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // mvdRenderActivex1
@@ -86,10 +86,10 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ParamNameBoxCol,
             this.ParamValueBoxCol});
-            this.dataGridView1.Location = new System.Drawing.Point(634, 148);
+            this.dataGridView1.Location = new System.Drawing.Point(622, 148);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(225, 277);
+            this.dataGridView1.Size = new System.Drawing.Size(310, 286);
             this.dataGridView1.TabIndex = 16;
             // 
             // ParamNameBoxCol
@@ -134,27 +134,6 @@
             this.rtbInfoMessage.TabIndex = 19;
             this.rtbInfoMessage.Text = "";
             // 
-            // MaskGroupBox
-            // 
-            this.MaskGroupBox.Controls.Add(this.PolyMaskRadioButton);
-            this.MaskGroupBox.Location = new System.Drawing.Point(634, 509);
-            this.MaskGroupBox.Name = "MaskGroupBox";
-            this.MaskGroupBox.Size = new System.Drawing.Size(234, 45);
-            this.MaskGroupBox.TabIndex = 24;
-            this.MaskGroupBox.TabStop = false;
-            this.MaskGroupBox.Text = "Mask";
-            // 
-            // PolyMaskRadioButton
-            // 
-            this.PolyMaskRadioButton.AutoSize = true;
-            this.PolyMaskRadioButton.Location = new System.Drawing.Point(21, 20);
-            this.PolyMaskRadioButton.Name = "PolyMaskRadioButton";
-            this.PolyMaskRadioButton.Size = new System.Drawing.Size(65, 16);
-            this.PolyMaskRadioButton.TabIndex = 0;
-            this.PolyMaskRadioButton.TabStop = true;
-            this.PolyMaskRadioButton.Text = "Polygon";
-            this.PolyMaskRadioButton.UseVisualStyleBackColor = true;
-            // 
             // ROIGroupBox
             // 
             this.ROIGroupBox.Controls.Add(this.RectROIRadioButton);
@@ -188,6 +167,27 @@
             this.AllROIRadioButton.Text = "All";
             this.AllROIRadioButton.UseVisualStyleBackColor = true;
             // 
+            // PolyMaskRadioButton
+            // 
+            this.PolyMaskRadioButton.AutoSize = true;
+            this.PolyMaskRadioButton.Location = new System.Drawing.Point(21, 20);
+            this.PolyMaskRadioButton.Name = "PolyMaskRadioButton";
+            this.PolyMaskRadioButton.Size = new System.Drawing.Size(65, 16);
+            this.PolyMaskRadioButton.TabIndex = 0;
+            this.PolyMaskRadioButton.TabStop = true;
+            this.PolyMaskRadioButton.Text = "Polygon";
+            this.PolyMaskRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // MaskGroupBox
+            // 
+            this.MaskGroupBox.Controls.Add(this.PolyMaskRadioButton);
+            this.MaskGroupBox.Location = new System.Drawing.Point(634, 509);
+            this.MaskGroupBox.Name = "MaskGroupBox";
+            this.MaskGroupBox.Size = new System.Drawing.Size(234, 45);
+            this.MaskGroupBox.TabIndex = 24;
+            this.MaskGroupBox.TabStop = false;
+            this.MaskGroupBox.Text = "Mask";
+            // 
             // MatchTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -205,10 +205,10 @@
             this.Name = "MatchTemplate";
             this.Text = "MatchTemplate";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.MaskGroupBox.ResumeLayout(false);
-            this.MaskGroupBox.PerformLayout();
             this.ROIGroupBox.ResumeLayout(false);
             this.ROIGroupBox.PerformLayout();
+            this.MaskGroupBox.ResumeLayout(false);
+            this.MaskGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -224,10 +224,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.RichTextBox rtbInfoMessage;
-        private System.Windows.Forms.GroupBox MaskGroupBox;
-        private System.Windows.Forms.RadioButton PolyMaskRadioButton;
         private System.Windows.Forms.GroupBox ROIGroupBox;
         private System.Windows.Forms.RadioButton RectROIRadioButton;
         private System.Windows.Forms.RadioButton AllROIRadioButton;
+        private System.Windows.Forms.RadioButton PolyMaskRadioButton;
+        private System.Windows.Forms.GroupBox MaskGroupBox;
     }
 }
