@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "460338",
+    "ThreadId": "217477",
+    "Html": "<p>I'm trying to use the sample &quot;SizeDefinition&quot; in my own project. I have defined a CommandName = &quot;buttonNavigation&quot; and so on. Then I create my own sizeDefinition, similar to the sample.</p>\r\n<p>Unluckily I got the following failure.</p>\r\n<p>CommandName 'buttonNavigation' referenced by two or more incompatible controls.</p>\r\n<p>I only defined it once and used in the view once.</p>\r\n<p>Thanks for helping me.</p>\r\n<p>&nbsp;</p>\r\n<p>regards</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-27T05:54:28.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460913",
+    "ThreadId": "217477",
+    "Html": "I've fixed it right now. The reason is that I have given one Id to two different commands.",
+    "PostedDate": "2010-06-28T18:34:25.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461140",
+    "ThreadId": "217477",
+    "Html": "<p>Great. Thanks for letting me know.</p>",
+    "PostedDate": "2010-06-29T05:21:39.623-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

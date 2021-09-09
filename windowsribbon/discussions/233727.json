@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "518119",
+    "ThreadId": "233727",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>in the Side <a href=\"http://blogs.microsoft.co.il/blogs/arik/archive/2009/10/22/windows-ribbon-for-winforms-part-9-changing-ribbon-colors.aspx\">\r\nhttp://blogs.microsoft.co.il/blogs/arik/archive/2009/10/22/windows-ribbon-for-winforms-part-9-changing-ribbon-colors.aspx</a></p>\r\n<p>i online find the color-set</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre>_ribbon.SetColors(Color.Wheat, Color.IndianRed, Color.BlueViolet);\r\n\r\n</pre>\r\n</div>\r\n<p>for olive-green. Do you know the settings for other color-standards (black, blue, etc.) ?</p>\r\n<p>Bye<br>\r\nMartin Kolb</p>\r\n",
+    "PostedDate": "2010-11-06T04:25:00.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518146",
+    "ThreadId": "233727",
+    "Html": "\r\n<p>Sorry, I don't the color definitions of a specific color-set.</p>\r\n<p>However, I assume a simple trial and error process might get you the results easily.</p>\r\n<p>Please let us know what you have found.</p>\r\n",
+    "PostedDate": "2010-11-06T07:31:15.293-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

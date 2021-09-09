@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "513694",
+    "ThreadId": "232582",
+    "Html": "\r\n<p>Hello, Arik!</p>\r\n<p>I've recently found that &quot;<strong>GalleryPropertiesProvider.cs</strong>&quot; contains a bad bug. The result is that\r\n<strong>DropDownGallery</strong> doesn't fill (try &quot;<strong>09-Galleries</strong>&quot; example in v2.5). The bug has appeared somewhere between builds\r\n<span id=\"x_TitleLabel\">45275 and </span><span id=\"x_TitleLabel\">50068 (after fixing\r\n</span>bugs related to gallery controls, actually :( ).</p>\r\n<p>Please, fix it as soon as you can!</p>\r\n<p>Thanks a lot.</p>\r\n",
+    "PostedDate": "2010-10-27T17:26:36.31-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518227",
+    "ThreadId": "232582",
+    "Html": "\r\n<p dir=\"ltr\"><span style=\"color:black; font-size:10pt\">I'm working on it.<br>\r\nIt's definitely a bug that was caused by a fix to a previous bug related to combobox.</span></p>\r\n<p dir=\"ltr\"><span style=\"color:black; font-size:10pt\">I need to find a way to solve both bugs simultaneously.<br>\r\nI'll update here when this is solved.</span></p>\r\n<p dir=\"rtl\">&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-06T13:45:23.467-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518230",
+    "ThreadId": "232582",
+    "Html": "\r\n<p>Thank you very much!</p>\r\n<p>I've been translating your blog post about galleries, and so found this bug. Now waiting for a fix :)</p>\r\n",
+    "PostedDate": "2010-11-06T14:14:42.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518236",
+    "ThreadId": "232582",
+    "Html": "\r\n<p>Which language are you translating to?</p>\r\n<p>Would be nice to have a link.&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-06T14:35:03.69-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518350",
+    "ThreadId": "232582",
+    "Html": "\r\n<p>I'm translating into Russian, I wrote you about it in spring ) Here are the links, the articles are adapted translations with author's insertions:</p>\r\n<p><a title=\"Prologue\" href=\"http://www.thevista.ru/page.php?id=13130\">Prologue</a></p>\r\n<p><a href=\"http://www.thevista.ru/page.php?id=13132\">Part 1</a></p>\r\n<p><a href=\"http://www.thevista.ru/page.php?id=13169\">Part 2</a></p>\r\n<p><a href=\"http://www.thevista.ru/page.php?id=13233\">Part 3</a></p>\r\n<p><a href=\"http://www.thevista.ru/page.php?id=13400\">Part 4</a></p>\r\n<p><a href=\"http://www.thevista.ru/page.php?id=13541\">Part 5</a></p>\r\n<p>Also, I've translated your post about <em>DestroyFramework</em>-related exception when closing form in\r\n<a href=\"http://sgtriggs.wordpress.com/2010/07/28/crash-while-closing-ribbon-application/\">\r\nmy blog</a> and later included this translation into one of the articles.</p>\r\n<p>If you're interested in these, I'll be able to add here future articles :)</p>\r\n<p>Thanks! :)</p>\r\n",
+    "PostedDate": "2010-11-07T05:38:32.027-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518509",
+    "ThreadId": "232582",
+    "Html": "\r\n<p>Solved the bug and released a new version with some more enhancments.</p>\r\n<p>Check out my blog for more details:</p>\r\n<p><a href=\"http://blogs.microsoft.co.il/blogs/arik/archive/2010/11/08/windows-ribbon-for-winforms-v2-6-released.aspx\">http://blogs.microsoft.co.il/blogs/arik/archive/2010/11/08/windows-ribbon-for-winforms-v2-6-released.aspx</a></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-07T16:56:00.74-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518885",
+    "ThreadId": "232582",
+    "Html": "\r\n<p>Fantastic! That's classic!!! So wonderful enhancements! Thanks a lot! :)</p>\r\n<p>I'll write about this update in the next article, is that okay? :)</p>\r\n<p>And keep working on the project, WinForms are still alive ;) Your wrapper library is just great!!!</p>\r\n",
+    "PostedDate": "2010-11-08T10:14:36.14-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1485006",
+    "ThreadId": "658382",
+    "Html": "The Windows Ribbon for WinForms project exposes an API UpdateProperty as -<br />\n<pre><code>public virtual HRESULT UpdateProperty(ref PropertyKey key, PropVariantRef currentValue, ref PropVariant newValue);</code></pre>\n\nIs this API meant to update ribbon control properties at runtime ? How do I update a button's display text dynamically ? Please advice.\r<br />\n<br />\nThanks/Saurav.<br />\n",
+    "PostedDate": "2016-09-30T04:59:34.817-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

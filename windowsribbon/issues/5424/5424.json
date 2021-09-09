@@ -1,0 +1,85 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Check out the following discussion for a fix&#58;http&#58;&#47;&#47;windowsribbon.codeplex.com&#47;Thread&#47;View.aspx&#63;ThreadId&#61;240773",
+    "ClosedDate": "2011-01-10T10:30:07.937-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Minimizing and then normalizing a Windows Form with the Ribbon, cause the Form to expand every time. Additional - minimizing the form and setting \"showintaskbar\" = false, destroys the framework and \"hides\" the ribbon.",
+    "LastUpdatedDate": "2013-05-16T03:57:04.52-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "windowsribbon",
+    "ReportedDate": "2010-11-12T01:49:00.82-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Minimize/Normalize form with ribbon",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 5424
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Issue found. The ShowInTaskbar property on a Windows Form, makes the form re-create its handle upon ShowInTaskbar = True. Only option to solve this is to re-use Win32 API.",
+      "PostedDate": "2010-11-14T08:44:20.933-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "So is the issue solved? or did you just understand the problem?\r\nAlso, what do you mean by \"re-use Win32 API\"?\r\n",
+      "PostedDate": "2010-11-16T10:06:26.043-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Issues is solved with the work-around to use Win32 API for hiding the form in taskbar. See VB.NET code below:\r\n\r\n<code>\r\nImports System.Runtime.InteropServices\r\n\r\nPublic Class NativeMethods\r\n\r\n    <DllImport(\"user32.dll\")> _\r\n    Private Shared Function SetWindowLong(ByVal hWnd As IntPtr, ByVal nIndex As Integer, ByVal dwNewLong As Integer) As Integer\r\n    End Function\r\n    <DllImport(\"user32.dll\")> _\r\n    Private Shared Function GetWindowLong(ByVal hWnd As IntPtr, ByVal nIndex As Integer) As Integer\r\n    End Function\r\n    <DllImport(\"user32.dll\", SetLastError:=True)> _\r\n    Private Shared Function ShowWindow(ByVal hWnd As IntPtr, ByVal nCmdShow As Integer) As Boolean\r\n    End Function\r\n\r\n    Private Const WS_EX_APPWINDOW As Integer = &H40000\r\n    Private Const GWL_EXSTYLE As Integer = -20\r\n    Private Const WS_EX_TOOLWINDOW As Integer = &H80\r\n    Private Const SW_HIDE As Integer = 0\r\n    Private Const SW_SHOW As Integer = 5\r\n\r\n    Friend Shared Sub ShowInTaskbar(ByVal form As Form, ByVal show As Boolean)\r\n        If show = False Then\r\n            ShowWindow(form.Handle, SW_HIDE)\r\n            SetWindowLong(form.Handle, GWL_EXSTYLE, GetWindowLong(form.Handle, GWL_EXSTYLE) And (Not WS_EX_APPWINDOW))\r\n        Else\r\n            ShowWindow(form.Handle, SW_SHOW)\r\n        End If\r\n    End Sub\r\nEnd Class\r\n</code>",
+      "PostedDate": "2010-11-16T14:14:35.667-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Issues is solved with the work-around to use Win32 API for hiding the form in taskbar. See VB.NET code below:\r\n\r\n<code>\r\nImports System.Runtime.InteropServices\r\n\r\nPublic Class NativeMethods\r\n\r\n    <DllImport(\"user32.dll\")> _\r\n    Private Shared Function SetWindowLong(ByVal hWnd As IntPtr, ByVal nIndex As Integer, ByVal dwNewLong As Integer) As Integer\r\n    End Function\r\n    <DllImport(\"user32.dll\")> _\r\n    Private Shared Function GetWindowLong(ByVal hWnd As IntPtr, ByVal nIndex As Integer) As Integer\r\n    End Function\r\n    <DllImport(\"user32.dll\", SetLastError:=True)> _\r\n    Private Shared Function ShowWindow(ByVal hWnd As IntPtr, ByVal nCmdShow As Integer) As Boolean\r\n    End Function\r\n\r\n    Private Const WS_EX_APPWINDOW As Integer = &H40000\r\n    Private Const GWL_EXSTYLE As Integer = -20\r\n    Private Const WS_EX_TOOLWINDOW As Integer = &H80\r\n    Private Const SW_HIDE As Integer = 0\r\n    Private Const SW_SHOW As Integer = 5\r\n\r\n    Friend Shared Sub ShowInTaskbar(ByVal form As Form, ByVal show As Boolean)\r\n        If show = False Then\r\n            ShowWindow(form.Handle, SW_HIDE)\r\n            SetWindowLong(form.Handle, GWL_EXSTYLE, GetWindowLong(form.Handle, GWL_EXSTYLE) And (Not WS_EX_APPWINDOW))\r\n        Else\r\n            ShowWindow(form.Handle, SW_SHOW)\r\n        End If\r\n    End Sub\r\nEnd Class\r\n</code>",
+      "PostedDate": "2010-11-16T14:14:50.44-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Issues is solved with the work-around to use Win32 API for hiding the form in taskbar. See VB.NET code below:\r\n\r\nImports System.Runtime.InteropServices\r\n\r\nPublic Class NativeMethods\r\n\r\n    <DllImport(\"user32.dll\")> _\r\n    Private Shared Function SetWindowLong(ByVal hWnd As IntPtr, ByVal nIndex As Integer, ByVal dwNewLong As Integer) As Integer\r\n    End Function\r\n    <DllImport(\"user32.dll\")> _\r\n    Private Shared Function GetWindowLong(ByVal hWnd As IntPtr, ByVal nIndex As Integer) As Integer\r\n    End Function\r\n    <DllImport(\"user32.dll\", SetLastError:=True)> _\r\n    Private Shared Function ShowWindow(ByVal hWnd As IntPtr, ByVal nCmdShow As Integer) As Boolean\r\n    End Function\r\n\r\n    Private Const WS_EX_APPWINDOW As Integer = &H40000\r\n    Private Const GWL_EXSTYLE As Integer = -20\r\n    Private Const WS_EX_TOOLWINDOW As Integer = &H80\r\n    Private Const SW_HIDE As Integer = 0\r\n    Private Const SW_SHOW As Integer = 5\r\n\r\n    Friend Shared Sub ShowInTaskbar(ByVal form As Form, ByVal show As Boolean)\r\n        If show = False Then\r\n            ShowWindow(form.Handle, SW_HIDE)\r\n            SetWindowLong(form.Handle, GWL_EXSTYLE, GetWindowLong(form.Handle, GWL_EXSTYLE) And (Not WS_EX_APPWINDOW))\r\n        Else\r\n            ShowWindow(form.Handle, SW_SHOW)\r\n        End If\r\n    End Sub\r\nEnd Class\r\n",
+      "PostedDate": "2010-11-16T14:14:52.363-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Check out the following discussion for a fix:\r\nhttp://windowsribbon.codeplex.com/Thread/View.aspx?ThreadId=240773\r\n",
+      "PostedDate": "2011-01-10T10:27:12.84-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2011-01-10T10:30:07.937-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:15:49.46-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:57:04.52-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "537135",
+    "ThreadId": "238711",
+    "Html": "\r\n<div id=\"x_ctl00_ctl00_MasterContent_Content_PostRepeater_ctl00_BodyDiv\">\r\n<p>Okay, my first post...&nbsp; First of all, this ribbon control is awesome!&nbsp; I'm glad I didn't waste atleast hundreds of dollars on some other website for some rip-off version.&nbsp; Anyway, super good job.</p>\r\n<p>Now, down to business.&nbsp; Is there anyway for the ribbon to host a TextBox control?</p>\r\n<p>According to <a href=\"http://msdn.microsoft.com/en-us/library/dd940497(v=VS.85).aspx\">\r\nhttp://msdn.microsoft.com/en-us/library/dd940497(v=VS.85).aspx</a>, there doesn't seem to be.&nbsp; Normally, I would just say okay and move on, but I find it really hard to believe for a control of this caliber to not have a TextBox.</p>\r\n<p>Not that it matters, but incase you're wondering, I'm updating/upgrading an older VB .Net app and replacing two toolstrips with the Ribbon.&nbsp; One of the ToolStrips had a TextBox which the user could use for database searches.&nbsp; I really don't want\r\n to make the user click a button to open a search window.&nbsp; I already have something like this for advanced searches.&nbsp; The ToolStrip TextBox is more of a quick search, and it's used a lot.&nbsp; Plus, I think one of the purposes of the Ribbon was so\r\n there would be fewer dialogs.</p>\r\n<p>Any suggestions would be highly appreciated.</p>\r\n<p>Thanks.</p>\r\n<p>PS. Sorry for posting this twice.&nbsp; I posted in the wrong place the first time.</p>\r\n</div>\r\n",
+    "PostedDate": "2010-12-16T23:11:33.597-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "537652",
+    "ThreadId": "238711",
+    "Html": "\r\n<p dir=\"ltr\"><span style=\"color:black; font-size:10pt\">Thanks for your complements.</span></p>\r\n<p dir=\"ltr\"><span style=\"color:black; font-size:10pt\">Unfortunately, there is no way to host a TextBox control in the ribbon.<br>\r\nThis is a limitation of the underlying Windows Ribbon Framework.</span></p>\r\n<p dir=\"ltr\"><span style=\"color:black; font-size:10pt\">That being said, you can use a ComboBox with free text inserting (IsEditable=True).<br>\r\nCheck-out my post about&nbsp;using ComboBox in the ribbon for more details:&nbsp;<a href=\"http://blogs.microsoft.co.il/blogs/arik/archive/2009/10/21/windows-ribbon-for-winforms-part-8-combobox.aspx\">http://blogs.microsoft.co.il/blogs/arik/archive/2009/10/21/windows-ribbon-for-winforms-part-8-combobox.aspx</a></span></p>\r\n<p dir=\"ltr\"><span style=\"color:black; font-size:10pt\">If you do go the ComboBox way, I suggest that you actually use the drop down feature,&nbsp;e.g. add recent searches to the combo.</span></p>\r\n<p dir=\"ltr\">&nbsp;</p>\r\n",
+    "PostedDate": "2010-12-18T00:22:04.357-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "539475",
+    "ThreadId": "238711",
+    "Html": "\r\n<p>Thanks for the quick response, Arik.&nbsp; That's a great idea (using the ComboBox).&nbsp; I think it'll be much better than the TextBox.</p>\r\n<p>Now, following your suggestion.&nbsp; I have three questions.&nbsp; Keep in mind, I did check out your Ribbon ComboBox post (which was very helpful btw), but I'm still having some trouble.</p>\r\n<p>1) It seems there is no KeyPress/KeyDown event.&nbsp; Is there any possible way to achieve this?&nbsp; The way my old TextBox worked that I'm replacing is I gave the user the option of searching as they type, or after Enter is pressed.&nbsp; So, I need to\r\n know whenever a key is typed and also test to see if it was the Enter key. (see next question).</p>\r\n<p>2) If it's possible to achieve what I'm hoping to do in question 1, how can I test each character to see if the Enter key was pressed.&nbsp; What I'm familiar with when it comes to the KeyPress or KeyDown event for the Winforms ComboBox is as follows.&nbsp;\r\n Can I do something similar with the Ribbon ComboBox?</p>\r\n<p>If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Return) Then '// e as System.Windows.Forms.KeyPressEventArgs<br>\r\nIf e.KeyCode = Keys.Enter Then '// e As System.Windows.Forms.KeyEventArgs<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; ' do something<br>\r\nEnd If</p>\r\n<p>3) How can I check if the ComboBox already contains a value?<br>\r\nWhen Enter is pressed in the ComboBox, I'm adding the ComboBox StringValue to the drop down as you suggested to record previous searches, but I can't figure out how to check if the StringValue already exists.&nbsp; I don't want duplicates.&nbsp; What I've been\r\n use to doing with the standard WinForms ComboBox is as follows.&nbsp; Is there anything equivalent?</p>\r\n<p>If ComboBox1.Items.IndexOf(&quot;Some string value.&quot;) = -1 Then<br>\r\nIf Not ComboBox1.Items.Contains(&quot;Some string value.&quot;) Then<br>\r\n&nbsp;&nbsp;&nbsp;&nbsp; ' add item to ComboBox<br>\r\nEnd If</p>\r\n<p><br>\r\nThanks for your help and patience.&nbsp; You're probably light-years ahead of me as a programmer.&nbsp; I hope I'm not pushing it with 3 questions. :)</p>\r\n",
+    "PostedDate": "2010-12-22T10:43:43.58-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "540908",
+    "ThreadId": "238711",
+    "Html": "\r\n<p>Okay, nevermind question #3 (How to check if ComboBox already contains a value).&nbsp; I just decided to store each ComboBox.StringValue in a List(Of String) and use its contains method.&nbsp; I then clear the Ribbon ComboBox using the Clear() method of\r\n RibbonComboBox, and then&nbsp;loop through and add each string&nbsp;from my List(Of String).</p>\r\n<p>I still need a solution for question 1, and 2.&nbsp; In addition, I have one more question (should be my last).</p>\r\n<p>After pressing Enter in the&nbsp;ComboBox and ExecuteEvent is triggered, the ComboBox loses focus.&nbsp; Is it possible to maintain focus on the ComboBox, or even return focus to it?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks again.</p>\r\n",
+    "PostedDate": "2010-12-27T12:04:36.88-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "540919",
+    "ThreadId": "238711",
+    "Html": "\r\n<p>There is no KeyDown/KeyUp event for the combobox.</p>\r\n<p>Generally speaking, I've exposed in my wrapper everything the windows ribbon framework has to offer.<br>\r\nSo if it's not in the wrapper class, it doesn't exists. WYSIWYG.</p>\r\n<p>There is no way to control the focus of the ribbon controls.</p>\r\n",
+    "PostedDate": "2010-12-27T12:35:24.407-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

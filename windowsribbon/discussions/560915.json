@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1289116",
+    "ThreadId": "560915",
+    "Html": "Hi All,\r<br />\n<br />\nI am trying to intergrate the 'Windows Ribbon for WinForms' control in the user control.\r<br />\n<br />\nCurrently it is throwing exception at \r<br />\n// Connects the framework and the application<br />\n<pre><code>    [PreserveSig]\n    HRESULT Initialize(IntPtr frameWnd, IUIApplication application);\n\n</code></pre>\n\nCan any one help me by telling the COM API that need to be used to connect the framework &amp; custom control?<br />\n",
+    "PostedDate": "2014-08-11T22:39:25.273-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

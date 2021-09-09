@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "611348",
+    "ThreadId": "257291",
+    "Html": "<p>I try to create a MDI application with RibbonLib, but i click maximize button in child form it cause error, i can't click minimize button</p>\n<p><img src=\"http://i1100.photobucket.com/albums/g412/hieunv1089/bug.gif\" alt=\"\" /> ﻿</p>",
+    "PostedDate": "2011-05-11T18:25:33.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "612051",
+    "ThreadId": "257291",
+    "Html": "<p>The Windows Ribbon Framework (and its wrapper, Windows Ribbon for WinForms) doesn't support MDI applications.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-05-12T15:17:21.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1080884",
+    "ThreadId": "257291",
+    "Html": "<strong>arik wrote:</strong><br />\n<blockquote>\nThe Windows Ribbon Framework (and its wrapper, Windows Ribbon for WinForms) doesn't support MDI applications. &nbsp;<br />\n</blockquote>\nIs there any update in the latest version? Still doesn't support MDI?<br />\n",
+    "PostedDate": "2013-08-15T03:02:45.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

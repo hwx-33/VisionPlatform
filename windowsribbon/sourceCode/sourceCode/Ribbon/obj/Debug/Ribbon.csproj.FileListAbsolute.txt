@@ -1,0 +1,6 @@
+D:\code\VisionPlatform\windowsribbon\sourceCode\sourceCode\Ribbon\bin\Debug\Ribbon.dll
+D:\code\VisionPlatform\windowsribbon\sourceCode\sourceCode\Ribbon\bin\Debug\Ribbon.pdb
+D:\code\VisionPlatform\windowsribbon\sourceCode\sourceCode\Ribbon\obj\Debug\Ribbon.csprojAssemblyReference.cache
+D:\code\VisionPlatform\windowsribbon\sourceCode\sourceCode\Ribbon\obj\Debug\Ribbon.csproj.CoreCompileInputs.cache
+D:\code\VisionPlatform\windowsribbon\sourceCode\sourceCode\Ribbon\obj\Debug\Ribbon.dll
+D:\code\VisionPlatform\windowsribbon\sourceCode\sourceCode\Ribbon\obj\Debug\Ribbon.pdb

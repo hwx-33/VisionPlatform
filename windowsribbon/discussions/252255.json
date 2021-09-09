@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "590664",
+    "ThreadId": "252255",
+    "Html": "\r\n<p>Hi There</p>\r\n<p>&nbsp;</p>\r\n<p>What is the best way I can save and restore the users quick access toolbar buttons?</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2011-04-02T07:51:17.6-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "590669",
+    "ThreadId": "252255",
+    "Html": "<p>If I'm not mistaking, there is a sample that show how to use the quick access tool-bar.<br />among other things it shows how to save and load QAT settings.</p>",
+    "PostedDate": "2011-04-02T08:19:55.503-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "590670",
+    "ThreadId": "252255",
+    "Html": "<p>That's what i was looking for. Thanks!</p>",
+    "PostedDate": "2011-04-02T08:21:26.453-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "595572",
+    "ThreadId": "252255",
+    "Html": "<p>Hi Arik and tompsonn,</p>\n<p>tompsonn, I'm the guy that replied to your other post about using my.settings for the minimized state.</p>\n<p>I've been trying to use <strong>my.settings</strong> to save the <strong>Q</strong>uick <strong>A</strong>ccess <strong>T</strong>oolbar (<strong>QAT</strong>) <strong>settings</strong>, but haven't gotten it to work. &nbsp;I was wondering if you had any luck with arik's suggestion looking at the QAT sample application. &nbsp;I looked at the sample application  and saving and loading settings seems to work for 1 session only. &nbsp;In other words, after restarting the application, opening/loading the QAT settings has no effect (the settings aren't saved).</p>\n<p>So, <strong>I've been trying to save the QAT settings stream as a string in my.settings</strong> so the settings would still be saved after restarting the application.</p>\n<p><strong>Here's what I've tried.</strong></p>\n<p>To save the settings (in form closing event):</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: green;\">        ' save ribbon QAT settings </span>\n        <span style=\"color: blue;\">Dim</span> _stream <span style=\"color: blue;\">As</span> Stream = <span style=\"color: blue;\">New</span> MemoryStream()\n        Ribbon1.SaveSettingsToStream(_stream)\n        <span style=\"color: blue;\">My</span>.Settings.QuickAccessToolbarSettings = _stream.ToString() <span style=\"color: #808000;\">' This is a problem, .ToString() returns \"System.IO.MemoryStream\"</span>\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>To load the settings (in form load event):</p>\n<div style=\"color: black; background-color: white;\">\n<pre style=\"color: black;\">        <span style=\"color: blue;\">Dim</span> _stream <span style=\"color: blue;\">As</span> Stream = <span style=\"color: blue;\">New</span> MemoryStream(System.Text.Encoding.ASCII.GetBytes(<span style=\"color: blue;\">My</span>.Settings.QuickAccessToolbarSettings))\n\n        <span style=\"color: blue;\">If</span> _stream <span style=\"color: blue;\">Is</span> <span style=\"color: blue;\">Nothing</span> <span style=\"color: blue;\">Then</span>\n            <span style=\"color: green;\">' do nothing</span>\n        <span style=\"color: blue;\">Else</span>\n            <span style=\"color: green;\">' load ribbon QAT settings </span>\n            _stream.Position = 0\n            Ribbon1.LoadSettingsFromStream(_stream)\n        <span style=\"color: blue;\">End</span> <span style=\"color: blue;\">If</span></pre>\n</div>",
+    "PostedDate": "2011-04-11T15:22:23.577-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "595640",
+    "ThreadId": "252255",
+    "Html": "<p>You obviously can't convert a memory stream directly to a string...</p>\n<p>You'd need to store the memory stream as a base 64 encoded byte[] string.</p>",
+    "PostedDate": "2011-04-11T20:14:07.56-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "595653",
+    "ThreadId": "252255",
+    "Html": "<p>FYI, this is how i did it (obviously you'll need to edit it to work with your app)</p>\n<p>&nbsp;</p>\n<pre style=\"font-family: Courier New; font-size: 13; color: black; background: white;\"><div style=\"color: black; background-color: white;\"><pre>\t\t<span style=\"color: gray;\">///</span> <span style=\"color: gray;\">&lt;summary&gt;</span>\n\t\t<span style=\"color: gray;\">///</span><span style=\"color: green;\"> </span>\n\t\t<span style=\"color: gray;\">///</span> <span style=\"color: gray;\">&lt;/summary&gt;</span>\n\t\t<span style=\"color: gray;\">///</span> <span style=\"color: gray;\">&lt;param name=\"base64ByteStream\"&gt;</span><span style=\"color: gray;\">&lt;/param&gt;</span>\n\t\t<span style=\"color: blue;\">public</span> <span style=\"color: blue;\">void</span> LoadCustomizations( <span style=\"color: blue;\">string</span> base64ByteStream )\n\t\t{\n\t\t\t<span style=\"color: green;\">/* INIT */</span>\n\t\t\t<span style=\"color: blue;\">if</span> ( <span style=\"color: blue;\">this</span>.thisRibbon != <span style=\"color: blue;\">null</span> )\n\t\t\t{\n\t\t\t\tStream ribbonCustomizationsStream = <span style=\"color: blue;\">new</span> MemoryStream();\n\t\t\t\t<span style=\"color: blue;\">byte</span>[] byteStream;\n\n\t\t\t\t<span style=\"color: blue;\">try</span>\n\t\t\t\t{\n\t\t\t\t\t<span style=\"color: blue;\">if</span> ( ribbonCustomizationsStream != <span style=\"color: blue;\">null</span> )\n\t\t\t\t\t{\n\t\t\t\t\t\t<span style=\"color: blue;\">if</span> ( !<span style=\"color: blue;\">string</span>.IsNullOrEmpty( base64ByteStream ) )\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t<span style=\"color: blue;\">try</span>\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t<span style=\"color: green;\">/* Get the bytes back and write them */</span>\n\t\t\t\t\t\t\t\tbyteStream = Convert.FromBase64String( base64ByteStream );\n\n\t\t\t\t\t\t\t\t<span style=\"color: blue;\">if</span> ( byteStream != <span style=\"color: blue;\">null</span> )\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\tribbonCustomizationsStream.Write( byteStream, 0, byteStream.Length );\n\t\t\t\t\t\t\t\t\tribbonCustomizationsStream.Position = 0;\n\n\t\t\t\t\t\t\t\t\t<span style=\"color: blue;\">this</span>.thisRibbon.LoadSettingsFromStream( ribbonCustomizationsStream );\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t<span style=\"color: blue;\">catch</span> ( FormatException )\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t<span style=\"color: green;\">/* Do nothing */</span>\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\t<span style=\"color: blue;\">finally</span>\n\t\t\t\t{\n\t\t\t\t\t<span style=\"color: green;\">/* Release any memory we were using */</span>\n\t\t\t\t\tbyteStream = <span style=\"color: blue;\">null</span>;\n\n\t\t\t\t\t<span style=\"color: blue;\">if</span> ( ribbonCustomizationsStream != <span style=\"color: blue;\">null</span> )\n\t\t\t\t\t{\n\t\t\t\t\t\tribbonCustomizationsStream.Close();\n\t\t\t\t\t\tribbonCustomizationsStream = <span style=\"color: blue;\">null</span>;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t<span style=\"color: gray;\">///</span> <span style=\"color: gray;\">&lt;summary&gt;</span>\n\t\t<span style=\"color: gray;\">///</span><span style=\"color: green;\"> </span>\n\t\t<span style=\"color: gray;\">///</span> <span style=\"color: gray;\">&lt;/summary&gt;</span>\n\t\t<span style=\"color: gray;\">///</span> <span style=\"color: gray;\">&lt;returns&gt;</span><span style=\"color: gray;\">&lt;/returns&gt;</span>\n\t\t<span style=\"color: blue;\">public</span> <span style=\"color: blue;\">string</span> SaveCustomizations()\n\t\t{\n\t\t\t<span style=\"color: green;\">/* INIT */</span>\n\t\t\t<span style=\"color: blue;\">string</span> base64ByteStream = <span style=\"color: blue;\">null</span>;\n\n\t\t\t<span style=\"color: blue;\">if</span> ( <span style=\"color: blue;\">this</span>.thisRibbon != <span style=\"color: blue;\">null</span> )\n\t\t\t{\n\t\t\t\tStream ribbonCustomizationsStream = <span style=\"color: blue;\">new</span> MemoryStream();\n\t\t\t\t<span style=\"color: blue;\">byte</span>[] byteStream;\n\n\t\t\t\t<span style=\"color: blue;\">try</span>\n\t\t\t\t{\n\t\t\t\t\t<span style=\"color: blue;\">if</span> ( ribbonCustomizationsStream != <span style=\"color: blue;\">null</span> )\n\t\t\t\t\t{\n\t\t\t\t\t\t<span style=\"color: blue;\">this</span>.thisRibbon.SaveSettingsToStream( ribbonCustomizationsStream );\n\n\t\t\t\t\t\t<span style=\"color: green;\">/* Get the bytes and convert it to base64 */</span>\n\t\t\t\t\t\t<span style=\"color: blue;\">if</span> ( ribbonCustomizationsStream.Length &gt; 0 )\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tbyteStream = <span style=\"color: blue;\">new</span> <span style=\"color: blue;\">byte</span>[ ribbonCustomizationsStream.Length ];\n\n\t\t\t\t\t\t\t<span style=\"color: blue;\">if</span> ( byteStream != <span style=\"color: blue;\">null</span> )\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\tribbonCustomizationsStream.Position = 0;\n\t\t\t\t\t\t\t\tribbonCustomizationsStream.Read( byteStream, 0, byteStream.Length );\n\n\t\t\t\t\t\t\t\tbase64ByteStream = Convert.ToBase64String( byteStream, 0, byteStream.Length );\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\t<span style=\"color: blue;\">finally</span>\n\t\t\t\t{\n\t\t\t\t\t<span style=\"color: green;\">/* Release any memory we were using */</span>\n\t\t\t\t\tbyteStream = <span style=\"color: blue;\">null</span>;\n\n\t\t\t\t\t<span style=\"color: blue;\">if</span> ( ribbonCustomizationsStream != <span style=\"color: blue;\">null</span> )\n\t\t\t\t\t{\n\t\t\t\t\t\tribbonCustomizationsStream.Close();\n\t\t\t\t\t\tribbonCustomizationsStream = <span style=\"color: blue;\">null</span>;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\t\t\t<span style=\"color: blue;\">return</span> base64ByteStream;\n\t\t}\n</pre>\n</div>\n<br /><br />It also handles minimized/QAT below or above ribbon settings too :)</pre>",
+    "PostedDate": "2011-04-11T21:40:21.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "596175",
+    "ThreadId": "252255",
+    "Html": "<p>Thanks for responding. &nbsp;I did what you said initially and converting to base64string from stream/byte array and vice versa seems to work in the sample application. &nbsp;However, for some reason <strong>the exact same code doesn't work in the main application</strong> I'm working on. &nbsp;The reason is as follows.</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre>        <span style=\"color: blue;\">Dim</span> _stream <span style=\"color: blue;\">As</span> Stream = <span style=\"color: blue;\">New</span> MemoryStream()\n        Ribbon1.SaveSettingsToStream(_stream) <strong>' This seems to be doing nothing</strong>\n        MsgBox(_stream.Length) <strong><span style=\"color: green;\">' this always returns \"0\"</span></strong>\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>Whenever I run the above code whether from a ribbon button or in the formClosing event, it seems the settings are never written to the stream.... &nbsp;The stream length is always zero. &nbsp;Again, in the sample application, this exact code always indicates that  the stream length is 386 or higher. &nbsp;This is the case even when no buttons have been added to the QAT.</p>\n<p>Any possible idea why this would be happening?</p>\n<p><strong>Update:</strong></p>\n<pre><span style=\"color: #0000ff;\"><strong>Ribbon1.SaveSettingsToStream(_stream) </strong></span>only works for me in the Sample Applications.  I've tried creating brand new applications and it never works.  The stream length is always 0.</pre>\n<pre><strong>Any idea what the difference might be between the Sample Apps and the new ones I'm creating???</strong></pre>",
+    "PostedDate": "2011-04-12T13:55:18.783-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "596264",
+    "ThreadId": "252255",
+    "Html": "<p>Make sure you are resetting the stream position to zero.</p>\n<p>My code works perfectly outside of the sample apps - perhaps you could use a C# to VB converter and tweak it to suit your app?</p>\n<p>&nbsp;</p>\n<p>Alternatively could you post what you are using here?</p>\n<p>Also...... make sure you are defining a quick access toolbar in the ribbon XML! I had the same problem now, come to think of it, and as soon as I defined the quick access toolbar in the XML, it worked fine.</p>",
+    "PostedDate": "2011-04-12T17:07:43.107-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "596911",
+    "ThreadId": "252255",
+    "Html": "<p>Oh my goodness, it worked. &nbsp;I just added the QAT to Ribbon.xml. &nbsp;You're a genius! &nbsp;Thanks so much, tompsonn. :)</p>",
+    "PostedDate": "2011-04-13T17:11:22.65-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "596919",
+    "ThreadId": "252255",
+    "Html": "<p>In case anyone's wondering, here's the <strong>complete code I'm using to save and load the QAT settings in VB .Net using My.Settings (Tested and Works)</strong>. &nbsp;Just make sure you <strong>define the QAT in the ribbon XML like tompsonn said</strong>, and like I failed to do. &nbsp;Thanks again, tompsonn.</p>\r\n<p><strong>How to save (in <span style=\"color: #008000;\">FormClosing Event</span>)</strong></p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>        <span style=\"color: blue;\">Dim</span> _stream <span style=\"color: blue;\">As</span> MemoryStream = <span style=\"color: blue;\">New</span> MemoryStream()\r\n        Ribbon1.SaveSettingsToStream(_stream)\r\n        <span style=\"color: blue;\">My</span>.Settings.QuickAccessToolbarSettings = Convert.ToBase64String(_stream.ToArray, 0, _stream.Length)\r\n</pre>\r\n</div>\r\n</p>\r\n<p><strong>How to load (in<span style=\"color: #008000;\"> FormLoad Event</span>)</strong></p>\r\n<p>\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>        <span style=\"color: blue;\">Dim</span> _stream <span style=\"color: blue;\">As</span> MemoryStream = <span style=\"color: blue;\">New</span> MemoryStream(Convert.FromBase64String(<span style=\"color: blue;\">My</span>.Settings.QuickAccessToolbarSettings))\r\n\r\n        <span style=\"color: blue;\">If</span> _stream <span style=\"color: blue;\">Is</span> <span style=\"color: blue;\">Nothing</span> <span style=\"color: blue;\">Then</span>\r\n            <span style=\"color: green;\">' do nothing</span>\r\n        <span style=\"color: blue;\">Else</span>\r\n            <span style=\"color: green;\">' load ribbon QAT settings </span>\r\n            _stream.Position = 0\r\n            Ribbon1.LoadSettingsFromStream(_stream)\r\n        <span style=\"color: blue;\">End</span> <span style=\"color: blue;\">If</span>\r\n</pre>\r\n</div>\r\n</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-04-13T17:51:42.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "596962",
+    "ThreadId": "252255",
+    "Html": "<p>Glad to hear it worked<br />On a side note, it may be more \"complete\" to handle a few exceptions and make sure the memory stream is disposed of when you're done with it :)</p>",
+    "PostedDate": "2011-04-13T20:15:26.893-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

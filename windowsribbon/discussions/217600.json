@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "460756",
+    "ThreadId": "217600",
+    "Html": "Hello, i don't know hoy to convert a bmp image to 32bit with convert2bmp and I've also seen your blog and your posts in Codeplex, but i haven't seen how to use convert2bmp.\r\nIf i edit a image of your project, it can be shown in the project (application) but if i assign an own image to the project, it can't be shown (it's 32bit bmp).\r\n\r\nI need help\r\nBest regards",
+    "PostedDate": "2010-06-28T10:36:34.337-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460912",
+    "ThreadId": "217600",
+    "Html": "Open cmd (if you're using windows os, run-&gt;cmd), cd to where your images are (cd c:\\users\\dell\\desktop\\image folder), then you can use it this way ( convert2bmp &lt;source&gt; &lt;target&gt;; convert2bmp source24.bmp source32.bmp) make sure that the images and the .exe are in the same folder ",
+    "PostedDate": "2010-06-28T18:31:57.977-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461137",
+    "ThreadId": "217600",
+    "Html": "This is correct.\r\n\r\nconvert2bmp source24.bmp source32.bmp\r\n",
+    "PostedDate": "2010-06-29T05:15:56.093-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "594919",
+    "ThreadId": "217600",
+    "Html": "<p>This PowerShell script will do the same as convert2bmp. This example converts all PNG files in a folder&nbsp;to 32bpp bitmaps. The transparent color can also be changed easily.</p>\r\n<p>[System.Reflection.Assembly]::LoadWithPartialName(\"System.Drawing\")<br />Get-Item \"*.png\" | % {<br />&nbsp;&nbsp;&nbsp; $FileName = [IO.Path]::GetFileNameWithoutExtension($_)<br />&nbsp;&nbsp;&nbsp; $Bitmap = [Drawing.Image]::FromFile($_.FullName)<br />&nbsp;&nbsp;&nbsp; $Bitmap.MakeTransparent(\"Magenta\")<br />&nbsp;&nbsp;&nbsp; $Bitmap.Save(\"$FileName.bmp\", [Drawing.Imaging.ImageFormat]::Bmp)<br />}</p>",
+    "PostedDate": "2011-04-10T10:30:09.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "595015",
+    "ThreadId": "217600",
+    "Html": "<p>Perfect!!</p>",
+    "PostedDate": "2011-04-10T16:59:14.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1020219",
+    "ThreadId": "217600",
+    "Html": "When I use convert2bmp to convert my transparent ping images, it successfully creates bitmap versions of the images that display on the ribbon.<br />\n<br />\n...However, it seems to be converting transparent parts of the image black (which is normal/expected, but it's also converting the color white to black as well.<br />\n<br />\nFor example, I have a transparent ping icon image that is a round circle shape with a transparent background, and the symbol inside the circle (a plus sign, +) is colored white.  When I convert the image and display it on the blue ribbon, it displays, but the plus sign is blue instead of white.<br />\n<br />\nI've tried opening my ping images in photoshop cs5 and placing them over a black colored layer and saving as a bitmap (32 bit), but when I try to use it on my ribbon, it compiles no problem, but simply doesn't show the image at all on the ribbon button.<br />\n<br />\nI've been using this ribbon for quite a long time, but previously I've been loading them like this:<br />\n<pre><code>_Button_AddItem.LargeImage = Ribbon1.ConvertToUIImage(My.Resources.add_icon) \n' where &quot;add_icon&quot; is a transparent ping.  This displays on the ribbon perfectly.</code></pre>\n\nAlthough this method allows me to use transparent ping images directly without converting them to bitmap, they occasionally don't load at all, and I get fully functional ribbon buttons, but no images on them.<br />\n<br />\nHow do I convert my transparent ping images and leave the white colored parts alone/leave the white parts white and not make white transparent/black too?<br />\n<br />\nPlease help...<br />\n",
+    "PostedDate": "2013-03-24T00:44:26.357-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

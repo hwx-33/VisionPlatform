@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "257154",
+    "ThreadId": "75144",
+    "Html": "<p>Hello,</p>\r\n<p>&nbsp;&nbsp;I'm trying to use the library with WPF instead of WinForms and I almost there but a little problem arise.</p>\r\n<p>&nbsp;&nbsp;It seem that WPF considers its windows from the&nbsp;beginning&nbsp;of the form, including the titlebar, and the problem shown in the screenshots happens.</p>\r\n<p>&nbsp;&nbsp;This is the normal behavior:</p>\r\n<p>&nbsp;&nbsp;<img src=\"http://img691.imageshack.us/img691/5103/normal.png\" alt=Normal><br><a href=\"http://img691.imageshack.us/i/normal.png/\"></a></p>\r\n<p>&nbsp;&nbsp;This happens when you resize the window (vertical or horizontal, it doesn't matter). Once you focus another window, the window is redraw and the white bar dissapear. Also note that the form doesn't fill all the window, and a black bar (of the same size of the title bar appears at the bottom.</p>\r\n<p>&nbsp;&nbsp;<img src=\"http://img21.imageshack.us/img21/4725/errordp.png\" alt=Error><br><a href=\"http://img21.imageshack.us/i/errordp.png/\"></a></p>\r\n<p>&nbsp;&nbsp;Do you any any way to set some property related with that issue, maybe when the ribbon is created, that could help me solve this issue?</p>\r\n<p>Regards,</p>\r\n<p>Nico</p>",
+    "PostedDate": "2009-11-14T15:12:47.22-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "257155",
+    "ThreadId": "75144",
+    "Html": "<p>I recommend that you use the ribbon control that was designed and built for WPF.<br>It is part of the WPF toolkit which you can get here: <a href=\"http://www.codeplex.com/wpf/\">http://www.codeplex.com/wpf/</a></p>\r\n<p>The ribbon in this project is to be used with WinForms applications only.</p>",
+    "PostedDate": "2009-11-14T15:32:44.42-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "257156",
+    "ThreadId": "75144",
+    "Html": "<p>Yes I, know, but I want to use the Windows 7 one, to have a Windows 7/Office 2010 consistent look &amp; feel. (The current WPF one is Office 2007 L&amp;F).</p>\r\n<p>Thanks.</p>",
+    "PostedDate": "2009-11-14T16:04:42.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

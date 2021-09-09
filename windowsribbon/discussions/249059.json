@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "577875",
+    "ThreadId": "249059",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>Does Win7 Ribbon support this? If so, what needs including in wrapper class?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2011-03-09T09:16:14.713-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "577953",
+    "ThreadId": "249059",
+    "Html": "<p>The Windows Ribbon Framework doesn't support a DatePicker control.</p>\r\n<p>The wrapper library provides <strong>every </strong>feature the Windows Ribbon Framework supports.</p>",
+    "PostedDate": "2011-03-09T11:22:52.71-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1089511",
+    "ThreadId": "455891",
+    "Html": "Hi EveryBody,\r<br />\nI have a problem using InitFramework and DestroyFramework methods. I got this error message:\r<br />\n&quot;'RibbonLib.Ribbon' does not contain a definition for 'InitFramework' and no extension method 'InitFramework' accepting a first argument of type 'RibbonLib.Ribbon' could be found (are you missing a using directive or an assembly reference?)&quot;\r<br />\nwhen Intiializing ribbon framwork at form load\r<br />\n_ribbon.InitFramework(this);\r<br />\nwhat is wrong in my code?<br />\n",
+    "PostedDate": "2013-09-07T00:53:53.703-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

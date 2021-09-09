@@ -1,0 +1,409 @@
+------ Rebuild All started: Project: Ribbon, Configuration: Debug Any CPU ------
+C:\Windows\Microsoft.NET\Framework\v3.5\Csc.exe /noconfig /nowarn:1701,1702 /errorreport:prompt /warn:4 /define:DEBUG;TRACE /reference:"C:\Program Files\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll" /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll /reference:C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll /debug+ /debug:full /filealign:512 /optimize- /out:obj\Debug\Ribbon.dll /target:library Controls\RibbonApplicationMenu.cs Controls\RibbonCheckBox.cs Controls\RibbonDropDownButton.cs Controls\RibbonDropDownColorPicker.cs Controls\Events\BaseEventsProvider.cs Controls\RibbonFontControl.cs Controls\RibbonHelpButton.cs Controls\RibbonMenuGroup.cs Controls\Properties\BasePropertiesProvider.cs Controls\BaseRibbonControl.cs Controls\RibbonButton.cs ColorHelper.cs Controls\Properties\BooleanValuePropertyProvider.cs Controls\Properties\ColorPickerPropertiesProvider.cs Controls\Properties\ContextAvailablePropertiesProvider.cs Controls\Properties\EnabledPropertiesProvider.cs Controls\Properties\FontControlPropertiesProvider.cs Controls\Properties\GalleryPropertiesProvider.cs Controls\Properties\ImagePropertiesProvider.cs Controls\Events\PreviewEventsProvider.cs Controls\Properties\KeytipPropertiesProvider.cs Controls\Properties\LabelDescriptionPropertiesProvider.cs Controls\Properties\LabelPropertiesProvider.cs Controls\Properties\RepresentativeStringPropertiesProvider.cs Controls\Properties\SpinnerPropertiesProvider.cs Controls\Properties\StringValueProperiesProvider.cs Controls\Properties\TooltipPropertiesProvider.cs Controls\RibbonSplitButton.cs Controls\RibbonTabGroup.cs Controls\RibbonToggleButton.cs Controls\RibbonDropDownGallery.cs Controls\Events\ExecuteEventsProvider.cs FontPropertyStore.cs GalleryCommandPropertySet.cs GalleryItemPropertySet.cs Controls\RibbonGroup.cs Controls\Events\IEventsProvider.cs Controls\RibbonInRibbonGallery.cs Controls\Properties\IPropertiesProvider.cs Controls\RibbonSplitButtonGallery.cs Controls\RibbonTab.cs Interop\PropertyKey.cs Interop\PropVariant.cs UICollectionChangedEvent.cs Controls\RibbonComboBox.cs Interop\CommonCOMInterfaces.cs Interop\RibbonCOMGuids.cs Interop\RibbonCOMInterfaces.cs Interop\RibbonCOMClasses.cs Interop\RibbonProperties.cs IRibbonControl.cs IRibbonForm.cs Properties\AssemblyInfo.cs Ribbon.cs RibbonUIApplication.cs Controls\RibbonSpinner.cs
+
+Compile complete -- 0 errors, 0 warnings
+Ribbon -> C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Ribbon\bin\Debug\Ribbon.dll
+------ Rebuild All started: Project: 12-FontControl, Configuration: Debug Any CPU ------
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.rc"
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.rc"
+"C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\bin\Debug\12-FontControl.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.res"
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.xml(10): warning SC2002: Undefined property: 'ApplicationMenu'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.xml(10): warning SC2002: Undefined property: 'QuickAccessToolbar'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.xml : warning SC2001 at /Application/Application.Views/Ribbon/Ribbon.ApplicationMenu/ApplicationMenu: Undefined Command on element.
+Header file generation successful: '(null)'.
+Ribbon markup file validation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.xml'.
+Ribbon resource file generation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.rc'.
+Microsoft (R) Windows (R) Resource Compiler Version 6.1.7600.16385
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Creating C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.res
+
+Using codepage 1252 as default
+
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.rc.....
+Writing UIFILE:APPLICATION_RIBBON,	lang:0x409,	size 2301
+Writing STRING:3751,	lang:0x409,	size 96
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: The command ""%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\bin\Debug\12-FontControl.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\12-FontControl\RibbonMarkup.res"" exited with code -1073741515.
+Done building project "12-FontControl.csproj" -- FAILED.
+------ Rebuild All started: Project: 11-DropDownColorPicker, Configuration: Debug Any CPU ------
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.rc"
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.rc"
+"C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\bin\Debug\11-DropDownColorPicker.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.res"
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.xml(44): warning SC2002: Undefined property: 'ApplicationMenu'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.xml(44): warning SC2002: Undefined property: 'QuickAccessToolbar'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.xml : warning SC2001 at /Application/Application.Views/Ribbon/Ribbon.ApplicationMenu/ApplicationMenu: Undefined Command on element.
+Header file generation successful: '(null)'.
+Ribbon markup file validation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.xml'.
+Ribbon resource file generation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.rc'.
+Microsoft (R) Windows (R) Resource Compiler Version 6.1.7600.16385
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Creating C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.res
+
+Using codepage 1252 as default
+
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.rc.....
+Writing BITMAP:60005,	lang:0x409,	size 4136..
+Writing BITMAP:60007,	lang:0x409,	size 4136..
+Writing BITMAP:60009,	lang:0x409,	size 4136..
+Writing BITMAP:60011,	lang:0x409,	size 4138..
+Writing UIFILE:APPLICATION_RIBBON,	lang:0x409,	size 1480
+Writing STRING:3751,	lang:0x409,	size 224
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: The command ""%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\bin\Debug\11-DropDownColorPicker.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\11-DropDownColorPicker\RibbonMarkup.res"" exited with code -1073741515.
+Done building project "11-DropDownColorPicker.csproj" -- FAILED.
+------ Rebuild All started: Project: 10-CheckBox, Configuration: Debug Any CPU ------
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.rc"
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.rc"
+"C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\bin\Debug\10-CheckBox.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.res"
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.xml(97): warning SC2002: Undefined property: 'ApplicationMenu'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.xml(97): warning SC2002: Undefined property: 'QuickAccessToolbar'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.xml : warning SC2001 at /Application/Application.Views/Ribbon/Ribbon.ApplicationMenu/ApplicationMenu: Undefined Command on element.
+Header file generation successful: '(null)'.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.xml(114): info SC3004 : Group.SizeDefinition property not specified.
+Ribbon markup file validation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.xml'.
+Ribbon resource file generation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.rc'.
+Microsoft (R) Windows (R) Resource Compiler Version 6.1.7600.16385
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Creating C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.res
+
+Using codepage 1252 as default
+
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.rc..
+Writing BITMAP:60002,	lang:0x409,	size 1066.
+Writing BITMAP:60003,	lang:0x409,	size 4138..
+Writing BITMAP:60005,	lang:0x409,	size 1066.
+Writing BITMAP:60006,	lang:0x409,	size 4138..
+Writing BITMAP:60008,	lang:0x409,	size 1066.
+Writing BITMAP:60009,	lang:0x409,	size 4138..
+Writing BITMAP:60011,	lang:0x409,	size 1066.
+Writing BITMAP:60012,	lang:0x409,	size 4138....
+Writing BITMAP:60016,	lang:0x409,	size 4136....
+Writing BITMAP:60020,	lang:0x409,	size 4136....
+Writing BITMAP:60024,	lang:0x409,	size 4136.....
+Writing UIFILE:APPLICATION_RIBBON,	lang:0x409,	size 1598
+Writing STRING:3751,	lang:0x409,	size 154
+Writing STRING:3752,	lang:0x409,	size 202
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: The command ""%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\bin\Debug\10-CheckBox.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\10-CheckBox\RibbonMarkup.res"" exited with code -1073741515.
+Done building project "10-CheckBox.csproj" -- FAILED.
+------ Rebuild All started: Project: 09-Galleries, Configuration: Debug Any CPU ------
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.rc"
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.rc"
+"C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\bin\Debug\09-Galleries.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.res"
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.xml(62): warning SC2002: Undefined property: 'ApplicationMenu'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.xml(62): warning SC2002: Undefined property: 'QuickAccessToolbar'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.xml : warning SC2001 at /Application/Application.Views/Ribbon/Ribbon.ApplicationMenu/ApplicationMenu: Undefined Command on element.
+Header file generation successful: '(null)'.
+Ribbon markup file validation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.xml'.
+Ribbon resource file generation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.rc'.
+Microsoft (R) Windows (R) Resource Compiler Version 6.1.7600.16385
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Creating C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.res
+
+Using codepage 1252 as default
+
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.rc....
+Writing BITMAP:60004,	lang:0x409,	size 1066.
+Writing BITMAP:60005,	lang:0x409,	size 4138..
+Writing BITMAP:60007,	lang:0x409,	size 1066.
+Writing BITMAP:60008,	lang:0x409,	size 4138...
+Writing BITMAP:60011,	lang:0x409,	size 4138...
+Writing UIFILE:APPLICATION_RIBBON,	lang:0x409,	size 1653
+Writing STRING:3751,	lang:0x409,	size 184
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: The command ""%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\bin\Debug\09-Galleries.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\09-Galleries\RibbonMarkup.res"" exited with code -1073741515.
+Done building project "09-Galleries.csproj" -- FAILED.
+------ Rebuild All started: Project: 08-Images, Configuration: Debug Any CPU ------
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.rc"
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.rc"
+"C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\bin\Debug\08-Images.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.res"
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.xml(42): warning SC2002: Undefined property: 'ApplicationMenu'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.xml(42): warning SC2002: Undefined property: 'QuickAccessToolbar'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.xml : warning SC2001 at /Application/Application.Views/Ribbon/Ribbon.ApplicationMenu/ApplicationMenu: Undefined Command on element.
+Header file generation successful: '(null)'.
+Ribbon markup file validation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.xml'.
+Ribbon resource file generation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.rc'.
+Microsoft (R) Windows (R) Resource Compiler Version 6.1.7600.16385
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Creating C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.res
+
+Using codepage 1252 as default
+
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.rc..
+Writing BITMAP:60002,	lang:0x409,	size 4136..
+Writing BITMAP:60004,	lang:0x409,	size 4136..
+Writing BITMAP:60006,	lang:0x409,	size 4136....
+Writing UIFILE:APPLICATION_RIBBON,	lang:0x409,	size 1267
+Writing STRING:3751,	lang:0x409,	size 126
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: The command ""%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\bin\Debug\08-Images.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\08-Images\RibbonMarkup.res"" exited with code -1073741515.
+Done building project "08-Images.csproj" -- FAILED.
+------ Rebuild All started: Project: 07-RibbonColor, Configuration: Debug Any CPU ------
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.rc"
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.rc"
+"C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\bin\Debug\07-RibbonColor.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.res"
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.xml(123): warning SC2002: Undefined property: 'ApplicationMenu'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.xml(123): warning SC2002: Undefined property: 'QuickAccessToolbar'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.xml : warning SC2001 at /Application/Application.Views/Ribbon/Ribbon.ApplicationMenu/ApplicationMenu: Undefined Command on element.
+Header file generation successful: '(null)'.
+Ribbon markup file validation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.xml'.
+Ribbon resource file generation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.rc'.
+Microsoft (R) Windows (R) Resource Compiler Version 6.1.7600.16385
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Creating C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.res
+
+Using codepage 1252 as default
+
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.rc.....
+Writing BITMAP:60005,	lang:0x409,	size 1066.
+Writing BITMAP:60006,	lang:0x409,	size 4138.....
+Writing BITMAP:60011,	lang:0x409,	size 1066.
+Writing BITMAP:60012,	lang:0x409,	size 4138.....
+Writing BITMAP:60017,	lang:0x409,	size 1066.
+Writing BITMAP:60018,	lang:0x409,	size 4138.....
+Writing BITMAP:60023,	lang:0x409,	size 1066.
+Writing BITMAP:60024,	lang:0x409,	size 4138....
+Writing BITMAP:60028,	lang:0x409,	size 4136....
+Writing BITMAP:60032,	lang:0x409,	size 4136....
+Writing BITMAP:60036,	lang:0x409,	size 4136.......
+Writing UIFILE:APPLICATION_RIBBON,	lang:0x409,	size 1817
+Writing STRING:3751,	lang:0x409,	size 310
+Writing STRING:3752,	lang:0x409,	size 274
+Writing STRING:3753,	lang:0x409,	size 156
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: The command ""%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\bin\Debug\07-RibbonColor.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\07-RibbonColor\RibbonMarkup.res"" exited with code -1073741515.
+Done building project "07-RibbonColor.csproj" -- FAILED.
+------ Rebuild All started: Project: 06-ComboBox, Configuration: Debug Any CPU ------
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.rc"
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.rc"
+"C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\bin\Debug\06-ComboBox.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.res"
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.xml(80): warning SC2002: Undefined property: 'ApplicationMenu'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.xml(80): warning SC2002: Undefined property: 'QuickAccessToolbar'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.xml : warning SC2001 at /Application/Application.Views/Ribbon/Ribbon.ApplicationMenu/ApplicationMenu: Undefined Command on element.
+Header file generation successful: '(null)'.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.xml(91): info SC3004 : Group.SizeDefinition property not specified.
+Ribbon markup file validation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.xml'.
+Ribbon resource file generation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.rc'.
+Microsoft (R) Windows (R) Resource Compiler Version 6.1.7600.16385
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Creating C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.res
+
+Using codepage 1252 as default
+
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.rc..
+Writing BITMAP:60002,	lang:0x409,	size 4136..
+Writing BITMAP:60004,	lang:0x409,	size 4136..
+Writing BITMAP:60006,	lang:0x409,	size 4136..
+Writing BITMAP:60008,	lang:0x409,	size 4136..
+Writing BITMAP:60010,	lang:0x409,	size 4136..
+Writing BITMAP:60012,	lang:0x409,	size 4136.....
+Writing UIFILE:APPLICATION_RIBBON,	lang:0x409,	size 1605
+Writing STRING:3751,	lang:0x409,	size 200
+Writing STRING:3752,	lang:0x409,	size 68
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: The command ""%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\bin\Debug\06-ComboBox.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\06-ComboBox\RibbonMarkup.res"" exited with code -1073741515.
+Done building project "06-ComboBox.csproj" -- FAILED.
+------ Rebuild All started: Project: 05-Spinner, Configuration: Debug Any CPU ------
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.rc"
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.rc"
+"C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\bin\Debug\05-Spinner.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.res"
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.xml(55): warning SC2002: Undefined property: 'ApplicationMenu'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.xml(55): warning SC2002: Undefined property: 'QuickAccessToolbar'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.xml : warning SC2001 at /Application/Application.Views/Ribbon/Ribbon.ApplicationMenu/ApplicationMenu: Undefined Command on element.
+Header file generation successful: '(null)'.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.xml(63): info SC3004 : Group.SizeDefinition property not specified.
+Ribbon markup file validation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.xml'.
+Ribbon resource file generation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.rc'.
+Microsoft (R) Windows (R) Resource Compiler Version 6.1.7600.16385
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Creating C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.res
+
+Using codepage 1252 as default
+
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.rc.....
+Writing BITMAP:60005,	lang:0x409,	size 4136..
+Writing BITMAP:60007,	lang:0x409,	size 4136..
+Writing BITMAP:60009,	lang:0x409,	size 4136......
+Writing UIFILE:APPLICATION_RIBBON,	lang:0x409,	size 1381
+Writing STRING:3751,	lang:0x409,	size 300
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: The command ""%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\bin\Debug\05-Spinner.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\05-Spinner\RibbonMarkup.res"" exited with code -1073741515.
+Done building project "05-Spinner.csproj" -- FAILED.
+------ Rebuild All started: Project: 04-TabGroupHelp, Configuration: Debug Any CPU ------
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.rc"
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.rc"
+"C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\bin\Debug\01-AddingRibbonSupport.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.res"
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.xml(123): warning SC2002: Undefined property: 'ApplicationMenu'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.xml(123): warning SC2002: Undefined property: 'QuickAccessToolbar'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.xml : warning SC2001 at /Application/Application.Views/Ribbon/Ribbon.ApplicationMenu/ApplicationMenu: Undefined Command on element.
+Header file generation successful: '(null)'.
+Ribbon markup file validation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.xml'.
+Ribbon resource file generation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.rc'.
+Microsoft (R) Windows (R) Resource Compiler Version 6.1.7600.16385
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Creating C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.res
+
+Using codepage 1252 as default
+
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.rc.....
+Writing BITMAP:60005,	lang:0x409,	size 1066.
+Writing BITMAP:60006,	lang:0x409,	size 4138.....
+Writing BITMAP:60011,	lang:0x409,	size 1066.
+Writing BITMAP:60012,	lang:0x409,	size 4138.....
+Writing BITMAP:60017,	lang:0x409,	size 1066.
+Writing BITMAP:60018,	lang:0x409,	size 4138.....
+Writing BITMAP:60023,	lang:0x409,	size 1066.
+Writing BITMAP:60024,	lang:0x409,	size 4138....
+Writing BITMAP:60028,	lang:0x409,	size 4136....
+Writing BITMAP:60032,	lang:0x409,	size 4136....
+Writing BITMAP:60036,	lang:0x409,	size 4136.......
+Writing UIFILE:APPLICATION_RIBBON,	lang:0x409,	size 1817
+Writing STRING:3751,	lang:0x409,	size 310
+Writing STRING:3752,	lang:0x409,	size 274
+Writing STRING:3753,	lang:0x409,	size 156
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: The command ""%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\bin\Debug\01-AddingRibbonSupport.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\04-TabGroupHelp\RibbonMarkup.res"" exited with code -1073741515.
+Done building project "04-TabGroupHelp.csproj" -- FAILED.
+------ Rebuild All started: Project: 03-MenuDropDown, Configuration: Debug Any CPU ------
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.rc"
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.rc"
+"C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\bin\Debug\03-MenuDropDown.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.res"
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.xml(115): warning SC2002: Undefined property: 'Tab'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.xml(115): warning SC2002: Undefined property: 'QuickAccessToolbar'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.xml(117): warning SC2001: Undefined Command on element.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.xml(135): warning SC2001: Undefined Command on element.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.xml : warning SC2001 at /Application/Application.Views/Ribbon/Ribbon.Tabs/Tab: Undefined Command on element.
+Header file generation successful: '(null)'.
+Ribbon markup file validation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.xml'.
+Ribbon resource file generation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.rc'.
+Microsoft (R) Windows (R) Resource Compiler Version 6.1.7600.16385
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Creating C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.res
+
+Using codepage 1252 as default
+
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.rc.....
+Writing BITMAP:60005,	lang:0x409,	size 1066.
+Writing BITMAP:60006,	lang:0x409,	size 4138.....
+Writing BITMAP:60011,	lang:0x409,	size 1066.
+Writing BITMAP:60012,	lang:0x409,	size 4138.....
+Writing BITMAP:60017,	lang:0x409,	size 1066.
+Writing BITMAP:60018,	lang:0x409,	size 4138.....
+Writing BITMAP:60023,	lang:0x409,	size 1066.
+Writing BITMAP:60024,	lang:0x409,	size 4138....
+Writing BITMAP:60028,	lang:0x409,	size 1066.
+Writing BITMAP:60029,	lang:0x409,	size 4138....
+Writing BITMAP:60033,	lang:0x409,	size 4136....
+Writing BITMAP:60037,	lang:0x409,	size 4136....
+Writing BITMAP:60041,	lang:0x409,	size 4136....
+Writing UIFILE:APPLICATION_RIBBON,	lang:0x409,	size 1757
+Writing STRING:3751,	lang:0x409,	size 310
+Writing STRING:3752,	lang:0x409,	size 282
+Writing STRING:3753,	lang:0x409,	size 248
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: The command ""%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\bin\Debug\03-MenuDropDown.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\03-MenuDropDown\RibbonMarkup.res"" exited with code -1073741515.
+Done building project "03-MenuDropDown.csproj" -- FAILED.
+------ Rebuild All started: Project: 02-ApplicationMenuButton, Configuration: Debug Any CPU ------
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.rc"
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.rc"
+"C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\bin\Debug\02-ApplicationMenuButton.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.res"
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.xml(62): warning SC2002: Undefined property: 'Tab'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.xml(62): warning SC2002: Undefined property: 'QuickAccessToolbar'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.xml : warning SC2001 at /Application/Application.Views/Ribbon/Ribbon.Tabs/Tab: Undefined Command on element.
+Header file generation successful: '(null)'.
+Ribbon markup file validation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.xml'.
+Ribbon resource file generation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.rc'.
+Microsoft (R) Windows (R) Resource Compiler Version 6.1.7600.16385
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Creating C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.res
+
+Using codepage 1252 as default
+
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.rc.....
+Writing BITMAP:60005,	lang:0x409,	size 1066.
+Writing BITMAP:60006,	lang:0x409,	size 4138.....
+Writing BITMAP:60011,	lang:0x409,	size 1066.
+Writing BITMAP:60012,	lang:0x409,	size 4138.....
+Writing BITMAP:60017,	lang:0x409,	size 1066.
+Writing BITMAP:60018,	lang:0x409,	size 4138.....
+Writing BITMAP:60023,	lang:0x409,	size 1066.
+Writing BITMAP:60024,	lang:0x409,	size 4138..
+Writing UIFILE:APPLICATION_RIBBON,	lang:0x409,	size 1331
+Writing STRING:3751,	lang:0x409,	size 256
+Writing STRING:3752,	lang:0x409,	size 196
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: The command ""%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\bin\Debug\02-ApplicationMenuButton.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\02-ApplicationMenuButton\RibbonMarkup.res"" exited with code -1073741515.
+Done building project "02-ApplicationMenuButton.csproj" -- FAILED.
+------ Rebuild All started: Project: 01-AddingRibbonSupport, Configuration: Debug Any CPU ------
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.rc"
+"%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.rc"
+"C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\bin\Debug\01-AddingRibbonSupport.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.res"
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.xml(8): warning SC2002: Undefined property: 'ApplicationMenu'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.xml(8): warning SC2002: Undefined property: 'Tab'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.xml(8): warning SC2002: Undefined property: 'QuickAccessToolbar'. Using default value.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.xml : warning SC2001 at /Application/Application.Views/Ribbon/Ribbon.ApplicationMenu/ApplicationMenu: Undefined Command on element.
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.xml : warning SC2001 at /Application/Application.Views/Ribbon/Ribbon.Tabs/Tab: Undefined Command on element.
+Header file generation successful: '(null)'.
+Ribbon markup file validation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.xml'.
+Ribbon resource file generation successful: 'C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.rc'.
+Microsoft (R) Windows (R) Resource Compiler Version 6.1.7600.16385
+
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Creating C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.res
+
+Using codepage 1252 as default
+
+C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.rc...
+Writing UIFILE:APPLICATION_RIBBON,	lang:0x409,	size 1042
+Writing STRING:3751,	lang:0x409,	size 104
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: The command ""%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\UICC.exe" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.xml" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.bml" /res:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "%PROGRAMFILES%\Microsoft SDKs\Windows\v7.0\Bin\rc.exe" /v "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.rc"
+C:\Windows\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(895,9): error MSB3073: "C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\..\..\VC\bin\link.exe" /VERBOSE /NOENTRY /DLL /OUT:"C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\bin\Debug\01-AddingRibbonSupport.ribbon.dll" "C:\VS2008Projects\Libraries\Forms\WindowsRibbonforWinForms\Samples\01-AddingRibbonSupport\RibbonMarkup.res"" exited with code -1073741515.
+Done building project "01-AddingRibbonSupport.csproj" -- FAILED.
+========== Rebuild All: 1 succeeded, 12 failed, 0 skipped ==========

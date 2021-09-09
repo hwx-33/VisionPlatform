@@ -1,0 +1,106 @@
+[
+  {
+    "Id": "462579",
+    "ThreadId": "218128",
+    "Html": "<p>Hi Arik,</p>\r\n<p>I have a new problem with incorporating the Ribbon into my Eclipse Application. The language (Progress ABL) I program in the Eclipse IDE doesn't support events whose handler signature does not conform to .NET Framework convention, which is in this form: eventhandler(sender AS System.Object, e AS System.EventArgs ).</p>\r\n<p>Is it possible to change the OnExecute event signature from&nbsp;(key AS RibbonLib.Interop.PropertyKeyRef,&nbsp;currentValue AS RibbonLib.Interop.PropVariantRef,&nbsp;commandExecutionProperties AS RibbonLib.Interop.IUISimplePropertySet) to the conventional way. i.e. (sender AS System.Object, e AS OnExecuteEventArgs), where OnExecuteEventArgs is derived from System.EventArgs and uses PropertyKeyRef, PropVariantRef and IUISimplePropertySet as data member?</p>\r\n<p>Thanks</p>\r\n<p>Ruan</p>",
+    "PostedDate": "2010-07-02T03:51:40.907-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "462595",
+    "ThreadId": "218128",
+    "Html": "Well, theoretically it is possible.\r\n\r\nUnfortunately, this would be a breaking change for all current users of this library.\r\nWhat I can suggest is that you download the code and make your own version of library, one with the modified event as you suggested.\r\n\r\nSorry I can't help you more but I'm afraid that doing a change like this will upset more than one user...\r\n",
+    "PostedDate": "2010-07-02T04:56:21.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "462603",
+    "ThreadId": "218128",
+    "Html": "<p>Thanks for your reply Arik, that's okay, I will try if I can make it. I haven't programmed in C# for years, I am from .net framework 1.0 background :).</p>\r\n<p>Are you able to give me some ideas in terms of what classes I will need to modify to accomodate that and other pitfall area?</p>\r\n<p>Looking forward to your reply.</p>\r\n<p>Regards<br>Ruan</p>",
+    "PostedDate": "2010-07-02T05:17:00.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "462606",
+    "ThreadId": "218128",
+    "Html": "Just change the delegate type in these files: ExecuteEventsProvider and PreviewEventsProvider\r\nand change the Execute function in both files to raise the events with the new delegate type\r\n\r\nOther than that, just fix all the compilation errors you will get due to the change.\r\nThe change is rather simple but as I've said it would break all the current clients..",
+    "PostedDate": "2010-07-02T05:33:15.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "462612",
+    "ThreadId": "218128",
+    "Html": "<p>Oh, Thanks. Sounds like I don't have to create a new OnExecuteEventArgs class, Do I?</p>\r\n<p>Will keep you updated how I go. Thank you so much for your support.</p>\r\n<p>Cheers</p>",
+    "PostedDate": "2010-07-02T05:45:46.053-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "462614",
+    "ThreadId": "218128",
+    "Html": "<p>Well, I think you should create such a class.<br>Otherwise, how will you pass the parameters?</p>\r\n<p>Good luck.</p>",
+    "PostedDate": "2010-07-02T05:54:16.45-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463180",
+    "ThreadId": "218128",
+    "Html": "<p>Hi Arik,</p>\r\n<p>I have accomplished my mission, my from can respond to the events now after I make the following modification to ExecuteEventsProvider and PreviewEventsProvider. Thank you very much indeed for your insights. ;-)</p>\r\n<div style=\"color:black;background-color:white\">\r\n<pre><span style=\"color:blue\">public</span> <span style=\"color:blue\">delegate</span> <span style=\"color:blue\">void</span> OnExecuteEventHandler(<span style=\"color:blue\">object</span> sender, OnExecuteEventArgs e);\r\n\r\n<span style=\"color:blue\">public</span> <span style=\"color:blue\">class</span> OnExecuteEventArgs : System.EventArgs\r\n    {\r\n        <span style=\"color:blue\">private</span> PropertyKeyRef _key; \r\n        <span style=\"color:blue\">private</span> PropVariantRef _currentValue;\r\n        <span style=\"color:blue\">private</span> IUISimplePropertySet _commandExecutionProperties;\r\n\r\n        <span style=\"color:blue\">public</span> OnExecuteEventArgs(PropertyKeyRef key, PropVariantRef currentValue, IUISimplePropertySet commandExecutionProperties)\r\n        {\r\n            _key = key;\r\n            _currentValue = currentValue;\r\n            _commandExecutionProperties = commandExecutionProperties;\r\n        }\r\n\r\n    }\r\n\r\n\r\n<span style=\"color:blue\">public</span> <span style=\"color:blue\">override</span> HRESULT Execute(ExecutionVerb verb, PropertyKeyRef key, PropVariantRef currentValue, IUISimplePropertySet commandExecutionProperties)\r\n        {\r\n            <span style=\"color:blue\">if</span> (verb == ExecutionVerb.Execute)\r\n            {\r\n                <span style=\"color:blue\">if</span> (OnExecute != <span style=\"color:blue\">null</span>)\r\n                {\r\n                    _onExecuteEventArgs = <span style=\"color:blue\">new</span> OnExecuteEventArgs(key, currentValue, commandExecutionProperties);\r\n                    OnExecute(<span style=\"color:blue\">new</span> <span style=\"color:blue\">object</span>(), _onExecuteEventArgs);\r\n                }\r\n            }\r\n\r\n            <span style=\"color:blue\">return</span> HRESULT.S_OK;\r\n        }\r\n</pre>\r\n</div>",
+    "PostedDate": "2010-07-03T20:02:52.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463200",
+    "ThreadId": "218128",
+    "Html": "<p>Hi Arik,</p>\r\n<p>Just a thought, is it possible to pass the actual instace of the object being clicked on the form to the OnExecute event? The above code only passes the generic object as the sender.</p>\r\n<p>Thanks<br>Ruan</p>",
+    "PostedDate": "2010-07-04T01:08:50.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463301",
+    "ThreadId": "218128",
+    "Html": "<p>Its possible, but y<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>ou <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>n<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>e<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>e<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>d<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>t<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>m<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>a<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>k<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>e<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>a<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>d<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>d<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>i<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>t<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>i<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>n<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>a<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>l<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>m<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>d<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>i<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>f<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>i<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>c<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>a<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>t<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>i<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>n<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>s<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>t<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>t<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>h<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>e<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>c<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>o<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>d<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span>e<span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span> <span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_end\" style=\"line-height:0;display:none\"><span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_start\" style=\"line-height:0;display:none\">﻿</span></span><span id=\"_mce_end\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_end\" style=\"line-height:0;display:none\">﻿</span><span id=\"_mce_end\" style=\"line-height:0;display:none\">﻿</span>to establish it.</p>",
+    "PostedDate": "2010-07-04T15:29:13.17-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "463356",
+    "ThreadId": "218128",
+    "Html": "<p>Can you shed some light on how to establish it please?</p>\r\n<p>Thanks<br>Ruan</p>",
+    "PostedDate": "2010-07-04T23:39:50.327-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "464224",
+    "ThreadId": "218128",
+    "Html": "<p>You can add the to the constructor of both ExecuteEventProvider and PreviewEventsProvider a new parameter (object sender).</p>\r\n<p>This parameter will be passed to the constructor by the ribbon element which created the events provided (e.g. RibbonButton)</p>\r\n<p>The parameter will be used when raising the events.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-07-07T05:41:07.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "465712",
+    "ThreadId": "218128",
+    "Html": "<p>Hi Arik,</p>\r\n<p>Thank you so much for your tips. I implemented it.</p>\r\n<p>It's great, I can now have only one method in my from to handle events fired from different control and test the commandID to decide what specific code to run.</p>\r\n<p>Cheers<br>Have a nice weekend.</p>",
+    "PostedDate": "2010-07-09T19:04:52.72-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "504612",
+    "ThreadId": "218128",
+    "Html": "<p>I've just replaced the event handling to be as discussed in this thread.<br>It will be available in the comming release (v2.5)</p>",
+    "PostedDate": "2010-10-08T17:57:27.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

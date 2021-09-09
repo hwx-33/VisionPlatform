@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "958439",
+    "ThreadId": "407329",
+    "Html": "\r\n<p>Hello Friends,</p>\r\n<p>&nbsp;</p>\r\n<p>I need some help i went through the license and rest of the forum but i was confused, i am developing an application and i would like to use this Windows Ribbon in my application, But the problem is that i am selling my application commercially and this\r\n is my first requirement so i am still looking around for the free controls that even those specifically commercial free so please assist me and guide me if i can adapt Windows Ribbon to my application?</p>\r\n<p>&nbsp;</p>\r\n<p>Do i need to contact the developer? or further need any permissions?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n",
+    "PostedDate": "2012-12-19T06:46:38.397-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "997191",
+    "ThreadId": "407329",
+    "Html": "I have the same question as yours, got any answers so far ?<br />\n",
+    "PostedDate": "2013-02-06T03:27:51.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "997214",
+    "ThreadId": "407329",
+    "Html": "You are allowed to use the Ribbon in commercial, free and open source applications. \r<br />\n<br />\nPlease be aware of the copyright things. To be save here do the following. In your software descriptions (on your webpage, in your distribution package...) add a statement that you are using this ribbon control with a link to the project here.\r<br />\n<br />\nFor open source projects you can find a good description here...\r<br />\n<a href=\"http://stackoverflow.com/questions/633132/is-ms-pl-microsoft-public-license-code-allowed-in-commercial-product\" rel=\"nofollow\">http://stackoverflow.com/questions/633132/is-ms-pl-microsoft-public-license-code-allowed-in-commercial-product</a><br />\n",
+    "PostedDate": "2013-02-06T04:07:19.163-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

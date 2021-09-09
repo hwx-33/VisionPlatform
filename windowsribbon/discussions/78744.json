@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "269597",
+    "ThreadId": "78744",
+    "Html": "<p>Hi,</p>\r\n<p>I tried to run the samples on vista(sp2), xp and Windows7 and it appears that the samples works only under Windows7.</p>\r\n<p>If I try (for example the QuickAccessToolbar sample)&nbsp;on Vista or XP, the program fails on the method &quot;CreateRibbonFrameWork&quot;.</p>\r\n<p>I noticed that on Windows7 computers I have the UiRibbon.dll under the SYSTEM directory while in Vista or XP computers this DLL is missing (even though I installed the Windows7 SDK).</p>\r\n<p>Can anyone please advise how can I use this Ribbon under Vista and XP ?</p>\r\n<p>Yoav.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-21T08:13:35.95-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "269766",
+    "ThreadId": "78744",
+    "Html": "<p>Hi, I'm only a (somewhat advanced) computer&nbsp;user. I'm not linked to this project nor to Microsoft in any way, so the following&nbsp;guidance may not be&nbsp;entirely accurate.</p>\r\n<p>Ribbon functionality from Windows 7 and Windows Server 2008 R2 was backported to Windows Vista and Windows Server 2008, but not to earlier Windows versions. On Windows Vista and Windows Server 2008,&nbsp;the Windows Ribbon and Animation Manager Library update (Microsoft <a title=\"KB960362: Description of Windows Ribbon and Animation Manager Library\" href=\"http://support.microsoft.com/kb/960362/\">KB960362</a>)&nbsp;is required, which depends on Windows Vista/Server 2008 Service Pack 2. This update&nbsp;is part of the so called Platform Update for Windows Vista and Windows Server 2008, and it is being&nbsp;deployed through Automatic Updates, Microsoft Update, and Windows Server Update Services (WSUS), provided the Service Pack 2 is installed. So, in fact, applications based on the&nbsp;Ribbon Framework will not work with Windows versions earlier than Windows Vista.</p>\r\n<p>Regards.</p>",
+    "PostedDate": "2009-12-21T19:23:31.953-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "282936",
+    "ThreadId": "78744",
+    "Html": "<p>I am having the same problem but the release notes on Win 7 SDK say that XP with SP3 is a supported OS so now I am very confused and can't find any help at all!<br><br>Please see below copy of text on the release notes of Win 7 SDK.<br><br>Can anybody clarify this please?</p>\r\n<h1>3.<span style=\"font-size:7pt;font-family:'Times New Roman';font-style:normal;font-variant:normal;font-weight:normal;line-height:normal\">&nbsp; </span>Supported Compiler, Platforms, and Related Software</h1>\r\n<p>This release of the Windows SDK supports Microsoft Visual Studio 2005 SP1, Microsoft Visual Studio 2008 SP1, and the Microsoft Visual Studio 2008 Express Editions. Express Editions of Visual Studio are available to download from the <a href=\"http://go.microsoft.com/fwlink/?LinkID=147531\">Visual Studio Express</a> site free of charge.</p>\r\n<p>This release of the Windows SDK supports x86, x64, and IA64 platform architectures for building and running applications on Windows XP SP3, Windows Server 2003 R2, Windows Vista, Windows Server 2008, and Windows 7.</p>",
+    "PostedDate": "2010-01-28T13:15:42.137-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283274",
+    "ThreadId": "78744",
+    "Html": "<p>Windows 7 Ribbon is only supported on:</p>\r\n<ul>\r\n<li>Windows 7</li>\r\n<li>Windows Vista with Service Pack 2 (SP2) and Platform Update for Windows Vista</li>\r\n<li>Windows Server 2008 R2</li>\r\n<li>windows Server 2008 with SP2 and Platform Update for Windows Server 2008</li>\r\n</ul>\r\n<p>Specifically, Windows XP is not supported.</p>",
+    "PostedDate": "2010-01-29T03:22:25.73-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283303",
+    "ThreadId": "78744",
+    "Html": "<p>Hi Arik,</p>\r\n<p>Well, I don't understand why you say that because the Windows SDK 7 release notes say that XP with SP3 is supported. PLEASE do check the release notes especially on point 3 that I am copying again:</p>\r\n<h1>3.<span style=\"font-size:7pt;font-family:'Times New Roman';font-style:normal;font-variant:normal;font-weight:normal;line-height:normal\">&nbsp; </span>Supported Compiler, Platforms, and Related Software</h1>\r\n<p>This release of the Windows SDK supports Microsoft Visual Studio 2005 SP1, Microsoft Visual Studio 2008 SP1, and the Microsoft Visual Studio 2008 Express Editions. Express Editions of Visual Studio are available to download from the <a href=\"http://go.microsoft.com/fwlink/?LinkID=147531\">Visual Studio Express</a> site free of charge.</p>\r\n<p>This release of the Windows SDK supports x86, x64, and IA64 platform architectures for building and running applications on Windows XP SP3, Windows Server 2003 R2, Windows Vista, Windows Server 2008, and Windows 7.</p>",
+    "PostedDate": "2010-01-29T04:59:35.017-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283422",
+    "ThreadId": "78744",
+    "Html": "<p>Check Windows Ribbon documentation <a href=\"http://msdn.microsoft.com/en-us/library/dd371191(VS.85).aspx\">http://msdn.microsoft.com/en-us/library/dd371191(VS.85).aspx</a>, under &quot;Minimum Requirements&quot;.</p>\r\n<p>The release notes of Windows SDK refers to the Windows SDK. This means you can install the Windows 7 SDK on Windows XP. It doesn't mean that every windows 7 feature is supported on XP.</p>\r\n<p>Surly you don't expect the Windows 7 task bar to work on windows XP, but it is in the SDK..</p>",
+    "PostedDate": "2010-01-29T11:26:32.583-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

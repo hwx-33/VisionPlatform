@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "419872",
+    "ThreadId": "205396",
+    "Html": "<p>Is ther e away to detect when the tab changes?</p>\r\n<p>Also is there a way to programatically change the tabs?</p>\r\n<p>Meanign if there are 2 tabs and you are currently on tab1, is there a way to prgrammatically toto tab2?</p>",
+    "PostedDate": "2010-03-18T10:09:20.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "420250",
+    "ThreadId": "205396",
+    "Html": "<p>Unfortunately, no.<br>There is no way to detect tab&nbsp;changes nor a programatic way to change the current tab.</p>\r\n<p>Note that this limitation is in the Windows Ribbon Framework, and not in the wrapper library.</p>",
+    "PostedDate": "2010-03-19T07:07:09.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

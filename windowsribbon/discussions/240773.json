@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "545152",
+    "ThreadId": "240773",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I've been using this ribbon for a couple of weeks now, and I've just noticed that everytime I minimize or maximize the form the ribbon is on, the height of the form increases by exactly 30 pixels upon returning the WindowState to normal.</p>\r\n<p>I've tested this with many applications I've made switching between&nbsp;.net framework 3.5 and 4.0, and tested all the sample applications provided with the library, and this happens consistetly with all of them.</p>\r\n<p>Is there any way to fix this so the normal WindowState size doesn't change after&nbsp;minimizing or maximizing??</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2011-01-06T16:33:11.573-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "545662",
+    "ThreadId": "240773",
+    "Html": "\r\n<p>Just an update.</p>\r\n<p>I noticed someone already mentioned this under <strong>Issue Tracker </strong>\r\n(<a href=\"http://windowsribbon.codeplex.com/workitem/5424\">http://windowsribbon.codeplex.com/workitem/5424</a>).&nbsp; However, although the user &quot;<strong><a id=\"x_PostedByLink0\" href=\"http://www.codeplex.com/site/users/view/rasmusfoged\">rasmusfoged</a></strong>&quot;\r\n stated &quot;Issues is solved with the work-around to use Win32 API for hiding the form in taskbar. See VB.NET code below:&quot;.&nbsp; Their solution did not resolve the issue with the normal WindowState size increasing by 30pixels after minimizing or maximizing.&nbsp;\r\n Additionally, I don't seem to experience any issue at all when the &quot;showintaskbar&quot; property is set to&nbsp;false.&nbsp; Maybe I misunderstood...</p>\r\n",
+    "PostedDate": "2011-01-07T13:39:08.093-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "546834",
+    "ThreadId": "240773",
+    "Html": "\r\n<p>I think this is a Windows Forms bug in Form class. The Windows ribbon control changes the client area of the window and the resize fails. I hate to write such bad workarounds... Include the following code into your form and assign the SizeChanged event handler...</p>\r\n<pre style=\"font-family:consolas\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:#2b91af\">FormWindowState</span>&nbsp;_previousWindowState;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:blue\">int</span>&nbsp;_previousNormalHeight;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:blue\">int</span>&nbsp;_preserveHeight;<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:blue\">private</span>&nbsp;<span style=\"color:blue\">void</span>&nbsp;Form1_SizeChanged(<span style=\"color:blue\">object</span>&nbsp;sender,&nbsp;<span style=\"color:#2b91af\">EventArgs</span>&nbsp;e)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:blue\">this</span>.label1.Text&nbsp;=&nbsp;<span style=\"color:blue\">this</span>.Height.ToString();<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:blue\">if</span>&nbsp;(_previousWindowState&nbsp;!=&nbsp;<span style=\"color:#2b91af\">FormWindowState</span>.Normal<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp;&nbsp;<span style=\"color:blue\">this</span>.WindowState&nbsp;==&nbsp;<span style=\"color:#2b91af\">FormWindowState</span>.Normal<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&amp;&nbsp;_previousNormalHeight&nbsp;!=&nbsp;0)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_preserveHeight&nbsp;=&nbsp;_previousNormalHeight;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:blue\">this</span>.BeginInvoke(<span style=\"color:blue\">new</span>&nbsp;<span style=\"color:#2b91af\">MethodInvoker</span>(RestoreHeight));<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:blue\">if</span>&nbsp;(<span style=\"color:blue\">this</span>.WindowState&nbsp;==&nbsp;<span style=\"color:#2b91af\">FormWindowState</span>.Normal)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_previousNormalHeight&nbsp;=&nbsp;<span style=\"color:blue\">this</span>.Height;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_previousWindowState&nbsp;=&nbsp;<span style=\"color:blue\">this</span>.WindowState;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:blue\">void</span>&nbsp;RestoreHeight()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"color:blue\">this</span>.Height&nbsp;=&nbsp;_preserveHeight;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>\r\n",
+    "PostedDate": "2011-01-10T09:53:28.18-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "546845",
+    "ThreadId": "240773",
+    "Html": "\r\n<p>Thanks a lot, <span style=\"color:#800080\">bernhardelbl</span>.&nbsp; It works just fine.</p>\r\n<p>Incase anyone needs it, here is the equivalent <strong>VB .Net code</strong>.</p>\r\n<div style=\"color:black; background-color:white\">\r\n<pre><span style=\"color:blue\">Private</span> _previousWindowState <span style=\"color:blue\">As</span> FormWindowState\r\n<span style=\"color:blue\">Private</span> _previousNormalHeight <span style=\"color:blue\">As</span> <span style=\"color:blue\">Integer</span>\r\n<span style=\"color:blue\">Private</span> _preserveHeight <span style=\"color:blue\">As</span> <span style=\"color:blue\">Integer</span>\r\n\r\n<span style=\"color:blue\">Private</span> <span style=\"color:blue\">Sub</span> Form1_SizeChanged(sender <span style=\"color:blue\">As</span> <span style=\"color:blue\">Object</span>, e <span style=\"color:blue\">As</span> EventArgs)\r\n\t<span style=\"color:blue\">Me</span>.label1.Text = <span style=\"color:blue\">Me</span>.Height.ToString()\r\n\r\n\t<span style=\"color:blue\">If</span> _previousWindowState &lt;&gt; FormWindowState.Normal <span style=\"color:blue\">AndAlso</span> <span style=\"color:blue\">Me</span>.WindowState = FormWindowState.Normal <span style=\"color:blue\">AndAlso</span> _previousNormalHeight &lt;&gt; 0 <span style=\"color:blue\">Then</span>\r\n\t\t_preserveHeight = _previousNormalHeight\r\n\t\t<span style=\"color:blue\">Me</span>.BeginInvoke(<span style=\"color:blue\">New</span> MethodInvoker(<span style=\"color:blue\">AddressOf</span> RestoreHeight))\r\n\t<span style=\"color:blue\">End</span> <span style=\"color:blue\">If</span>\r\n\r\n\t<span style=\"color:blue\">If</span> <span style=\"color:blue\">Me</span>.WindowState = FormWindowState.Normal <span style=\"color:blue\">Then</span>\r\n\t\t_previousNormalHeight = <span style=\"color:blue\">Me</span>.Height\r\n\t<span style=\"color:blue\">End</span> <span style=\"color:blue\">If</span>\r\n\t_previousWindowState = <span style=\"color:blue\">Me</span>.WindowState\r\n<span style=\"color:blue\">End</span> <span style=\"color:blue\">Sub</span>\r\n\r\n<span style=\"color:blue\">Private</span> <span style=\"color:blue\">Sub</span> RestoreHeight()\r\n\t<span style=\"color:blue\">Me</span>.Height = _preserveHeight\r\n<span style=\"color:blue\">End</span> <span style=\"color:blue\">Sub</span>\r\n</pre>\r\n</div>\r\n",
+    "PostedDate": "2011-01-10T10:14:57.347-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "546853",
+    "ThreadId": "240773",
+    "Html": "\r\n<p>Great work Bernhard.</p>\r\n",
+    "PostedDate": "2011-01-10T10:26:26.897-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1054240",
+    "ThreadId": "240773",
+    "Html": "I feel that this fix is a better work around as it doesn't mess with resetting the form size <em>back</em> - it merely ignores the size in the first place. Override WndProc in the form(s) that host the Ribbon control. You'll need a boolean field on the form and some native methods and consts, but you can fill in the blanks.<br />\n<pre><code>    [SecuritySafeCritical]\n    protected override void WndProc( ref Message m )\n    {\n        switch ( m.Msg )\n        {\n        case NativeMethods.WM_WINDOWPOSCHANGING:\n            Utils.NativeMethods.WINDOWPOS windowPos = \n                    ( Utils.NativeMethods.WINDOWPOS ) m.GetLParam( typeof( Utils.NativeMethods.WINDOWPOS ) );\n\n            if ( this.WindowState == FormWindowState.Minimized )\n            {\n                this._processNextWmPosChanging = true;\n                break;\n            }\n\n            if ( this._processNextWmPosChanging )\n            {\n                this._processNextWmPosChanging = false;\n\n                m.Result = IntPtr.Zero;\n                windowPos.flags |= 0x1; /* SWP_NOSIZE */\n                Marshal.StructureToPtr( windowPos, m.LParam, false );\n            }\n            break;\n\n        default:\n            base.WndProc( ref m );\n            break;\n    }</code></pre>\n\n",
+    "PostedDate": "2013-06-07T21:36:03.963-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

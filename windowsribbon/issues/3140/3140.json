@@ -1,0 +1,76 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "I think I&#39;ve solved it. Added a call to vcvars32.bat before calling link.exethis sets some required environment variables.Try latest source.",
+    "ClosedDate": "2009-11-19T16:18:12.353-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Here is the output from Visual Studio.\n \nAny ideas why it fails?",
+    "LastUpdatedDate": "2013-05-16T03:57:06.413-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "windowsribbon",
+    "ReportedDate": "2009-11-19T15:28:48.163-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Can't compile latest source",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 3140
+  },
+  "FileAttachments": [
+    {
+      "FileId": 1090,
+      "FileName": "Output-Build.txt",
+      "DownloadUrl": ".\\1090"
+    }
+  ],
+  "Comments": [
+    {
+      "Message": "Please try to run the the prebuild events of one of the samples (say 12-FontControl) from the command line.\r\nIt seems that the 3rd prebuild command, link.exe, has an error. \r\nWhen running from command line link.exe usually prints a more informative message on the error.\r\nKeep me updated.",
+      "PostedDate": "2009-11-19T16:06:22.74-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-11-19T16:18:12.353-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Hi arik,\r\n\r\nit works fine now.\r\n\r\nthanks for the fix.",
+      "PostedDate": "2009-11-20T04:44:17.627-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Actually, while adding my last sample I noticed it didn't work as expected.\r\nNow it should work.",
+      "PostedDate": "2009-11-22T14:46:22.973-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:15:50.087-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:57:06.413-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

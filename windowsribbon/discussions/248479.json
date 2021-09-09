@@ -1,0 +1,90 @@
+[
+  {
+    "Id": "575663",
+    "ThreadId": "248479",
+    "Html": "\r\n<p>Hi all,</p>\r\n<p>im getting these two errors</p>\r\n<p>Error<span> </span>1<span> </span>Custom tool error: Generation failed. Error: rc.exe failed to generate binary .res file!<span>\r\n</span>\\\\domain.local\\share\\Web Server\\Application\\App\\App1\\RibbonGen.xml<span> </span>\r\n1<span> </span>1<span> </span>App1<br>\r\nError<span> </span>2<span> </span>Error reading resource file \\\\domain.local\\share\\Web Server\\Application\\App\\App1\\RibbonGen.ribbon' -- 'The system cannot find the file specified. '<span>\r\n</span>App1</p>\r\n<p>and the ribbonGen.ribbon file has triangle exclamation on it, but the file is there if i browse to directory :S</p>\r\n<p>when i first created the file it generated fine, but o copied and pasted some xml from the sample files saved it then the .ribbon file goes caput :S</p>\r\n<p>any ideas?<br>\r\nis it becuase my project is on a share?</p>\r\n<p>Thanks&nbsp;</p>\r\n",
+    "PostedDate": "2011-03-04T09:31:25.567-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "915951",
+    "ThreadId": "248479",
+    "Html": "<p>Make sure to call the Ribbon's xml definition file \"RibbonMarkup.xml\" (don't forget to correct the ResourceName property after renaming your existing file). It looks like the RibbonGenerator tool is looking hard coded for a RibbonMarkup.xml, nothing else (\"Ribbon.xml\" for example didn't work for me and caused your errors, and your files name is also different from it with \"RibbonGen\").</p>",
+    "PostedDate": "2012-09-21T14:46:30.137-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050638",
+    "ThreadId": "248479",
+    "Html": "Hi Everyone,\r<br />\n<br />\nSorry to bring this post back from the dead, but it seems I am having the same issue. When I remove certain sections of the code I made, the RibbonMarkup..ribbon file starts working again, but if i have my full XML code in the file, the .ribbon file does not get generated. I am running Visual Studio 2010 Ultimate on Windows 8 Pro x64. Please Help! I have re installed the generator 6 times and nothing has helped. If you want my full XML code, I can post it. As said before, I used code from the samples. I did not directly copy and paste the code though, I printed the code out and typed it in. Please Help!!<br />\n",
+    "PostedDate": "2013-05-30T07:24:07.94-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050754",
+    "ThreadId": "248479",
+    "Html": "Are you sure the XML code which you add back does not have any errors? That was always freaking me out, a very tiny error causing the generator to fail at creating the RibbonMarkup. Also make sure you do not reuse same IDs or do some other logical errors in the (complex!) ribbon XML.\r<br />\nYou can post it, maybe I can review it, even though I didn't work with the Ribbon since September :-)<br />\n",
+    "PostedDate": "2013-05-30T10:29:00.687-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050768",
+    "ThreadId": "248479",
+    "Html": "Hi PacMani,\r<br />\n<br />\nI have since resolved any errors occurring with the Application Menu Area, but any issue(s) still persist in the Ribbon Tabs area/section. In the application menu, it just ended up being a control that was incompatible with its parent container. I am assuming it is the same for the Ribbon Tabs area, but I have yet to find where it is happening. If it is not too much trouble for you to review my &lt;Ribbon.Tabs&gt; area, that would be great. As previously stated though, I have resolved issues within the application menu region. My code is given in whole below.<br />\n<pre><code>&lt;?xml version='1.0' encoding='utf-8'?&gt;\n&lt;Application xmlns='http://schemas.microsoft.com/windows/2009/Ribbon'&gt;\n  &lt;Application.Commands&gt;\n&lt;/Application.Commands&gt;\n    &lt;Application.Views&gt;\n    &lt;Ribbon&gt;\n\n      &lt;!--BEGIN SIZE DEFINITIONS--&gt;\n      &lt;Ribbon.SizeDefinitions&gt;\n        &lt;SizeDefinition Name=&quot;ParagraphLayout&quot;&gt;\n          &lt;ControlNameMap&gt;\n            &lt;ControlNameDefinition Name=&quot;button1&quot; /&gt;\n            &lt;ControlNameDefinition Name=&quot;button2&quot; /&gt;\n            &lt;ControlNameDefinition Name=&quot;button3&quot; /&gt;\n            &lt;ControlNameDefinition Name=&quot;button4&quot; /&gt;\n            &lt;ControlNameDefinition Name=&quot;button5&quot; /&gt;\n            &lt;ControlNameDefinition Name=&quot;button6&quot; /&gt;\n            &lt;ControlNameDefinition Name=&quot;button7&quot; /&gt;\n            &lt;ControlNameDefinition Name=&quot;button8&quot; /&gt;\n            &lt;ControlNameDefinition Name=&quot;button9&quot; /&gt;\n          &lt;/ControlNameMap&gt;\n          &lt;GroupSizeDefinition Size=&quot;Large&quot;&gt;\n            &lt;Row&gt;\n              &lt;ControlGroup&gt;\n                &lt;ControlSizeDefinition ControlName=&quot;button1&quot; IsLabelVisible=&quot;false&quot; /&gt;\n                &lt;ControlSizeDefinition ControlName=&quot;button2&quot; IsLabelVisible=&quot;false&quot; /&gt;\n              &lt;/ControlGroup&gt;\n              &lt;ControlGroup&gt;\n                &lt;ControlSizeDefinition ControlName=&quot;button3&quot; IsLabelVisible=&quot;false&quot; /&gt;\n              &lt;/ControlGroup&gt;\n              &lt;ControlGroup&gt;\n                &lt;ControlSizeDefinition ControlName=&quot;button4&quot; IsLabelVisible=&quot;false&quot; /&gt;\n              &lt;/ControlGroup&gt;\n            &lt;/Row&gt;\n            &lt;Row&gt;\n              &lt;ControlGroup&gt;\n                &lt;ControlSizeDefinition ControlName=&quot;button5&quot; IsLabelVisible=&quot;false&quot; /&gt;\n                &lt;ControlSizeDefinition ControlName=&quot;button6&quot; IsLabelVisible=&quot;false&quot; /&gt;\n                &lt;ControlSizeDefinition ControlName=&quot;button7&quot; IsLabelVisible=&quot;false&quot; /&gt;\n                &lt;ControlSizeDefinition ControlName=&quot;button8&quot; IsLabelVisible=&quot;false&quot; /&gt;\n              &lt;/ControlGroup&gt;\n              &lt;ControlGroup&gt;\n                &lt;ControlSizeDefinition ControlName=&quot;button9&quot; IsLabelVisible=&quot;false&quot; /&gt;\n              &lt;/ControlGroup&gt;\n            &lt;/Row&gt;\n          &lt;/GroupSizeDefinition&gt;\n        &lt;/SizeDefinition&gt;\n      &lt;/Ribbon.SizeDefinitions&gt;\n      &lt;!--END SIZE DEFINITIONS--&gt;\n      \n      &lt;!--BEGIN HELP BUTTON DECLARATION--&gt;\n      &lt;Ribbon.HelpButton&gt;\n        &lt;HelpButton CommandName='cmdHelpButton' /&gt;\n      &lt;/Ribbon.HelpButton&gt;\n      &lt;!--END HELP BUTTON DECLARATION--&gt;\n      \n      &lt;!--BEGIN APPLICATION MENU CONTROL DECLARATIONS AND POSITIONING--&gt;\n      &lt;Ribbon.ApplicationMenu&gt;\n        &lt;ApplicationMenu&gt;\n          \n          &lt;MenuGroup CommandName='cmdMenuGroupFile'&gt;\n            &lt;Button CommandName='cmdButtonNew' /&gt;\n            &lt;Button CommandName='cmdButtonOpen' /&gt;\n            &lt;Button CommandName='cmdButtonSave' /&gt;\n            &lt;Button CommandName='cmdButtonSaveAs' /&gt;\n          &lt;/MenuGroup&gt;\n\n          &lt;MenuGroup CommandName='cmdMenuGroupPrinting'&gt;\n            &lt;Button CommandName='cmdButtonPrint' /&gt;\n            &lt;Button CommandName='cmdButtonPrintPreview' /&gt;\n            &lt;SplitButton&gt;\n              &lt;SplitButton.ButtonItem&gt;\n                &lt;Button CommandName='cmdButtonPageSetup' /&gt;\n              &lt;/SplitButton.ButtonItem&gt;\n              &lt;SplitButton.MenuGroups&gt;\n                &lt;MenuGroup Class='MajorItems'&gt;\n                  &lt;Button CommandName='cmdButtonPageSetup2' /&gt;\n                  &lt;ComboBox CommandName=&quot;cmdPageSizeComboBox&quot; IsAutoCompleteEnabled=&quot;true&quot; IsEditable=&quot;false&quot; ResizeType=&quot;VerticalResize&quot; /&gt;\n                  &lt;ComboBox CommandName=&quot;cmdPageOrientationComboBox&quot; IsAutoCompleteEnabled=&quot;true&quot; IsEditable=&quot;false&quot; /&gt;\n                &lt;/MenuGroup&gt;\n              &lt;/SplitButton.MenuGroups&gt;\n            &lt;/SplitButton&gt;\n          &lt;/MenuGroup&gt;\n\n          &lt;MenuGroup CommandName='cmdMenuGroupSocial'&gt;\n            &lt;DropDownButton CommandName='cmdDropDownButtonSocial'&gt;\n              &lt;MenuGroup Class='MajorItems'&gt;\n                &lt;Button CommandName='cmdButtonFacebook' /&gt;\n                &lt;Button CommandName='cmdButtonTwitter' /&gt;\n                &lt;Button CommandName='cmdButtonMySpace' /&gt;\n                &lt;Button CommandName='cmdButtonPintrest' /&gt;\n                &lt;Button CommandName='cmdButtonEmail' /&gt;\n              &lt;/MenuGroup&gt;\n            &lt;/DropDownButton&gt;\n          &lt;/MenuGroup&gt;\n\n          &lt;MenuGroup CommandName='cmdMenuExit'&gt;\n            &lt;Button CommandName='cmdButtonExit' /&gt;\n          &lt;/MenuGroup&gt;\n        &lt;/ApplicationMenu&gt;\n      &lt;/Ribbon.ApplicationMenu&gt;\n      &lt;!--END APPLICATION MENU CONTROL DECLARATIONS AND POSITIONING--&gt;\n      \n      &lt;!--BEGIN RIBBON TABS (WITH CONTROLS) DECLARTION AND POSITIONING--&gt;\n      &lt;Ribbon.Tabs&gt;\n        &lt;Tab CommandName='cmdTabMain'&gt;\n          \n          &lt;Group CommandName=&quot;cmdGroupRichFont&quot; SizeDefinition=&quot;OneFontControl&quot;&gt;\n            &lt;FontControl CommandName=&quot;cmdRichFont&quot; FontType=&quot;RichFont&quot; /&gt;\n          &lt;/Group&gt;\n          \n          &lt;Group CommandName=&quot;cmdGroupParagraphStyle&quot; SizeDefinition=&quot;ParagraphLayout&quot;&gt;\n            &lt;Button CommandName=&quot;cmdDecreaseIndent&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdIncreaseIndent&quot; /&gt;\n            &lt;SplitButton&gt;\n              &lt;Button CommandName=&quot;cmdStartList&quot; /&gt;\n            &lt;/SplitButton&gt;\n            &lt;DropDownButton CommandName=&quot;cmdLineSpacing&quot;&gt;\n              &lt;Button /&gt;\n            &lt;/DropDownButton&gt;\n            &lt;Button CommandName=&quot;cmdAlignLeft&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdAlignCenter&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdAlignRight&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdJustify&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdParagraph&quot; /&gt;\n          &lt;/Group&gt;\n          \n          &lt;Group CommandName=&quot;cmdGroupClipboardTools&quot; SizeDefinition =&quot;ThreeButtons&quot;&gt;\n            &lt;Button CommandName=&quot;cmdButtonCopy&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdButtonCut&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdButtonPaste&quot; /&gt;\n          &lt;/Group&gt;\n          \n          &lt;Group CommandName=&quot;cmdGroupQuickFix&quot; SizeDefinition=&quot;TwoButtons&quot;&gt;\n            &lt;Button CommandName=&quot;cmdButtonUndo&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdButtonRedo&quot; /&gt;\n          &lt;/Group&gt;\n          \n          &lt;Group CommandName=&quot;cmdGroupEvalTools&quot; SizeDefinition=&quot;OneButton&quot;&gt;\n            &lt;Button CommandName=&quot;cmdButtonReportProblem&quot; /&gt;\n          &lt;/Group&gt;\n        &lt;/Tab&gt;\n        \n        &lt;Tab CommandName=&quot;cmdTabInsert&quot;&gt;\n          &lt;Group CommandName=&quot;cmdGroupImageCenter&quot; SizeDefinition=&quot;OneButton&quot;&gt;\n            &lt;Button CommandName=&quot;cmdButtonImportPicture&quot; /&gt;\n          &lt;/Group&gt;\n          \n          &lt;Group CommandName=&quot;cmdGroupDocuments&quot; SizeDefinition=&quot;TwoButtons&quot;&gt;\n            &lt;Button CommandName=&quot;cmdButtonImportWholeDocument&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdButtonImportDocumentText&quot; /&gt;\n          &lt;/Group&gt;\n          \n          &lt;Group CommandName=&quot;cmdGroupEnhancedText&quot; SizeDefinition=&quot;ThreeButtons&quot;&gt;\n            &lt;Button CommandName=&quot;cmdButtonAddHyperlink&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdButtonInsertTime&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdButtonInsertDate&quot; /&gt;\n          &lt;/Group&gt;\n        &lt;/Tab&gt;\n        \n        &lt;Tab CommandName=&quot;cmdTabEdit&quot;&gt;\n          &lt;Group CommandName=&quot;cmdGroupFind&quot;&gt;\n            &lt;ComboBox CommandName=&quot;cmdFindSearchTermComboBox&quot; IsAutoCompleteEnabled=&quot;true&quot; IsEditable=&quot;true&quot; /&gt;\n            &lt;CheckBox CommandName=&quot;cmdCheckBox&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdButtonFind&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdButtonFindNext&quot; /&gt;\n          &lt;/Group&gt;\n          &lt;Group CommandName=&quot;cmdGroupReplace&quot;&gt;\n            &lt;ComboBox CommandName=&quot;cmdReplaceInTermComboBox&quot; IsAutoCompleteEnabled=&quot;true&quot; IsEditable=&quot;true&quot; /&gt;\n            &lt;ComboBox CommandName=&quot;cmdRepalceOutTermComboBox&quot; IsAutoCompleteEnabled=&quot;true&quot; IsEditable=&quot;true&quot; /&gt;\n            &lt;CheckBox CommandName=&quot;cmdCheckBox&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdButtonReplace&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdButtonReplaceAll&quot; /&gt;\n          &lt;/Group&gt;\n          &lt;Group CommandName=&quot;cmdGroupSelect&quot;&gt;\n            &lt;Button CommandName=&quot;cmdButtonSelect&quot; /&gt;\n            &lt;Button CommandName=&quot;cmdButtonSelectAll&quot; /&gt;&quot;\n          &lt;/Group&gt;\n        &lt;/Tab&gt;\n        &lt;Tab CommandName=&quot;cmdTabLayout&quot;&gt;\n          &lt;Group CommandName=&quot;cmdGroupPageDesign&quot;&gt;\n            &lt;DropDownColorPicker CommandName=&quot;cmdDropDownColorPickerStandardColors&quot;\n                                 ColorTemplate=&quot;StandardColors&quot;/&gt;\n            &lt;ToggleButton CommandName=&quot;cmdToggleButtonPageBorder&quot; \n                          ApplicationDefaults.IsChecked=&quot;false&quot;/&gt;\n            \n          &lt;/Group&gt;\n          &lt;Group CommandName=&quot;cmdGroupPageLayout&quot;&gt;\n            &lt;ComboBox CommandName=&quot;cmdPageSizeComboBox2&quot; IsAutoCompleteEnabled=&quot;true&quot; IsEditable=&quot;false&quot; ResizeType=&quot;VerticalResize&quot; /&gt;\n            &lt;ComboBox CommandName=&quot;cmdPageOrientationComboBox2&quot; IsAutoCompleteEnabled=&quot;true&quot; IsEditable=&quot;false&quot; /&gt;\n          &lt;/Group&gt;\n        &lt;/Tab&gt;\n      &lt;/Ribbon.Tabs&gt;\n      &lt;!--END RIBBON TABS (WITH CONTROLS) DECLARTION AND POSITIONING--&gt;\n    &lt;/Ribbon&gt;\n  &lt;/Application.Views&gt;\n&lt;/Application&gt;</code></pre>\n\n",
+    "PostedDate": "2013-05-30T10:58:38.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1050830",
+    "ThreadId": "248479",
+    "Html": "I coudln't find any errors at first sight. I'd recommend removing every group and adding it back one by one and compile between the steps.<br />\n",
+    "PostedDate": "2013-05-30T13:05:03.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1051132",
+    "ThreadId": "248479",
+    "Html": "\r\n<div>Thanks so much for your hell! I took your advice and narrowed the issue down to my edit tab with all the checkboxes and combo boxes and more. Thanks so much PacMani!<br>\r\n<br>\r\n<div>--</div>\r\n<div>Alex Hawk</div>\r\n<div>Sent from my iPhone</div>\r\n</div>\r\n<div><br>\r\n</div>\r\n",
+    "PostedDate": "2013-05-31T04:15:30.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1051253",
+    "ThreadId": "248479",
+    "Html": "No problem. Just because I'm curious, what was the error exactly?<br />\n",
+    "PostedDate": "2013-05-31T08:39:04.04-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1051309",
+    "ThreadId": "248479",
+    "Html": "\r\n<div>It was an error basically stating that uicc.exe could not generate the ribbon file.<br>\r\n<br>\r\n<div>--</div>\r\n<div>Alex Hawk</div>\r\n<div>Sent from my iPhone</div>\r\n<div><br>\r\n</div>\r\n</div>\r\n<div><br>\r\n</div>\r\n",
+    "PostedDate": "2013-05-31T11:14:00.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1051310",
+    "ThreadId": "248479",
+    "Html": "Yeah that's clear :D I thought it was a syntax error in the RibbonMarkup.xml especially<br />\n",
+    "PostedDate": "2013-05-31T11:15:22.7-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1051317",
+    "ThreadId": "248479",
+    "Html": "\r\n<div>Oh no. The XML file and the log file were still there, but the .ribbon file would not generate and that error appeared. I hope this helps other users.\r\n<br>\r\n<br>\r\n<div>--</div>\r\n<div>Alex Hawk</div>\r\n<div>Sent from my iPhone</div>\r\n<div><br>\r\n</div>\r\n</div>\r\n<div><br>\r\n</div>\r\n",
+    "PostedDate": "2013-05-31T11:19:40.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

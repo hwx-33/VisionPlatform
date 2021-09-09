@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "621945",
+    "ThreadId": "259927",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm setting up a ribbon for an application and with the combobox controls I need to have the text area default to something on app startup, as right now they are just blank.</p>\r\n<p>I've tried calling combobox.StringValue = myDefaultString when I handle the RibbonComboBox.ItemsSourceReady event. The value is set correctly when looking via the debugger, but the text area is not updated.</p>\r\n<p>I tried adding a call to _ribbon.Framework.InvalidateUICommand() in StringValuePropertiesProvider.StringValue and that did trigger theUpdateProperty method in the StringValuePropertiesProvider but again nothing was updated.</p>\r\n<p>Am I missing something, or is this a bug in the framework?&nbsp; As I see an example in the Windows Live Movie Maker working and this is kind of a show stopper if I can't get this to work..</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2011-06-02T05:50:10.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "622253",
+    "ThreadId": "259927",
+    "Html": "<p>I've tried the following on the C# <strong>06-ComboBox </strong>sample:</p>\r\n<p>I've added the following line:</p>\r\n<p><span style=\"font-family: Consolas; font-size: x-small;\"><span style=\"font-family: Consolas; font-size: x-small;\"><span style=\"font-family: Consolas; font-size: x-small;\"><span style=\"font-family: Consolas; font-size: x-small;\"><span style=\"font-family: Consolas; font-size: x-small;\">\r\n<p><span style=\"font-family: Consolas; font-size: x-small;\"><span style=\"font-family: Consolas; font-size: x-small;\">\r\n<div style=\"color: black; background-color: white;\">\r\n<pre>_comboBox2.StringValue = <span style=\"color: #a31515;\">\"Label 2\"</span>;\r\n</pre>\r\n</div>\r\n</span></span></p>\r\n</span></span></span></span></span></p>\r\n<p>as the last line of the <span style=\"font-family: Consolas; font-size: x-small;\"><span style=\"font-family: Consolas; font-size: x-small;\"><strong>_comboBox2_ItemsSourceReady </strong>method, and it worked.</span></span></p>\r\n<p><span style=\"font-family: Consolas; font-size: x-small;\"><span style=\"font-family: Consolas; font-size: x-small;\">&nbsp;</span></span></p>",
+    "PostedDate": "2011-06-02T15:32:15.047-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "622275",
+    "ThreadId": "259927",
+    "Html": "<p>Yes, that one worked too, but it doesn't work for _comboBox1 and _comboBox3.</p>\r\n<p>Do you see it work or not work when you do the same for the other two combo boxes?</p>\r\n<p>And yet, that doesn't work for me in my application... :\\</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2011-06-02T17:21:44.52-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "622278",
+    "ThreadId": "259927",
+    "Html": "<p>The other two ComboBox have set IsEditable=\"false\", I guess this is the difference.</p>\r\n<p>You can also try to set the SelectedItem (index) of the relevant element, if such exists.</p>",
+    "PostedDate": "2011-06-02T17:49:33.997-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "622280",
+    "ThreadId": "259927",
+    "Html": "<p>Ugh, I figured it out.&nbsp; You have to have IsEditable=\"true\" I had them off because I would prefer the user to not type in them, as input isn't valid for the majority of the items..</p>",
+    "PostedDate": "2011-06-02T17:55:25.343-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "622281",
+    "ThreadId": "259927",
+    "Html": "<p>Ah, I didn't refresh the page in between my replies.&nbsp; I'll try the SelectedItem method too.</p>\r\n<p>Thanks! :)</p>",
+    "PostedDate": "2011-06-02T17:56:08.083-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "622286",
+    "ThreadId": "259927",
+    "Html": "<p>Setting the SelectedItem property works great too, after trapping my method to add items &amp; set the index so it doesn't call its self over and over after setting the index. :)</p>\r\n<p>Thanks again!</p>",
+    "PostedDate": "2011-06-02T18:26:59.2-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

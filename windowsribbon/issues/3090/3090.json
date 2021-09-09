@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Done.",
+    "ClosedDate": "2009-11-15T09:57:54.05-08:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "If you run an application which used the ribbon on a system which doesn't have the COM objects, it crashes with the following exception:\n \nSystem.Runtime.InteropServices.COMException (0x80040154): Die COM-Klassenfactory für die Komponente mit CLSID {926749FA-2615-4987-8845-C33E65F2B957} konnte aufgrund des folgenden Fehlers nicht abgerufen werden: 80040154.\n   bei RibbonLib.Ribbon.CreateRibbonFramework()\n \nCould you handle this? Wrap it and throw a new PlatformNotSupported- Exception with a message, that the ribbon is not available.",
+    "LastUpdatedDate": "2013-05-16T03:57:07.037-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "windowsribbon",
+    "ReportedDate": "2009-11-12T04:07:29.593-08:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Error Handling if Ribbon is not available (COMException (0x80040154))",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 3090
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

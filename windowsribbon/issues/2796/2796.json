@@ -1,0 +1,90 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "added missing CommonCOMInterfaces.cs",
+    "ClosedDate": "2009-10-21T12:50:37.51-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \nwhen I try to compile the sourcecode I'm always getting the message, that the .res file can't be found under H:\\Documents\\Projects\\Ribbon..\n \nMy only chance to get the code to compile is to excatly create the folder structure under drive H:.\n \nDo you know why?\n \nI'm using Windows 7 Ultimate x86 german + VS2008Sp1 + Win7SDK.",
+    "LastUpdatedDate": "2013-05-16T03:57:07.62-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "windowsribbon",
+    "ReportedDate": "2009-10-13T05:41:59.207-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Can't compile the sourcecode",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2796
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "In the application project settings, under Application tab, you can set the .res file location (which is the output of compiling the ribbon markup).\r\nYou can change it from a full path to just \"RibbonMarkup.res\". Note that when you try to save this setting, visual studio WILL complain that it can't find the file, but if you close the settings window and compile it will find it (under the project directory).\r\n\r\nOn my next update of the files, this issue is already resolved.",
+      "PostedDate": "2009-10-17T09:07:19.853-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-17T14:30:57.04-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "thanks arik, it works now fine :)",
+      "PostedDate": "2009-10-19T15:34:37.107-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "After the update to revision 33220 I can't compile the source code.\r\n\r\nThe CommonCOMInterfaces.cs is missing.",
+      "PostedDate": "2009-10-21T09:03:12.763-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Project settings now doesn't specify the full path.\r\n\r\n\n\n** Closed by arik 10/17/2009 2:30 PM",
+      "PostedDate": "2009-10-21T09:04:00.917-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "CommonCOMInterfaces.cs is missing",
+      "PostedDate": "2009-10-21T09:04:01.323-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-21T12:50:37.51-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "ok, works now fine :)",
+      "PostedDate": "2009-10-21T15:52:55.73-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:15:51.35-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:57:07.62-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

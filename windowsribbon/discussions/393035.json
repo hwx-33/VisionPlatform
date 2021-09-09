@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "903936",
+    "ThreadId": "393035",
+    "Html": "\r\n<p>Hi</p>\r\n<p>I'm a novice trying to learn (at the age of 65) how to build some home-use applications with Visual Basic Express 10.</p>\r\n<p>How can I incorporate the Ribbon in my projects?</p>\r\n<p>Thanks</p>\r\n<p>Jo&atilde;o</p>\r\n<p>joao.matoso@gmail.com</p>\r\n<p>joaomatoso@hotmail.com</p>\r\n",
+    "PostedDate": "2012-08-25T03:36:50.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "903943",
+    "ThreadId": "393035",
+    "Html": "<p>&nbsp;</p>\r\n<p>Warning<span> </span>1<span> </span>The referenced component 'Ribbon' could not be found. <span> </span>Error<span> </span>2<span> </span>Type 'RibbonLib.Ribbon' is not defined.<span> </span>C:\\Documents and Settings\\ines\\Os meus documentos\\Downloads\\windowsribbon-63156\\Samples\\VB\\01-AddingRibbonSupport\\Form1.Designer.vb<span> </span>26<span> </span>30<span> </span>01-AddingRibbonSupportError<span> </span>3<span> </span>Type 'RibbonLib.Ribbon' is not defined.<span> </span>C:\\Documents and Settings\\ines\\Os meus documentos\\Downloads\\windowsribbon-63156\\Samples\\VB\\01-AddingRibbonSupport\\Form1.Designer.vb<span> </span>51<span> </span>22<span> </span>01-AddingRibbonSupportWarning<span> </span>4<span> </span>Namespace or type specified in the Imports 'RibbonLib' doesn't contain any public member or cannot be found. Make sure the namespace or the type is defined and contains at least one public member. Make sure the imported element name doesn't use any aliases.<span> </span>C:\\Documents and Settings\\ines\\Os meus documentos\\Downloads\\windowsribbon-63156\\Samples\\VB\\01-AddingRibbonSupport\\Form1.vb<span> </span>1<span> </span>9<span> </span>01-AddingRibbonSupport</p>",
+    "PostedDate": "2012-08-25T03:56:55.79-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

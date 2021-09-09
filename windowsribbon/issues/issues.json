@@ -1,0 +1,46 @@
+[
+  {
+    "Id": 2796,
+    "Title": "Can't compile the sourcecode"
+  },
+  {
+    "Id": 2797,
+    "Title": "Create a new file for each class, Interface"
+  },
+  {
+    "Id": 2798,
+    "Title": "Include the precompiled WindowsAPICodePack DLL into version control"
+  },
+  {
+    "Id": 2799,
+    "Title": "Remove some files from source version"
+  },
+  {
+    "Id": 3090,
+    "Title": "Error Handling if Ribbon is not available (COMException (0x80040154))"
+  },
+  {
+    "Id": 3140,
+    "Title": "Can't compile latest source"
+  },
+  {
+    "Id": 3710,
+    "Title": "Not working on Win XP SP3 which is a supported platform"
+  },
+  {
+    "Id": 4660,
+    "Title": "LINK : fatal error LNK1181: cannot open input file '...\\Ribbon\\Samples\\CS\\01-AddingRibbonSupport\\RibbonMarkup.res'"
+  },
+  {
+    "Id": 5151,
+    "Title": "Standard event handling"
+  },
+  {
+    "Id": 5424,
+    "Title": "Minimize/Normalize form with ribbon"
+  },
+  {
+    "Id": 6585,
+    "Title": "Spinner.DecimalValue broken in changeset 63156"
+  }
+]

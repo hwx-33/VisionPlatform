@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1017072",
+    "ThreadId": "437056",
+    "Html": "Hi,\r<br />\nI am trying to insert an Image with a combo box like this sample of the MSDN Ribbon Framework.\r<br />\n<br />\n<img src=\"http://i.msdn.microsoft.com/dynimg/IC510558.png\" alt=\"Image\" />\r<br />\n<br />\nHere my code:<br />\n<pre><code>Dim bitmap As Bitmap = New System.Drawing.Bitmap(&quot;C:\\Users\\thomas\\Res\\FillWithBlack.bmp&quot;)\n            bitmap.MakeTransparent()\n_comboBoxFill.Label = Msg.ComboBoxFill_LabelTitle\n            _comboBoxFill.SmallImage = _ribbon.ConvertToUIImage(bitmap)</code></pre>\n\nThe Label is shown but the bitmap not.\r<br />\nI tried with a lot of bitmaps including some used for other ribbon commands, no of them are shown.\r<br />\nAnybody can show a bitmap like the sample of MSDN?\r<br />\n<br />\nThanks\r<br />\n<br />\nThomas<br />\n",
+    "PostedDate": "2013-03-18T07:34:48.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "810339",
+    "ThreadId": "348598",
+    "Html": "<p>Is it possible to select a gallery item programmatically? I have a RibbonSplitButtonGallery which I populate with GalleryItemPropertySet objects&nbsp;using its&nbsp;ItemsSource property. When clicking on an item, the SelectedItem property gives me the correct 0-based item index, but assigning  a value to&nbsp;SelectedItem seems to have no effect.</p>",
+    "PostedDate": "2012-03-14T10:00:53.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "810915",
+    "ThreadId": "348598",
+    "Html": "<p>Never mind. It works fine. The problem was me trying to assign a value to SelectedItem inside the RibbonSplitButtonGallery's ExecuteEvent when fired due to a change to SelectedItem. Apparently that's not possible.</p>",
+    "PostedDate": "2012-03-15T08:45:14.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

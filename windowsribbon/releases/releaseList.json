@@ -1,0 +1,33 @@
+[
+  {
+    "Id": "0",
+    "Name": "RibbonLib",
+    "DevelopmentStatus": "Stable",
+    "Description": "*RibbonLib, version 2.6*\nA .NET library for using Windows Ribbon in WinForms applications\nNote: you must have the [url:Windows 7 SDK|http://www.microsoft.com/downloads/details.aspx?familyid=71DEB800-C591-4F97-A900-BEA146E4FAE1&displaylang=en] installed in order to compile the project.\n\nC# and Vb.NET Sample applications included:\n* *01 - AddingRibbonSupport* - Empty WinForms application with basic Ribbon support.\n* *02 - ApplicationMenuButton* - WinForms application with Ribbon that contains an application menu with some buttons.\n* *03 - MenuDropDown* - WinForms application with DropDownButton and SplitButton inside an application menu.\n* *04 - TabGroupHelp* - WinForms application that uses Tabs, Groups and HelpButton.\n* *05 - Spinner* - WinForms application that demonstrates the use of a Spinner control in the ribbon.\n* *06 - ComboBox* - WinForms application that demonstrates the use of a CombBox control in the ribbon.\n* *07 - RibbonColor* - WinForms application that shows how to change the ribbon global colors.\n* *08 - Images* - WinForms application that shows how to work set images dynamically in the ribbon.\n* *09 - Galleries* - WinForms application thats uses DropDownGallery, SplitButtonGallery and InRibbonGallery.\n* *10 - CheckBox* - WinForms application that uses CheckBox and ToggleButton control in the ribbon.\n* *11 - DropDownColorPicker* - WinForms application that demonstrates the use of a DropDownColorPicker control in the ribbon.\n* *12 - FontControl* - WinForms application that demonstrates the use of a FontControl control in the ribbon.\n* *13 - ApplicationModes* - WinForms application that demonstrates the use of ApplicationModes.\n* *14 - ContextualTabs* - WinForms application that demonstrates the use of ContextualTabs.\n* *15 - ContextPopup* - WinForms application that demonstrates the use of ribbon context popups.\n* *16 - RecentItems* - WinForms application that demonstrates the use of ribbon recent items.\n* *17 - QuickAccessToolbar* WinForms application that demonstrates the use of quick access toolbar.\n* *18 - SizeDefinition* WinForms application that demonstrates the use of custom layout templates.\n* *19 - Localization* WinForms application that demonstrates how to localize your ribbon.\n\n*convert2bmp* is a small utility application that converts images to 32bit BMPs.\n\n*PropVariant.cs* is a managed wrapper for PROPVARIANT struct. It is based on Windows API Code Pack v1.0 and PreviewRibbon versions. It includes proper support for both decimal values and vectors.",
+    "ReleasedDatge": "0001-01-01T00:00:00",
+    "ModifiedDate": "2010-11-07T16:48:12.697-08:00",
+    "Files": [
+      {
+        "Id": "1456495b-be48-4d3e-abe9-9d7af2465873",
+        "FileName": "RibbonLib_v2.6.zip",
+        "Url": "./0/1456495b-be48-4d3e-abe9-9d7af2465873",
+        "Type": "Source Code",
+        "UploadDate": "2010-11-07T16:48:10.4-08:00"
+      },
+      {
+        "Id": "09134520-a0aa-42fc-8ad9-9c1cde0d9c3c",
+        "FileName": "convert2bmp.exe",
+        "Url": "./0/09134520-a0aa-42fc-8ad9-9c1cde0d9c3c",
+        "Type": "Application",
+        "UploadDate": "2009-10-01T15:33:27.163-07:00"
+      },
+      {
+        "Id": "d6ee6d6d-2b9b-447d-b07e-89e090c0d0c0",
+        "FileName": "PropVariant.cs",
+        "Url": "./0/d6ee6d6d-2b9b-447d-b07e-89e090c0d0c0",
+        "Type": "Source Code",
+        "UploadDate": "2009-11-10T15:53:25.293-08:00"
+      }
+    ]
+  }
+]

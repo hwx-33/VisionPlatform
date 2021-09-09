@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "565114",
+    "ThreadId": "245750",
+    "Html": "\r\n<p>My OS is Windows 7 Home Premium, I have the Windows 7 SDK, and I'm using Visual Studio Professional. However, whenever I add the Ribbon to my form, I only get&nbsp;a white box with a line down the middle and a line across the middle. Whenever I try to compile\r\n the project, there is just a white space where the ribbon should be. I copied the XML file from one of the examples, but nothing has changed. Then I tried copying the Program.vb file. Again, no change. Any help?</p>\r\n",
+    "PostedDate": "2011-02-12T06:16:51.557-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "565743",
+    "ThreadId": "245750",
+    "Html": "During design time there is only a place holder. The ribbon will be shown<br>\r\nonly during runtime. So everything seems to be normal.",
+    "PostedDate": "2011-02-14T02:08:27.897-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "567999",
+    "ThreadId": "245750",
+    "Html": "<p>Oh, sorry! I always forget to read the documentation... Thank you!</p>",
+    "PostedDate": "2011-02-17T09:43:15.243-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

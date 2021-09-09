@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "723107",
+    "ThreadId": "285635",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>currently i'm experiencing some strange problems with your ribbon control:</p>\r\n<p>i can't press any buttons! All buttons are enabled but i cant press them, ribbon is not responding at all (click/mouse over). It is very &quot;floating&quot; problem because this problem can disappear on the next applicatio start or maybe not.</p>\r\n<p>I've spent a lot of time by trying to find problem, but no results...</p>\r\n<p>Any ideas?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks in advance!</p>\r\n",
+    "PostedDate": "2012-01-10T06:32:03.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "818400",
+    "ThreadId": "285635",
+    "Html": "<p>More details - ribbon is unavailable only when application window is created as inactive. If i'm already have any active window in my system when my application starts - everything works great, otherwise ribbon doesnt work. Any ideas?</p>",
+    "PostedDate": "2012-04-01T08:50:53.793-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1488149",
+    "ThreadId": "285635",
+    "Html": "I get the same problem when I change the container form RTL at runtime.<br />\n",
+    "PostedDate": "2016-11-16T23:08:09.677-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

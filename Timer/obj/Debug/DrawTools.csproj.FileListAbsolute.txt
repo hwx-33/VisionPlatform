@@ -1,0 +1,8 @@
+D:\code\VisionPlatform\Timer\bin\Debug\Timer.dll
+D:\code\VisionPlatform\Timer\bin\Debug\Timer.pdb
+D:\code\VisionPlatform\Timer\obj\Debug\DrawTools.csprojAssemblyReference.cache
+D:\code\VisionPlatform\Timer\obj\Debug\Timer.DrawTools.resources
+D:\code\VisionPlatform\Timer\obj\Debug\DrawTools.csproj.GenerateResource.cache
+D:\code\VisionPlatform\Timer\obj\Debug\DrawTools.csproj.CoreCompileInputs.cache
+D:\code\VisionPlatform\Timer\obj\Debug\Timer.dll
+D:\code\VisionPlatform\Timer\obj\Debug\Timer.pdb

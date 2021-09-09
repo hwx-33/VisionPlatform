@@ -1,0 +1,42 @@
+[
+  {
+    "Id": "427969",
+    "ThreadId": "208471",
+    "Html": "<p>Hello, I've VS2010 and i've downloaded Ribbon from here. When i try debug and compile your project or another Ribbon's project designed by me, i see an error message. You can see the error message in <a href=\"http://picasaweb.google.com/lh/photo/GTzGjFqF7jvQWUkOuldLCQ?authkey=Gv1sRgCK6g68Lq5IeJUw&feat=directlink\">http://picasaweb.google.com/lh/photo/GTzGjFqF7jvQWUkOuldLCQ?authkey=Gv1sRgCK6g68Lq5IeJUw&amp;feat=directlink</a>&nbsp;. I have also Windows 7 SDK and I try reinstall SDK but the problem continues. I never had this problem.</p>\r\n<p>Bye</p>",
+    "PostedDate": "2010-04-06T11:20:55.217-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "428249",
+    "ThreadId": "208471",
+    "Html": "<p>I'm not familiar with this error.</p>\r\n<p>If you have a 64bit windows, check out this&nbsp;discussion: <a href=\"http://windowsribbon.codeplex.com/Thread/View.aspx?ThreadId=77456\">http://windowsribbon.codeplex.com/Thread/View.aspx?ThreadId=77456</a></p>\r\n<p>Also since you work on VS2010, maybe some folders are not where I expect them to be, check the pre-build events and make sure all the EXEs I use&nbsp;(UICC, RC, LINK) are available in the given locations.</p>",
+    "PostedDate": "2010-04-07T04:36:54.597-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "428376",
+    "ThreadId": "208471",
+    "Html": "<p>I cheked it, and the EXEs that you use are availables in given locations, but problem continues. <strong>I have a 32bit Windows.</strong></p>",
+    "PostedDate": "2010-04-07T09:48:15.163-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "428411",
+    "ThreadId": "208471",
+    "Html": "<p>I see now that the pre build commands also return errors.</p>\r\n<p>I suggest you open a visual studio command line (the one with all the environment variables set)<br>and run the pre build steps manually. It usually offers more error information to the screen.<br>Maybe if we understand what the problem with the prebuild steps we will figure out the other problem.</p>",
+    "PostedDate": "2010-04-07T11:05:45.497-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "428487",
+    "ThreadId": "208471",
+    "Html": "<p>I solve my problem, repairing Visual Studio</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2010-04-07T12:59:21.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

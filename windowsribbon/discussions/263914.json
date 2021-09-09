@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "637358",
+    "ThreadId": "263914",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm using Visual C# 2010 Express. I have the Windows 7 SDK and C&#43;&#43; Express installed. When I used an older version (no Ribbon Generator then) everything worked fine.</p>\r\n<p>Now, when I try to compile the RibbonGenerator I get a some errors:<br>\r\n<br>\r\n</p>\r\n<ul>\r\n<li>Type- or Namespace &quot;Service Provider&quot; cannot be found. </li><li>VsShellUtilities is not available in the current context. </li><li>Microsoft.VisualStudio.Shell cannot be found </li></ul>\r\n<p>...and some more. I don't know the exakt error messages, I translated them from German.</p>\r\n<p>So has anybody an idea what went wrong?</p>\r\n<p>Best regard,</p>\r\n<p>Mark</p>\r\n",
+    "PostedDate": "2011-07-05T02:10:20.557-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "637437",
+    "ThreadId": "263914",
+    "Html": "\r\n<div>\r\n<p><span lang=\"EN-US\" style=\"font-size:9.0pt; font-family:\">Hi,</span></p>\r\n<p><span lang=\"EN-US\" style=\"font-size:9.0pt; font-family:\">it seems that in RibbonGenerator project the Microsoft.VisualStudio.Shell.dll is not referenced correctly. Please have a look at your Solution Explorer for project references.</span></p>\r\n<p><span lang=\"EN-US\" style=\"font-size:9.0pt; font-family:\"></span></p>\r\n<p><span lang=\"EN-US\" style=\"font-size:9.0pt; font-family:\">Best regards,</span></p>\r\n<p><span lang=\"EN-US\" style=\"font-size:9.0pt; font-family:\">Bernhard</span></p>\r\n</div>\r\n",
+    "PostedDate": "2011-07-05T05:18:22.14-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "679867",
+    "ThreadId": "274733",
+    "Html": "<p>Hi guys</p>\n<p>its a wonderfull ribbon I've ever seen, I've a question, Does it work in 32 bit OS? I could not run it in windows Xp! does it work only in windows 7?</p>\n<p>how can I run it in windows xp?</p>\n<p>&nbsp;</p>\n<p>and another question: does it work in windows 7 32bit?</p>\n<p>best regards..</p>",
+    "PostedDate": "2011-10-04T08:59:09.533-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "680072",
+    "ThreadId": "274733",
+    "Html": "<div>\n<p><span style=\"font-size: 10.0pt;\">No, the ribbon only works with Windows 7 and Windows Vista with the platform update.</span></p>\n<p><span style=\"font-size: 10.0pt;\">It should work in both 32-bit and 64-bit environments.<br /></span></p>\n</div>",
+    "PostedDate": "2011-10-04T17:15:58.853-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

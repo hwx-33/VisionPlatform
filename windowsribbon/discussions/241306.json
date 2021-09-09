@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "547302",
+    "ThreadId": "241306",
+    "Html": "\r\n<p>After calling the <strong>Hide</strong> method, the ribbon remains visible and functional, and the ClientSize extends to the top of the window border.</p>\r\n<p>So, when I dock a Panel or SplitContainer (or any control for that matter)&nbsp;below the ribbon and then call, for example&nbsp;<strong>Ribbon1.Hide()</strong>, the container or control that was docked extends underneath the ribbon to the top of the window\r\n border with the Ribbon sitting on top of it.</p>\r\n<p>Any workaround or suggestions would be appreciated.</p>\r\n<p>Thanks again.</p>\r\n",
+    "PostedDate": "2011-01-11T07:14:31.793-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "548137",
+    "ThreadId": "241306",
+    "Html": "\r\n<p>I confirm that this is a bug in Ribbon class (Version 2.6)</p>\r\n<p>Hide method is the same as Visible = false</p>\r\n<p>Workaround:</p>\r\n<p>&nbsp;</p>\r\n<pre>ribbon.Visible = false;\r\n\r\nribbon.Viewable = false;</pre>\r\n<p>&nbsp;</p>\r\n<p>You can also download the latest Ribbon.cs here in Source Code tab. It contains two fixes: Visible property and Maximize/Minimize workaround.</p>\r\n",
+    "PostedDate": "2011-01-12T10:01:48.633-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "548417",
+    "ThreadId": "241306",
+    "Html": "\r\n<p>Thanks, Bernhard.&nbsp; Here are my results.</p>\r\n<p><br>\r\nUsing <strong>ribbon.Visible = false </strong>worked in terms of making the ribbon not visible, but the top of whichever container/control is docked below the ribbon still extends to the top of the form border.&nbsp; So, if I put a Button control at the top\r\n of a panel and then set the dockStyle of the panel to fill, after calling ribbon.Visible = false the Panel seems to fall out of the client area and the Button within the Panel gets hidden underneath the top of the form border.</p>\r\n<p>Using <strong>ribbon.Viewable = false </strong>seemed to produce the expected result.&nbsp; After calling ribbon.Viewable = false with a Panel docked below the ribbon with its dockStyle set to Fill, the ribbon disappeared and the Panel remained inside the\r\n client area and all child controls of the panel remained completely visible.&nbsp;\r\n<span style=\"color:#ff0000\"><strong>Problem solved.&nbsp; </strong></span><strong><em>so it seemed...</em></strong></p>\r\n<p><br>\r\nSo, it seemed my problem was solved with <strong>ribbon.Viewable</strong>.&nbsp; However, I thought I would try the updated Ribbon.cs (<strong>windowsribbon-56090</strong>), and now&hellip;</p>\r\n<p><strong>ribbon.hide </strong><span style=\"text-decoration:underline\">produces the same result as ribbon.visible</span>, which is any docked container or control below the ribbon falls out of the client area underneath the top of the form border.</p>\r\n<p><strong>ribbon.visible = false </strong><span style=\"text-decoration:underline\">has the same result (no change)</span>, which is any docked container or control below the ribbon falls out of the client area underneath the top of the form border.</p>\r\n<p><strong>ribbon.viewable = false</strong> <span style=\"text-decoration:underline\">\r\nseems to no longer exist</span>.&nbsp; In fact, when I try building sample application #15 (ContextPopup), it fails in the form load event when &ldquo;_ribbon.Viewable = False&rdquo; is called.&nbsp; It says &ldquo;<span style=\"color:#ff0000\">&lsquo;Viewable&rsquo;\r\n is not a member of RibbonLib.Ribbon</span>&rdquo;.</p>\r\n<p><br>\r\nNow I&rsquo;m concerned.&nbsp; ribbon.Viewable = false was the only thing that worked, but now with the updated source code, it doesn&rsquo;t work&hellip;</p>\r\n<p><br>\r\nBy the way, the workaround for the minimizing/maximizing problem seems to be fine in the new source code.&nbsp; Thanks again.</p>\r\n",
+    "PostedDate": "2011-01-12T19:43:34.36-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "548469",
+    "ThreadId": "241306",
+    "Html": "\r\n<p>I was able to reproduce the behaviour from above and revert the changes to Visible and Viewable property to its previous state. To make Visible property work as expected it would be necessarry to override it, but this is not possible.</p>\r\n<p>Solution now:</p>\r\n<p>- Use Viewable property</p>\r\n",
+    "PostedDate": "2011-01-12T22:47:23.51-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

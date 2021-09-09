@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "460309",
+    "ThreadId": "217460",
+    "Html": "<p>How to invoke a tab.onClick event?</p>\r\n<p>I am working on a prototype that needs to change the content view while switching tabs. Is it possible with the Ribbon Framework?</p>\r\n<p>Thanks!</p>",
+    "PostedDate": "2010-06-26T22:40:13.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460819",
+    "ThreadId": "217460",
+    "Html": "<p>Sorry, you can't.</p>\r\n<p>The Windows Ribbon Framework doesn't support this feature, hence neither my wrapper.</p>",
+    "PostedDate": "2010-06-28T13:14:22.347-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

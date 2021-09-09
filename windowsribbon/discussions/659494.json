@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1488146",
+    "ThreadId": "659494",
+    "Html": "I am making a multilanguage project in which user can change language at runtime without closing the form, but I have two problems:<br />\n<ol>\n<li>Ribbon buttons labels not change languge automaticaly.</li>\n<li>\nChanging ribbone container form RightToLeft property crashing the ribbon giving exception (try to write to a protectd memory).\r<br />\nWhat is wrong????<br />\n</li>\n</ol>\n",
+    "PostedDate": "2016-11-16T22:06:25.297-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

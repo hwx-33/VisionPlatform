@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1015337",
+    "ThreadId": "436649",
+    "Html": "Hello Everybody,\r<br />\n<br />\nCan i use this control in VS2010 winforms?\r<br />\n<br />\nCan i deploy application on Windows XP machine?<br />\n",
+    "PostedDate": "2013-03-14T08:25:49.897-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1015876",
+    "ThreadId": "436649",
+    "Html": "You are able to use this control in VS2010 winforms, but you cannot support this control on Windows XP(You must &quot;activate&quot; this ribbon control ONLY on Windows Vista Platform Update 1, Windows 7 and Windows 8.<br />\n",
+    "PostedDate": "2013-03-15T05:31:58.057-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

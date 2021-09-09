@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1010582",
+    "ThreadId": "435435",
+    "Html": "I know the whole purpose of the Ribbon menu is not aiming at supporting MDI applications.\r<br />\n<br />\nbut if I want to use something like dockpanelsuite style forms/pages to add in or close new doc frequently, is there any alternative? the dockpanelsuite has to be in MDI mode which doesn't really work with this Ribbon, is it true?\r<br />\n<br />\nor is there a way that this Ribbon can work in MDI application? \r<br />\n<br />\nCheers<br />\n",
+    "PostedDate": "2013-03-05T06:35:20.513-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "535443",
+    "ThreadId": "238293",
+    "Html": "\r\n<p>Does the Windows Ribbon control support change at runtime? I need my ribbons to be customizable like an Office application, but I can access the collections.</p>\r\n",
+    "PostedDate": "2010-12-14T02:33:13.343-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "535451",
+    "ThreadId": "238293",
+    "Html": "\r\n<p>The Ribbon for WinForms project is a managed wrapper around Microsoft Windows Ribbon Framework (first introduced in Windows 7 and now available also in Vista).</p>\r\n<p>As such, it has the same limitation as the wrapee. Specifically, dynamic changes at run-time are quite limited.</p>\r\n<p>What you can do is:</p>\r\n<p>1. Use application modes, which allows you to set several modes in the application, where each mode has a different set of tabs/groups/buttons.<br>\r\nNote that you can change the UI at runtime but only to predefined UI.<br>\r\nCheck <a href=\"http://blogs.microsoft.co.il/blogs/arik/archive/2009/11/23/windows-ribbon-for-winforms-part-16-applicationmodes.aspx\">\r\nthis </a>post for more information on application modes.</p>\r\n<p>&#65279;2. Use contextual tabs, which are additonal tabs that appear when you set a &quot;context&quot;.<br>\r\nAgain, allows changing at runtime, but should be predefined.<br>\r\nCheck <a href=\"http://blogs.microsoft.co.il/blogs/arik/archive/2009/11/23/windows-ribbon-for-winforms-part-17-contextualtabs.aspx\">\r\nthis </a>post for more information on contextual tabs.</p>\r\n<p>The only feature where you can add UI is using <a href=\"http://blogs.microsoft.co.il/blogs/arik/archive/2009/10/27/windows-ribbon-for-winforms-part-11-dropdowngallery-splitbuttongallery-and-inribbongallery.aspx\">\r\ngallery</a>-based controls.</p>\r\n<p>Arik.</p>\r\n",
+    "PostedDate": "2010-12-14T02:59:12.993-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "1201416",
+    "ThreadId": "528550",
+    "Html": "Hi Guys, somebody can help me?\r<br />\n<br />\nI need hide/show all tabs from my ribbon menu at press a button.\r<br />\n<br />\nThanks a lot.<br />\n",
+    "PostedDate": "2014-01-31T09:49:36.64-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1425505",
+    "ThreadId": "528550",
+    "Html": "Hi jmontero1980,\r<br />\n<br />\nyou can use <a href=\"http://blogs.microsoft.co.il/arik/2009/11/23/windows-ribbon-for-winforms-part-16-applicationmodes/\" rel=\"nofollow\">ApplicationModes</a> for that.\r<br />\n<br />\nbest regards\r<br />\nNils<br />\n",
+    "PostedDate": "2015-05-15T00:09:19.737-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1436084",
+    "ThreadId": "528550",
+    "Html": "<strong>nilslueders wrote:</strong><br />\n<blockquote>\nHi jmontero1980,<br />\n<br />\nyou can use <a href=\"http://blogs.microsoft.co.il/arik/2009/11/23/windows-ribbon-for-winforms-part-16-applicationmodes/\" rel=\"nofollow\">ApplicationModes</a> for that.<br />\n<br />\nbest regards<br />\nNils<br />\n</blockquote>\nI want to hide/show a button of DropDownButton or ApplicationMenu but I can't. I tried using ApplicationModes but is not. Please help me how to do? Or help me how to add Dynamic button to MenuDropDown when Run-time like add a recentItems?<br />\n<br />\nThanks for your helps!<br />\n",
+    "PostedDate": "2015-07-27T03:18:54.923-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

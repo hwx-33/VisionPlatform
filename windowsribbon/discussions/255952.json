@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "605733",
+    "ThreadId": "255952",
+    "Html": "\r\n<p>Hi all</p>\r\n<p>forgive me if I am not looking hard enough, but I couldn't find anywhere that specifies how to localize the strings for command labels, tooltips etc in the ribbon markup?</p>\r\n<p>Could anyone point me in the right direction?</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2011-05-02T00:10:45.073-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "605740",
+    "ThreadId": "255952",
+    "Html": "<div>\n<p><span style=\"font-size: 11.0pt;\" lang=\"EN-US\">Hi,</span></p>\n<p><span style=\"font-size: 11.0pt;\" lang=\"EN-US\">you can look into the sample solution project &ldquo;19-Localization&rdquo;.</span></p>\n<p><span style=\"font-size: 11.0pt;\" lang=\"EN-US\">&nbsp;</span></p>\n<p><span style=\"font-size: 11.0pt;\" lang=\"EN-US\">Thanks</span></p>\n<p><span style=\"font-size: 11.0pt;\" lang=\"EN-US\">Bernhard</span></p>\n</div>",
+    "PostedDate": "2011-05-02T00:23:28.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "605748",
+    "ThreadId": "255952",
+    "Html": "<p>Thanks I am looking at it now.</p>\r\n<p>However, in Program.cs for the sample the thread culture is being set to de-DE. When I run the program, the ribbon is still displaying in english....</p>",
+    "PostedDate": "2011-05-02T00:39:29.487-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

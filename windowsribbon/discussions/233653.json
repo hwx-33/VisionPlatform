@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "517772",
+    "ThreadId": "233653",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>how can i change the visible/enabled from a button/group/tab with codebehind at runtime ?</p>\r\n<p>I fond only to set the label:</p>\r\n<pre>_buttonRibbon.Label = &quot;new label&quot;</pre>\r\n<p>I can't find a property for .visible/.viewable oder .enabled ...</p>\r\n<p>Bye</p>\r\n<p>Martin</p>\r\n",
+    "PostedDate": "2010-11-05T09:25:15.633-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518148",
+    "ThreadId": "233653",
+    "Html": "\r\n<p>You can't change the visibility of a single UI control, like a button.</p>\r\n<p>The closest thing you can do is:</p>\r\n<p>1. Use application modes, which allows you to set several modes in the application, where each mode has a different set of tabs/groups/buttons.<br>\r\nCheck <a href=\"http://blogs.microsoft.co.il/blogs/arik/archive/2009/11/23/windows-ribbon-for-winforms-part-16-applicationmodes.aspx\">\r\nthis </a>post for more information on application modes.</p>\r\n<p>&#65279;2. Use contextual tabs, which are additonal tabs that appear when you set a &quot;context&quot;.<br>\r\nCheck <a href=\"http://blogs.microsoft.co.il/blogs/arik/archive/2009/11/23/windows-ribbon-for-winforms-part-17-contextualtabs.aspx\">\r\nthis </a>post for more information on contextual tabs.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-06T07:37:36.507-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

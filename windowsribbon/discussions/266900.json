@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "648910",
+    "ThreadId": "266900",
+    "Html": "\r\n<p>I have a vertical scroll bar which works fine when I set WindowState to System.Windows.Forms.FormWindowState.Normal.</p>\r\n<p>&nbsp;</p>\r\n<p>However, when I change this to Maximized, it doesn't display properly. The VScrollbar is set to:</p>\r\n<p><br>\r\n</p>\r\n<pre>this.vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;</pre>\r\n<p></p>\r\n<p>I tried to upload the screenshot, but I cannot figure out how to do that.</p>\r\n<p>&nbsp;</p>\r\n<p>Anyone has got similar issue like me?</p>\r\n",
+    "PostedDate": "2011-07-28T05:40:10.103-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "648934",
+    "ThreadId": "266900",
+    "Html": "<p>I fixed various docking issues with the ribbon by setting the Viewable property of the ribbon to false, and then immediately setting it to true again in the Load event of the form,.</p>",
+    "PostedDate": "2011-07-28T06:13:01.93-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "648946",
+    "ThreadId": "266900",
+    "Html": "<p>Thanks man, that solved my issue.</p>\r\n<p>Thanks for the quick reply.</p>",
+    "PostedDate": "2011-07-28T06:23:15.743-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

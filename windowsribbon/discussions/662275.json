@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1494820",
+    "ThreadId": "662275",
+    "Html": "Hi,\r<br />\n<br />\nI´m trying to catch events like changing the tab, so I can change by UI as well. Does anybody know, how to realize that within this implementation?<br />\n\r<br />\nI searched the web, and found using Event Tracing for Windows (ETW). But this looks like a bit like to crack a walnut with a sledgehammer. Maybe I didn´t understand it correctly.\r<br />\n<br />\nAny help is appreciated. Thanks\r<br />\n<br />\nhullihulli<br />\n",
+    "PostedDate": "2017-03-29T02:30:11.267-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

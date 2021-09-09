@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "433389",
+    "ThreadId": "209982",
+    "Html": "<p>Hey,</p>\r\n<p>First off, thank you VERY much for this library! It's really great to work with.</p>\r\n<p>I am currently using it in an app I am working on, and for some reason sometimes when I move the Window (or resize/maximize), the title bar gets messed up. Here's a screenshot:&nbsp;http://img406.imageshack.us/img406/2764/screenshotso.png</p>\r\n<p>As soon as I mouse over the Ribbon portion of the title bar (the little arrow thing), it gets fixed. Any clue why something like that happens? The one thing I noticed is that it happens in my app which happens to house a XNA Game Studio 3D control on it. A normal app doesn't do that. So something from the 3D viewport may be&nbsp;interfering&nbsp;but I am not sure.&nbsp;</p>\r\n<p>I would appreciate any ideas on how I can go about fixing something like that. Maybe force Windows to repaint the title bar everytime I move/resize the Window?</p>\r\n<p>Thanks again!</p>",
+    "PostedDate": "2010-04-20T15:41:44.967-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434402",
+    "ThreadId": "209982",
+    "Html": "<p dir=ltr><span style=\"color:black;font-size:10pt\">I've seen this type of problems before.<br>If I remember correctly, this happens also when you try to use the Ribbon Framework with a WPF application.</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">Unfortunately, I don't have good news.<br>I didn't manage to solve it back when I tried.<br>I think the problem is related to some win32 definition that some application types do (like WPF apps), <br>these definitions collides with the definition of the Ribbon Framework and hence the result.</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">(An example for such a &quot;definition&quot; is that a ribbon-based application should not have a win32 menu, and the ribbon framework enforces it by using win32 APIs to remove the menu section).</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">I assume the XNA framework does similar win32 changes which cause these problems.</span></p>\r\n<p dir=rtl>&nbsp;</p>",
+    "PostedDate": "2010-04-22T16:57:40.843-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

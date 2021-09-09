@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "496510",
+    "ThreadId": "227999",
+    "Html": "<p>Hi, 1st of all, thanks for your hard work, a nice pice of software. :)</p>\r\n<p>One short quesiton: I've made a standard DropDownButtonGallery (Commands), works well, all ribbonbuttons have their own image, labeltext and so on...</p>\r\n<p>In my code, i've added an execute handler to each button in array (based on your splitbutton ex. source):</p>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For i = 0 To mybuttons.Length - 1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mybuttons(i) = New RibbonButton(myribbon, 6000 + i)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; With mybuttons(i)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .Label = Button &amp; i<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .LargeImage = myribbon.ConvertToUIImage(CType(imageListGhosts.Images(CInt(Fix(i))), Bitmap))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .LabelDescription = &quot;Test&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .TooltipDescription = &quot;TT_Test&quot;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .TooltipTitle = .Label<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>AddHandler .OnExecute, AddressOf&nbsp;execute_mybutton</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; End With<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next i<br><br>blabla... will be added to Gallery ... blabla... all ok till here.</p>\r\n<p><strong>Problem:</strong> What's the correct way in Sub &quot;execute_mybutton&quot; to find out which one of my dynamically added buttons (or&nbsp;THE button in my&nbsp;buttonarray)&nbsp;has been clicked (e. x. messagebox with buttons labeltext...)? Im a little confused between the differences with the other gallerytype (items)... e. x.&nbsp;&quot;selecteditem&quot; for a command is also present, but always returns 0...?!?</p>\r\n<p>Thanks for your help.</p>\r\n<p>best regards</p>\r\n<p>Jordan</p>",
+    "PostedDate": "2010-09-21T07:20:31.43-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "510812",
+    "ThreadId": "227999",
+    "Html": "\r\n<p>First, sorry for the late reply.</p>\r\n<p>The events mechanism has changed and supports the more standard &quot;object sender, MyEventArgs e&quot; syntax.<br>\r\nUsing the sender you can check which button generated the event.</p>\r\n",
+    "PostedDate": "2010-10-21T15:59:20.037-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

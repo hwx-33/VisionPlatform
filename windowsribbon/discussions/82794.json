@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "284454",
+    "ThreadId": "82794",
+    "Html": "<p>I&acute;m getting an AccessViolationException when using Close() to exit the application.</p>\r\n<p>System.AccessViolationException was unhandled<br>&nbsp; Source=&quot;System.Windows.Forms&quot;<br>&nbsp; StackTrace:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; em System.Windows.Forms.UnsafeNativeMethods.DispatchMessageW(MSG&amp; msg)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; em System.Windows.Forms.Application.ComponentManager.System.Windows.Forms.UnsafeNativeMethods.IMsoComponentManager.FPushMessageLoop(Int32 dwComponentID, Int32 reason, Int32 pvLoopData)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; em System.Windows.Forms.Application.ThreadContext.RunMessageLoopInner(Int32 reason, ApplicationContext context)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; em System.Windows.Forms.Application.ThreadContext.RunMessageLoop(Int32 reason, ApplicationContext context)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; em _01_AddingRibbonSupport.Program.Main() em D:\\Visual Studio 2008\\Projects\\FlashUnits\\FlashUnits\\Program.cs:line 19<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; em System.AppDomain._nExecuteAssembly(Assembly assembly, String[] args)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; em Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; em System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; em System.Threading.ThreadHelper.ThreadStart()<br>&nbsp; InnerException:</p>",
+    "PostedDate": "2010-02-01T15:41:35.927-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "288469",
+    "ThreadId": "82794",
+    "Html": "<p>Are you, by any chance, calling Close() from a handler to one of the ribbon buttons?</p>\r\n<p>calling Close() raises the form_closed event, which then calls ribbon.DestroyFramework()<br>But you are still using it! (you are still in the ribbon handler, somewhere up in the stack)<br>So this cause the exception.</p>\r\n<p>Either don't call close firectly from the handler (you can invoke a timer that will close the form).<br>or, don't call DestoryFramework on form_closed (maybe in another location, or not at all, process should clean up after itself..)</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-10T14:10:49.603-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "288964",
+    "ThreadId": "82794",
+    "Html": "It's not elegant, but the timer does work. Thanks.<br>",
+    "PostedDate": "2010-02-11T02:52:39.46-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434531",
+    "ThreadId": "82794",
+    "Html": "<p>Check this post for an alternative solution:</p>\r\n<p><a href=\"http://blogs.microsoft.co.il/blogs/arik/archive/2010/04/14/crash-while-closing-application-that-uses-windows-ribbon-framework.aspx\">Crash while closing application that uses Windows Ribbon Framework</a></p>",
+    "PostedDate": "2010-04-23T01:54:34.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "434713",
+    "ThreadId": "82794",
+    "Html": "<p>Nice work :)</p>",
+    "PostedDate": "2010-04-23T10:25:50.397-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454006",
+    "ThreadId": "82794",
+    "Html": "<p>I have the same problem and the above link says &quot;account suspended&quot;. Could anyone post the alternative solution?</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2010-06-10T07:40:47.643-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454101",
+    "ThreadId": "82794",
+    "Html": "<p><a href=\"http://blogs.microsoft.co.il/blogs/arik/archive/2010/04/14/crash-while-closing-application-that-uses-windows-ribbon-framework.aspx\">http://blogs.microsoft.co.il/blogs/arik/archive/2010/04/14/crash-while-closing-application-that-uses-windows-ribbon-framework.aspx</a></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-10T10:20:38.693-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454121",
+    "ThreadId": "82794",
+    "Html": "<p>I get the same &quot;This account has been suspended&quot; thing when I click on that link.</p>",
+    "PostedDate": "2010-06-10T11:09:37.32-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454902",
+    "ThreadId": "82794",
+    "Html": "<p>This is the same, posted on codeproject.</p>\r\n<p><a href=\"http://www.codeproject.com/Articles/72501/Crash-while-closing-application-that-uses-Windows-.aspx\">http://www.codeproject.com/Articles/72501/Crash-while-closing-application-that-uses-Windows-.aspx</a></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-13T04:35:29.41-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "454983",
+    "ThreadId": "82794",
+    "Html": "<p>Thank you. The other links work now too. :)</p>",
+    "PostedDate": "2010-06-13T14:55:09.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

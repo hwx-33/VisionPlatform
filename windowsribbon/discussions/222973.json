@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "478255",
+    "ThreadId": "222973",
+    "Html": "Hello,\r\n\r\ni have a problem with the spinner Control from the library.\r\nWhen the Decimal Value of the Control is set by code you can see the following problem:\r\n\r\nA new value is set by Spinner on the Ribbon. Then you hide the form (minimize or so) and show it again.\r\nThe &quot;old&quot; value is shown.\r\n\r\nI have a attached a little test-app:\r\nhttp://www.pierre-doll.de/download/Test.zip\r\n\r\nDoes anyone have a idea?\r\n\r\nBest regards",
+    "PostedDate": "2010-08-09T12:33:45.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "478302",
+    "ThreadId": "222973",
+    "Html": "<p>This was a bug in my wrapper.</p>\r\n<p>I've fixed it now, you can get it from the latest &quot;Source Code&quot; version<br>In the near future I might release another version with the fix included.</p>\r\n<p>Thanks for reporting on the problem,<br>Arik.</p>",
+    "PostedDate": "2010-08-09T14:48:34.373-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "478311",
+    "ThreadId": "222973",
+    "Html": "It works :)\r\n\r\nThank you for the quick reply.",
+    "PostedDate": "2010-08-09T15:16:54.23-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

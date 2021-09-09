@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1012756",
+    "ThreadId": "436001",
+    "Html": "Hello everybody,\r<br />\n<br />\nI downloaded the RibbonLib package from the source code and compiled the RibbonGenerator and installed that. I intergrated the Ribbon project source code in my solution as I find that better to have a overview on all my projects. I made a reference to the project in the main project. Once I use the custom tool and compile my project, I get no errors. But when I want to run the project, I get the following error at file Ribbon.cs: Parent of Ribbon does not derive from Form class.\r<br />\n<br />\nWhen I go the the project directory I find the following files:\r<br />\n<img src=\"http://s15.postimage.org/wtq3ws7a3/Knipsel.png\" alt=\"Image\" />\r<br />\nAnd when I move the RibbonMarkup.ribbon file from that to the debug folder, the application runs fine. Now I would like to know how to intergrate this ribbon file inside the application so it is not visable.\r<br />\n<br />\nThank you.<br />\n",
+    "PostedDate": "2013-03-09T07:44:29.743-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

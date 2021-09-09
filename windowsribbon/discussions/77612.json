@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "265365",
+    "ThreadId": "77612",
+    "Html": "<p>Sorry but if I understood, &quot;Windows Ribbon for WinForms&quot; is only compatible from Windows Vista SP2...</p>\r\n<p>I would like to be able to use such a project for Windows XP: don't the &quot;Windows Ribbon for WinForms&quot; can ?</p>\r\n<p>If yes, what are prerequisites, if no do you know another way to be able to ?</p>\r\n<p>Thank's in advance.</p>\r\n<p>Greg</p>\r\n<p>PS : sorry for my english... i'm french</p>",
+    "PostedDate": "2009-12-09T08:18:43.967-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "265673",
+    "ThreadId": "77612",
+    "Html": "<p>The Requirement is the Windows Ribbon COM object. This was first developed in WIndows 7. But Microsoft made it available fpr Vista Sp2 Users as part of the Platform Update Series which also backports DX11/Direct2D, BITS4, PowerShell 2.0 and other fetaures back to Vista. XP is outdated. Upgrade to Vista/7 to get the requirements to use the Ribbons.</p>",
+    "PostedDate": "2009-12-10T05:22:36.007-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "265716",
+    "ThreadId": "77612",
+    "Html": "<p><span id=\"result_box\"><span title=\"au-delà du discours commercial qui vous pousse à dire que Windows XP est dépassé, en tant que consultant informatique je peux vous assurer que toutes les sociétés n'ont pas encore migré vers Windows Vista...\">Beyond the (Microsoft) commercial speech that urges you to say that Windows XP is outdated, as a computer consultant I can assure you that all companies have not yet migrated to Windows Vista/7... ;-)<br></span></span></p>\r\n<p><span id=\"result_box\"><span title=\"ma question avait donc tout son sens.\">So my question was meaningless.</span></span><span id=\"result_box\"></span></p>\r\n<p><span id=\"result_box\"><span title=\"Merci beaucoup pour votre réponse qui me satisfait néanmoins.\">Thank you for your answer which satisfies me, however.</span></span></p>\r\n<p><span><span title=\"Merci beaucoup pour votre réponse qui me satisfait néanmoins.\">Best regards<br></span></span></p>\r\n<p><span><span title=\"Merci beaucoup pour votre réponse qui me satisfait néanmoins.\">\r\n<hr>\r\nGr&eacute;goire<br></span></span></p>",
+    "PostedDate": "2009-12-10T07:06:30.687-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "282937",
+    "ThreadId": "77612",
+    "Html": "<p>How wrong you are!!</p>\r\n<p>Please see posting http://windowsribbon.codeplex.com/Thread/View.aspx?ThreadId=78744</p>\r\n<p>I am having same problem and I can't build anything on my XP with SP3 which is a supported platform according to Microsoft Win 7 SDK.</p>\r\n<p>Anybody can help?</p>",
+    "PostedDate": "2010-01-28T13:17:57.59-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283275",
+    "ThreadId": "77612",
+    "Html": "<p>Windows 7 Ribbon is only supported on:</p>\r\n<ul>\r\n<li>Windows 7</li>\r\n<li>Windows Vista with Service Pack 2 (SP2) and Platform Update for Windows Vista</li>\r\n<li>Windows Server 2008 R2</li>\r\n<li>Windows Server 2008 with SP2 and Platform Update for Windows Server 2008</li>\r\n</ul>\r\n<p>&nbsp;Specifically, Windows XP is not supported.</p>",
+    "PostedDate": "2010-01-29T03:25:18.813-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283307",
+    "ThreadId": "77612",
+    "Html": "<p>So why do the Windows SDK 7 release notes say that Windows XP SP3 is supported? <br><br>Arik, PLEASE check the Windows SDK 7 release notes....<br><br></p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-01-29T05:19:54.437-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283424",
+    "ThreadId": "77612",
+    "Html": "<p>Check Windows Ribbon documentation <a href=\"http://msdn.microsoft.com/en-us/library/dd371191(VS.85).aspx\">http://msdn.microsoft.com/en-us/library/dd371191(VS.85).aspx</a>, under &quot;Minimum Requirements&quot;.</p>\r\n<p>The release notes of Windows SDK refers to the Windows SDK. This means you can install the Windows 7 SDK on Windows XP. It doesn't mean that every windows 7 feature is supported on XP.</p>\r\n<p>Surly you don't expect the Windows 7 task bar to work on windows XP, but it is in the SDK..</p>",
+    "PostedDate": "2010-01-29T11:27:55.7-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283529",
+    "ThreadId": "77612",
+    "Html": "<p>So what is the point to be on the SDK if then we cannot use it?<br>What's the point of releasing the windows 7 SDK for XP if we then cannot develop some of the main feautures?! From what you are saying then it is useless, pointless...<br>So as a software developer I will have to develop 2 different products?! Because it will be 2 years before companies start to think about&nbsp; moving from XP to Windows 7!</p>",
+    "PostedDate": "2010-01-29T16:54:58.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283652",
+    "ThreadId": "77612",
+    "Html": "<blockquote style=\"border:solid .1em #ccc;font-style:italic;margin:.25em 1em 0 1em;padding:0 .25em 0 .25em\"><strong>Giorgito wrote:</strong><br>\r\n<p>So what is the point to be on the SDK if then we cannot use it?<br>What's the point of releasing the windows 7 SDK for XP if we then cannot develop some of the main feautures?! From what you are saying then it is useless, pointless...<br>So as a software developer I will have to develop 2 different products?! Because it will be 2 years before companies start to think about&nbsp; moving from XP to Windows 7!</p>\r\n</blockquote>\r\n<p>Hi,</p>\r\n<p>you can install the Windows 7 SDK and develop an application! But you CAN'T RUN it on XP! The Windows 7 Ribbon is a COM object which is NOT AVAILABLE under XP! It is not useless, you make wrong conlcusions about what a supported platform is. SDK can be installed on XP, bur Ribbon apps can't be run on XP.</p>\r\n<p>For more, check the WorkItems comments:</p>\r\n<p>http://windowsribbon.codeplex.com/WorkItem/View.aspx?WorkItemId=3710</p>",
+    "PostedDate": "2010-01-30T08:06:43.957-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "283658",
+    "ThreadId": "77612",
+    "Html": "<p>Hi,<br><br>How can I develop an application in XP without running it?! So you never code and press f5 to run it?! Wow, you must be the only one doing it! Why would Microsotft release VS 2008 with the f5 option to run?! hmmm....</p>\r\n<p>I mean, I never saw any developer coding an application without running it and testing it while he develops it!</p>\r\n<p><br>THERE AREN'T any developers out there that don't code,buid,run,test,code,build,run,test...until they are happy and do a final build!</p>\r\n<p>Sorry but your arguments are not adding up!</p>\r\n<p>I really cannot believe that it is not supported otherwise it would defeat the purpose of making the win 7 SDK available for XP!</p>",
+    "PostedDate": "2010-01-30T08:29:21.83-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

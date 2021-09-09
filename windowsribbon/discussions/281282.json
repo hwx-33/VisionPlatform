@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "705145",
+    "ThreadId": "281282",
+    "Html": "\r\n<p>Hi, I wanted to know is it possible to show different user controls or forms on different tabs. e.g. If on page load, the first tab is selected and below the ribbon some set of form controls or datagrid or a user control is shown. When I navigate to another\r\n tab another set of user controls or a different form is shown below the ribbon control. And in the ribbon the particular set of controls for the user control should be shown.</p>\r\n<p>This is a common scenario in desktop application development. Can this be achieved with this ribbon? If it can be achieved can anyone give some examples because I was unable to find one. Thanks.</p>\r\n",
+    "PostedDate": "2011-11-29T23:36:51.523-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "705156",
+    "ThreadId": "281282",
+    "Html": "<p>How about the reverse? Contextual ribbon tabs.... you can show different ribbon UI based on which part of your application the user is interacting with.</p>",
+    "PostedDate": "2011-11-30T00:05:08.987-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "705165",
+    "ThreadId": "281282",
+    "Html": "<p>Actually I do not want to change the display of the ribbon itself...rather the controls in the panel below the ribbon.</p>\r\n<p>The following elaboration may clear my requirement.</p>\r\n<p>I would like to create application with ribbon interface that looks and behaves like this:</p>\r\n<ul>\r\n<li>application have one main form with ribbon </li>\r\n<li>ribbon has multiple tabs</li>\r\n<li>when user switches tab on ribbon, panel below ribbon changes and  displays content related to ribbon panel. That way, ribbon tab acts as  if it is tab over whole window.</li>\r\n</ul>\r\n<p>For example, ribbon have two tabs: people and tasks. When current  ribbon panel is \"people\", below ribbon is displayed grid with people  data. Ribbon contains command for manipulating people data. When user  switches to \"tasks\" tab on ribbon, application should display form with  tasks below ribbon.</p>",
+    "PostedDate": "2011-11-30T00:40:03.267-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "705168",
+    "ThreadId": "281282",
+    "Html": "\r\n<p>From: bikramiter</p>\r\n<div id=\"ThreadNotificationPostBody\">\r\n<p>Actually I do not want to change the display of the ribbon itself...rather the controls in the panel below the ribbon.</p>\r\n<p>The following elaboration may clear my requirement.</p>\r\n<p>I would like to create application with ribbon interface that looks and behaves like this:</p>\r\n<ul>\r\n<li>application have one main form with ribbon </li><li>ribbon has multiple tabs </li><li>when user switches tab on ribbon, panel below ribbon changes and displays content related to ribbon panel. That way, ribbon tab acts as if it is tab over whole window.\r\n</li></ul>\r\n<p>For example, ribbon have two tabs: people and tasks. When current ribbon panel is &quot;people&quot;, below ribbon is displayed grid with people data. Ribbon contains command for manipulating people data. When user switches to &quot;tasks&quot; tab on ribbon, application should\r\n display form with tasks below ribbon.</p>\r\n</div>\r\n<div></div>\r\n",
+    "PostedDate": "2011-11-30T00:47:53.52-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "705190",
+    "ThreadId": "281282",
+    "Html": "<p>I'm sorry, I replied to that via e-mail... looks like the system is broken!! :)</p>\r\n<p>&nbsp;</p>\r\n<p>Anyway, I wrote:</p>\r\n<p><span style=\"font-size: 9pt;\">As far as I know, you cannot do this as the ribbon was not designed for this.<br /> <br /> A standard tab control will of course accomplish this, although it probably isn't good enough for your scenario! :)<br /> <br /> Have you considered a third party tab control?</span></p>",
+    "PostedDate": "2011-11-30T01:58:25.25-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "705217",
+    "ThreadId": "281282",
+    "Html": "<p>Thnx tompsonn for your time and willingness to help. Yes, its true that a standard tab control can do this, but that is not the preferred one as it will be the place holder for other big controls like forms or user controls. So a tab will not look suitable.</p>\r\n<p>Third party tools like Telerik and DevExpress do provide such controls to fulfill my requirements, but at this point of time I am looking the feature for my own requirements and knowledge. Because the look and feel of the windows ribbon control is better than the available third party controls. And if my requirement can be achieved with this than it can be a great tool for many applications development.</p>",
+    "PostedDate": "2011-11-30T03:43:53.473-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

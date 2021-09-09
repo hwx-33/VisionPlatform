@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "597068",
+    "ThreadId": "253837",
+    "Html": "\r\n<p>Hey all</p>\r\n<p>I know you can change the colors for the ribbon as per http://blogs.microsoft.co.il/blogs/arik/archive/2009/10/22/windows-ribbon-for-winforms-part-9-changing-ribbon-colors.aspx, but is there a way to change colors for the contextual tab headers?</p>\r\n<p>Thanks.</p>\r\n",
+    "PostedDate": "2011-04-14T01:57:56.42-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "680164",
+    "ThreadId": "253837",
+    "Html": "<p>Hi, has someony any ideas, or is the Ribbon implenetaion in Win7 limited and lacks of this function?</p>",
+    "PostedDate": "2011-10-05T01:01:58.447-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "680166",
+    "ThreadId": "253837",
+    "Html": "<div>\n<p><span style=\"font-size: 10.0pt;\">As far as I know you can&rsquo;t change the color of the tabs. :(<br /></span></p>\n<p><span style=\"font-size: 10.0pt;\">You can only change the color theme of your ribbon as I mentioned.<br /> </span></p>\n</div>",
+    "PostedDate": "2011-10-05T01:02:58.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

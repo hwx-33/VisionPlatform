@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "422374",
+    "ThreadId": "206955",
+    "Html": "<p>Is there any sort of visual designer for Ribbons? ...a Visual Studio Designer would be best but I'd like to find anything that supports visual design (and outputs Windows Ribbon XML).</p>\r\n<p>Michael Herman (Toronto)</p>",
+    "PostedDate": "2010-03-22T20:57:09.663-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422420",
+    "ThreadId": "206955",
+    "Html": "<p>Unfortunately there isn't. Not for the Windows Ribbon.</p>\r\n<p>But that could be a nice open source project for someone.</p>",
+    "PostedDate": "2010-03-23T00:27:31.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

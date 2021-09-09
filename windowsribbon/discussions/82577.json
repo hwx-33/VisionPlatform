@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "283854",
+    "ThreadId": "82577",
+    "Html": "<p>It seems that the ToolTipTitle is not working when set from the RibbonMarkup.xml file on Menu Items.</p>\r\n<p>You can seem sample 2 as an example, none of the Application Menu items have titles, even though they are set.</p>\r\n<p>If you set the Title in the Form1.ctor() it does not apply either, but if you set it from the _buttonNew_OnExecute() it does apply.</p>\r\n<p>&nbsp;</p>\r\n<p>Any insight on this?</p>",
+    "PostedDate": "2010-01-31T03:25:52.553-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "288468",
+    "ThreadId": "82577",
+    "Html": "<p>It seems that if the LabelTitle and TooltipTitle are the same, the ribbon doesn't show the TooltipTitle.</p>\r\n<p>I'm not sure if this is a bug or feature, but it's in the ribbon framework and not in the wrapper.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-10T14:03:18.753-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

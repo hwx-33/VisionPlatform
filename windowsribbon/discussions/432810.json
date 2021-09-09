@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "999919",
+    "ThreadId": "432810",
+    "Html": "This ribbon control is not running in Visual Studio 2012 Ultimate Update 1!!! Why??? Please help me. It is constantly saying that &quot;RibbonGenerator was not found on your computer&quot;. I have it installed in Windows 8 64-bit machine with VS 2012 Update 1.<br />\n",
+    "PostedDate": "2013-02-12T02:45:55.29-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "999939",
+    "ThreadId": "432810",
+    "Html": "The error messages means that the custom tool (RibbonGenerator) is not installed and registered correctly for Visual Studio 2012.<br />\n<br />\nFor more detailed information about how to register please read the following posts...<br />\n<br />\n<a href=\"http://bernhardelbl.wordpress.com/2010/12/10/ribbongenerator-for-visual-studio-2010-express-editions-windows-ribbon-for-winforms/\" rel=\"nofollow\">Manual Registration</a><br />\n<br />\n<a href=\"http://bernhardelbl.wordpress.com/2010/12/10/ribbongenerator-details-windows-ribbon-for-winforms/\" rel=\"nofollow\">Other details</a><br />\n<br />\nThe setup included in the download package does not support Visual Studio 2012. So you need to register the custom tool manually as described in the blog posts from above.<br />\n",
+    "PostedDate": "2013-02-12T03:25:07.127-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1002107",
+    "ThreadId": "432810",
+    "Html": "Try running <strong>devenv.exe /setup</strong> afterwards.  After running this and opening a new instance of <em>Visual Studio 2012</em>, I was able to successfully use the RibbonGenerator.\r<br />\n<br />\nAnother note:\r<br />\nI had also changed InprocServer32 to C:\\WINDOWS\\SysWOW64\\mscoree.dll (from <em>C:\\WINDOWS\\ <strong>system32</strong> \\mscoree.dll</em> )<br />\n",
+    "PostedDate": "2013-02-15T19:45:39.857-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1010990",
+    "ThreadId": "432810",
+    "Html": "I cannot understand what to do! Can you provide complete instructions?\r<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-03-05T23:05:17.69-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1084060",
+    "ThreadId": "432810",
+    "Html": "<a href=\"http://www.kettic.com/winforms_ui/ribbonbar.shtml\" rel=\"nofollow\">RibbonBar Control for WinForms</a> in Visual Studio 2012.<br />\n",
+    "PostedDate": "2013-08-23T02:54:07.713-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1093605",
+    "ThreadId": "432810",
+    "Html": "I've the same problem, what's the solution please a don't want to comeback to VS 2010 :(.\r<br />\n<br />\nI've tried to solve it by Manual Registration  but alwayse the same problem.\r<br />\n<br />\nPlease because i've a GUI using RibbonLib 2,6 and it's buzzy to change it and going to WPF Windows Ribbon.\r<br />\n<br />\nThanks in advance.<br />\n",
+    "PostedDate": "2013-09-17T09:03:41.303-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

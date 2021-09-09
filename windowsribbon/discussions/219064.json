@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "465956",
+    "ThreadId": "219064",
+    "Html": "<p>Hi Arik,</p>\r\n<p>I have encountered a new problem when I tried to build the Combox example. The example works if the comboxes are places on the first/main tab which is viewed when the form is launched.</p>\r\n<p>If there are multiple tabs and the comboxes are placed on tabs other than the first one, the FillComboBoxes() routine throws a NullReferenceException. i.e. _comboBox1.ItemsSource is null. I believe tab objects are not initialized until they are viewed. Since the Ribbon Framework doesn't support Tab Click event, I don't know where to&nbsp;put the FillComboBoxes() to initiate the combox items when it's viewed.</p>\r\n<p>Can you help please?</p>\r\n<p>Regards<br>Ruan</p>",
+    "PostedDate": "2010-07-11T05:25:00.097-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "470648",
+    "ThreadId": "219064",
+    "Html": "<p>Hi,</p>\r\n<p>&nbsp;</p>\r\n<p>I'm also seeing the same issue with the ComboBox when it is inside another tab.</p>\r\n<p>&nbsp;</p>\r\n<p>EDIT: So I guess the problem stems from http://msdn.microsoft.com/en-us/library/dd940492%28v=VS.85%29.aspx</p>\r\n<p>Quoting:</p>\r\n<p>&quot;Typically, a <strong>Combo Box</strong> property is updated in the ribbon UI by invalidating the Command associated with the control through a call to the <a href=\"http://msdn.microsoft.com/en-us/library/dd371375(v=VS.85).aspx\">IUIFramework::InvalidateUICommand</a> method. The invalidation event is handled, and the property updates defined, by the <a href=\"http://msdn.microsoft.com/en-us/library/dd371494(v=VS.85).aspx\">IUICommandHandler::UpdateProperty</a> callback method.</p>\r\n<p>The <strong>IUICommandHandler::UpdateProperty</strong> callback method is not executed, and the application queried for an  updated property value, until the property is required by the framework.  For example, when a tab is activated and a control revealed in the  ribbon UI, or when a tooltip is displayed.</p>\r\n<div><strong> Note</strong>&nbsp;&nbsp;In some cases, a property can be retrieved through  the <a href=\"http://msdn.microsoft.com/en-us/library/dd371370(v=VS.85).aspx\">IUIFramework::GetUICommandProperty</a> method and set with the   <a href=\"http://msdn.microsoft.com/en-us/library/dd371478(v=VS.85).aspx\">IUIFramework::SetUICommandProperty</a> method.&quot;</div>\r\n<div></div>\r\n<div>Which is accurate, i see the appropriate lists allocated once I change tabs.&nbsp; I've tried calling IUFramework::GetUICommandProperty but that returned with an E_FAIL.&nbsp; Is there some other way this should be handle to initialize the comobox correctly when not in the first tab?</div>",
+    "PostedDate": "2010-07-21T19:38:52.747-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475653",
+    "ThreadId": "219064",
+    "Html": "I've made some changes with how the ribbon wrapper handles items in gallery / combobox.\r\nHopfully, this will solve all of your problems.\r\n\r\nHere are some details:\r\nhttp://blogs.microsoft.co.il/blogs/arik/archive/2010/08/03/windows-ribbon-for-winforms-v2-3-released-bug-fixes.aspx\r\n\r\nYou can get the latest release (v2.3) to check.",
+    "PostedDate": "2010-08-02T15:12:56.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "475698",
+    "ThreadId": "219064",
+    "Html": "<p>Thank you that fixed the issue! :)</p>",
+    "PostedDate": "2010-08-02T18:03:11.84-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "476796",
+    "ThreadId": "219064",
+    "Html": "Awesome!\r\n\r\nThanks",
+    "PostedDate": "2010-08-05T03:56:25.543-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "477264",
+    "ThreadId": "219064",
+    "Html": "Thank you for reporting the issue.",
+    "PostedDate": "2010-08-06T00:38:27.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "518511",
+    "ThreadId": "219064",
+    "Html": "\r\n<p>I've made a new fix for this bug, since the old fix caused some problems with galleries.</p>\r\n<p>You can check the combobox sample (6) on the latest release (v2.6) for more details.</p>\r\n<p><a href=\"http://blogs.microsoft.co.il/blogs/arik/archive/2010/11/08/windows-ribbon-for-winforms-v2-6-released.aspx\">http://blogs.microsoft.co.il/blogs/arik/archive/2010/11/08/windows-ribbon-for-winforms-v2-6-released.aspx</a></p>\r\n",
+    "PostedDate": "2010-11-07T16:57:22.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "626360",
+    "ThreadId": "261031",
+    "Html": "\r\n<p>Hi!</p>\r\n<p>I'm using Visual Studio 2010 Express. I've done everything as stated in Bernhard's blog and I've got a problem.</p>\r\n<p>I've added the Ribbon.xml file and built the project, such that Ribbon.ribbon file appeared. However, when I try to set the ResourceName of ribbon to the generated file, IDE protests with a message:</p>\r\n<p>Ribbon resource 'wfSketchbook.Ribbon.ribbon' not found in assembly 'C:\\Windows\\Microsoft.Net\\assembly\\GAC_MSIL\\System.Windows.Forms\\v4.0_4.0.0.0__b77a5c561934e089\\System.Windows.Forms.dll'.</p>\r\n<p>Application's name is wfSketchbook and so is the program's namespace.</p>\r\n<p>However, if I edit the Form1.Designer.cs file, forcing the value property to &quot;wfSketchbook.Ribbon.ribbon&quot;, build and run the application, suprisingly it starts and displays the ribbon as expected. However, the form designer shouts with big error:</p>\r\n<p>http://www.spook.freshsite.pl/Temporary/ribbon-error.png</p>\r\n<p>I'm ok with fact, that the ribbon is not visible during designtime, but the constantly appearing error message is annoying.</p>\r\n<p>May I do something with that? Maybe I'm doing something wrong?</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards -- Spook.</p>\r\n",
+    "PostedDate": "2011-06-11T06:32:25.797-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626366",
+    "ThreadId": "261031",
+    "Html": "<p>Spook,</p>\r\n<p>The ribbon doesn't support a designer mode at all, anyway. However that error should not be occuring.</p>\r\n<p>Is it necessary you link to the .NET Framework v4? If not, try using 3.5 - you can find this setting on the first page of your project's properties.</p>",
+    "PostedDate": "2011-06-11T07:03:40.647-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626382",
+    "ThreadId": "261031",
+    "Html": "<p>I've rebuilt the Ribbon library for 3.5 and changed the application's target framework version to 3.5 and the same error appears (including the \\v4.0_4.0.0.0... part).</p>\r\n<p>Best regards -- Spook.</p>",
+    "PostedDate": "2011-06-11T08:20:14.237-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626386",
+    "ThreadId": "261031",
+    "Html": "<p>Can you run any of the samples in the ribbon lib solution?</p>",
+    "PostedDate": "2011-06-11T08:34:29.757-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626388",
+    "ThreadId": "261031",
+    "Html": "<p>Run, yes. Open in designer, no - the same error message appears.</p>\n<p><span style=\"color: #ff0000;\"><strong>Edit:</strong></span></p>\n<p>I've rebuilt the ribbon library for .NET 4.0 framework with no effect. The error message is still the same.</p>\n<p>Best regards -- Spook.</p>",
+    "PostedDate": "2011-06-11T08:40:25.023-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626390",
+    "ThreadId": "261031",
+    "Html": "<p>I wonder if it has anything to do with the fact you're using an express edition of visual studio....</p>\r\n<p>Im wondering why it is looking for that resource in the Forms DLL.<br />i'll have a dig around for ya until one of the devs can get on this one.....</p>",
+    "PostedDate": "2011-06-11T08:45:41.353-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626392",
+    "ThreadId": "261031",
+    "Html": "<p>I'd be very grateful. It would be strange though, if the Visual Studio version might interfere in that way. After all, the control is just a wrapper over the WinAPI functions.</p>\n<p>This one might help a little more (full stack trace):</p>\n<p>http://www.spook.freshsite.pl/Temporary/Ribbon-error2.png</p>\n<p><span style=\"color: #ff0000;\"><strong>Edit:</strong></span></p>\n<p>One more thing, the component in my VS does not look as in the screenshots. Instead of placeholder arrows, I see a non-painting hole:</p>\n<p>http://www.spook.freshsite.pl/Temporary/Ribbon-error3.png</p>\n<p>Best regards -- Spook.</p>",
+    "PostedDate": "2011-06-11T08:58:52.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626407",
+    "ThreadId": "261031",
+    "Html": "<p>With the significant help of my friend, I have nailed down the problem.</p>\r\n<p>static Util()<br /> {<br />&nbsp;_designMode = (System.Diagnostics.Process.GetCurrentProcess().ProcessName.ToLower() == \"devenv\");<br /> }</p>\r\n<p>Since Express versions of Visual Studio does not have unified IDE, there are several binaries responsible for each language. In my case, changing \"devenv\" to \"vcsexpress\" did the trick. I think it's worth correcting, as it seems to be the only change required to use your component in Visual Studio Express versions.</p>\r\n<p>By the way that was a hardcore trickery to debug Visual Studio Express under Visual Studio Express. But even that can be done :)</p>\r\n<p>Thanks for the assistance anyway :)</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards -- Spook.</p>",
+    "PostedDate": "2011-06-11T10:01:29.033-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626418",
+    "ThreadId": "261031",
+    "Html": "<p>A-ha, my theory on the express edition being the cause wasn't such a silly one in the end ..... :)</p>\r\n<p>Glad you got it sorted!</p>",
+    "PostedDate": "2011-06-11T10:48:19.09-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626419",
+    "ThreadId": "261031",
+    "Html": "<p>Well, that's another lesson for me, that \"impossible\" usually means \"highly improbable\" :)</p>\r\n<p>Can you please pass the info further to the control devs?</p>\r\n<p>&nbsp;</p>\r\n<p>Best regards -- Spook.</p>",
+    "PostedDate": "2011-06-11T10:52:33.48-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "626526",
+    "ThreadId": "261031",
+    "Html": "<p>Thank you for reporting this. You have found a bug and your fix directed to the right direction. Instead of replacing devenv with vcsexpress I would prefer to combine both in an \"Or\" to support both versions VS and VS Express.</p>\r\n<p>Best regards,</p>\r\n<p>Bernhard</p>",
+    "PostedDate": "2011-06-12T01:30:18.753-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "628852",
+    "ThreadId": "261031",
+    "Html": "<p>A new version of Util.cs is available in Source Code tab.</p>\n<p>You can find more information about the solution here...</p>\n<p><a href=\"http://bernhardelbl.wordpress.com/2011/06/16/howto-detecting-design-mode-in-wpf-asp-net-and-windows-forms-applications/\">http://bernhardelbl.wordpress.com/2011/06/16/howto-detecting-design-mode-in-wpf-asp-net-and-windows-forms-applications/</a></p>\n<p>&nbsp;</p>\n<p>Best regards,</p>\n<p>Bernhard</p>",
+    "PostedDate": "2011-06-16T11:39:13.523-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

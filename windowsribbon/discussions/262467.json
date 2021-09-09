@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "631717",
+    "ThreadId": "262467",
+    "Html": "\r\n<p>How to change the Text or Image of the Ribbon ApplicationButton?</p>\r\n<p>Like Word 2010, the ApplicationButton is Blue and has Text.</p>\r\n<p>Is there any Interface in the WindowsRibbon Library to change the ApplicationButton?</p>\r\n",
+    "PostedDate": "2011-06-23T03:00:42.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "631806",
+    "ThreadId": "262467",
+    "Html": "<p>I believe Office 2010 uses its own Framework.<br />There is no API that I know of in the Windows Ribbon Framework that can provide this behaviour.</p>",
+    "PostedDate": "2011-06-23T05:58:11.22-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

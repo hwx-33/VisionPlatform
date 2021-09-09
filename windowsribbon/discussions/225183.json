@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "486022",
+    "ThreadId": "225183",
+    "Html": "<p>Hello,</p>\r\n<p>I have a problem when using an aero theme and setting FormBorderStyle = FixedSingle. A white area is placed between the ribbon and the form border:&nbsp;<a href=\"http://www.dabostudios.net/incorrect.png\">click</a></p>\r\n<p>If I instead use FormBorderStyle = Sizable the problem is gone: <a href=\"http://www.dabostudios.net/correct.png\">click</a></p>\r\n<p>If I use Windows 7 basic theme it doesn't matter what FormBorderStyle is set to, it always works. I am using the same code as in the tutorials (SplitContainer) and get the same result on two computers, how can I fix this?</p>",
+    "PostedDate": "2010-08-28T14:10:23.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "486026",
+    "ThreadId": "225183",
+    "Html": "<p>When you use the Windows Ribbon Framework it poses some limitations on the window,<br>for example, you can't have menu items.</p>\r\n<p>The issue you have mentioned seems to be yet another limitation in the Windows Ribbon Framework.<br>Unfortunately, the only thing I can recommend is to avoid changing the FormBordereStyle to FixedSingle.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-08-28T15:39:27.85-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "486027",
+    "ThreadId": "225183",
+    "Html": "<p>Thanks for the reply.</p>\r\n<p>Unfortunately&nbsp;I cannot have users changing the size of the window. Perhaps I can ignore window resize events or something instead.</p>\r\n<p>Edit: Found a way to set the max and min size of the window so it works like I want it now. Thanks for a great lib.</p>",
+    "PostedDate": "2010-08-28T15:53:03.813-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

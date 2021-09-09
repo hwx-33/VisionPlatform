@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "498066",
+    "ThreadId": "228473",
+    "Html": "<p>Hello,</p>\r\n<p>When working with the SpinnerControl, if I set the value of the control when the forms loads up, the value is not saved. If I set the value later it gets saved perfectly. I've tried it in a little project and then it works fine (just as in the sample project).</p>\r\n<p>My project is a little too big to attach here, so I can't give you an example. I've tried setting the value before and after the ribbon initialisation but to no avail.<br>I've also stepped into the source code but it seems that the value gets set properly (I mean, it knows that the ribbon is initialised and it sets the value correctly, it just doesn't show in the UI and when I query the property it also doesn't show any change). When I step into the source code, the HRESULT value is E_Fail. When I update the property later the HRESULT is s_OK, but I don't see any other information.</p>\r\n<p>Any ideas on what the problem might be?</p>",
+    "PostedDate": "2010-09-24T06:56:29.183-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

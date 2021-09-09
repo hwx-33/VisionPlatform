@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "417454",
+    "ThreadId": "204774",
+    "Html": "<p><span title=\"Hola, he descargado los archivos (proyecto) sobre Ribbon de su sitio, desde aquí pero resulta que no encuentro la referencia para crear una aplicación o algo Ribbon, no la encuentro en las carpetas descargadas y necesito obtener esa referencia &quot;.dll para que así\">Hi, I downloaded the files (project) Ribbon on your site, from here but it is that I find the reference to create an application or something Ribbon, can not find in the downloaded folder and I need to get that reference. &quot;Dll so that&nbsp;</span><span title=\"pueda añadirla a las referencias de mi proyecto con Visual Studio.\">can add to the references of my project with Visual Studio.<br></span><span title=\"Leí el tutorial &quot;http://blogs.microsoft.co.il/blogs/arik/archive/2009/09/15/windows-ribbon-for-winforms-part-3-first-winforms-ribbon-application.aspx&quot;\">I read the tutorial &quot;http://blogs.microsoft.co.il/blogs/arik/archive/2009/09/15/windows-ribbon-for-winforms-part-3-first-winforms-ribbon-application.aspx&quot;&nbsp;</span><span title=\"y no consigo nada.\">and not get anything.</span></p>",
+    "PostedDate": "2010-03-12T06:50:46.89-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "417468",
+    "ThreadId": "204774",
+    "Html": "<p>The download consists of 18 samples (exe projects) and a single Dll project (Ribbon.dll)<br>All you need to do is compile the solution and get the output of the ribbon dll project.</p>\r\n<p>If you are unable to compile the project, maybe you can post the exact error message.<br>Please review the other discussions since a few errors are known, for example:<br>- compiling under 64bit version.<br>- make sure you have Widows 7 SDK installed.</p>\r\n<p>You can download a compiled version of the Ribbon.dll here: <a href=\"http://www.codeproject.com/KB/shell/windowsribbon02.aspx\">http://www.codeproject.com/KB/shell/windowsribbon02.aspx</a><br>under &quot;Download demo project&quot;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-12T07:08:04.197-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "417478",
+    "ThreadId": "204774",
+    "Html": "<p>Hello, thanks for your response</p>",
+    "PostedDate": "2010-03-12T07:29:16.59-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

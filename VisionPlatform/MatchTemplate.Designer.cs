@@ -43,6 +43,7 @@
             this.AllROIRadioButton = new System.Windows.Forms.RadioButton();
             this.PolyMaskRadioButton = new System.Windows.Forms.RadioButton();
             this.MaskGroupBox = new System.Windows.Forms.GroupBox();
+            this.userControl11 = new Timer.DrawTools();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.ROIGroupBox.SuspendLayout();
             this.MaskGroupBox.SuspendLayout();
@@ -188,11 +189,19 @@
             this.MaskGroupBox.TabStop = false;
             this.MaskGroupBox.Text = "Mask";
             // 
+            // userControl11
+            // 
+            this.userControl11.Location = new System.Drawing.Point(288, 493);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(303, 247);
+            this.userControl11.TabIndex = 25;
+            // 
             // MatchTemplate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 764);
+            this.Controls.Add(this.userControl11);
             this.Controls.Add(this.MaskGroupBox);
             this.Controls.Add(this.ROIGroupBox);
             this.Controls.Add(this.rtbInfoMessage);
@@ -229,5 +238,6 @@
         private System.Windows.Forms.RadioButton AllROIRadioButton;
         private System.Windows.Forms.RadioButton PolyMaskRadioButton;
         private System.Windows.Forms.GroupBox MaskGroupBox;
+        private Timer.DrawTools userControl11;
     }
 }

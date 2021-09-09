@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "424475",
+    "ThreadId": "207513",
+    "Html": "<p>1. Is it necessary to call _ribbon.DestroyFramework() before calling InitFramework() with a [different] ribbon from a second assembly?&nbsp; ...I'm assuming it is.</p>\r\n<p>2. How &quot;expensive&quot; is it to (re)create a Ribbon object?&nbsp;How &quot;expensive&quot; is it to (re)run DestroyFramework() followed by InitFramework()?&nbsp; Related to #1, is it reasonable to use DestroyFramework/InitFramework to frequently completely replace the Ribbon?&nbsp; For scenario, take Outlook 2007/2010&nbsp;with the left folder view that displays all of the different kinds of Outlook folders and you're cursoring up and down through the different types of folders.&nbsp; The ribbon changes everytime (or everytime the folder type changes).</p>\r\n<p>NOTE: I can't use Ribbon application modes because this is part of a WinForms application extensibility framework and it works best if each Ribbon is in a separate assembly.</p>\r\n<p>Michael Herman (Toronto)</p>",
+    "PostedDate": "2010-03-27T10:51:19.077-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "424506",
+    "ThreadId": "207513",
+    "Html": "<p dir=ltr>Indeed, you must call DestoryFramework before calling again InitFramework.<br>Also, try to avoid the following common pitfall, you can't call DestoryFramework in an event handler of one of the ribbon items, otherwise you will get an exception.<br>If you must, open a timer that will invoke the DestoryFramework, after you return from the event handler.</p>\r\n<p dir=ltr>I can't say what you are planning is a &quot;best practice&quot;, since Microsoft didn't allow changing the ribbon structure for a reason..<br>But this will probably work, just make sure you don't reload the ribbon DLLs over and over, to avoid the extra IO. Hopefully for you it will work fast enough...</p>",
+    "PostedDate": "2010-03-27T13:28:28.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "424946",
+    "ThreadId": "207513",
+    "Html": "<p>Re: I can't say what you are planning is a &quot;best practice&quot;, since Microsoft didn't allow changing the ribbon structure for a reason.</p>\r\n<p>Can you explain the latter part of your comment a bit more?&nbsp;&nbsp; It seems to be that whether you're using application modes or reloading an entirely new ribbon object, it shouldn't make a difference (i.e. modulo performance, etc., using one approach or another is an &quot;implementation detail&quot; ...isn't it?)</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-03-29T07:49:52.847-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "425074",
+    "ThreadId": "207513",
+    "Html": "<p>As far as I understand, application modes should be used to allow several static ribbon modes like &quot;Normal mode&quot; and &quot;Print Mode&quot;.</p>\r\n<p>I assume that Microsoft noticed they didn't provide a dynamic way to use the application modes thus there is probably a reason behind it.</p>\r\n<p>That being said, I don't work at Microsoft and can't really tell why they limited the API in such a way.</p>",
+    "PostedDate": "2010-03-29T12:59:52.91-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

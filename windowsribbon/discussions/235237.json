@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "524056",
+    "ThreadId": "235237",
+    "Html": "\r\n<p>If a user clicks on a search button in tab A, I want them to be kicked to Tab B. How can this happen?</p>\r\n",
+    "PostedDate": "2010-11-18T14:34:14.487-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "524058",
+    "ThreadId": "235237",
+    "Html": "\r\n<p>Unfortunately, this behavior is not support by the Windows Ribbon Framework, and hence my wrapper can't provide it.</p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2010-11-18T14:37:09.577-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

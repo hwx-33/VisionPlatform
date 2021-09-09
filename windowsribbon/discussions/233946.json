@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "519022",
+    "ThreadId": "233946",
+    "Html": "\r\n<p>Hello,</p>\r\n<p>how must i use the RibbonGenerator ?</p>\r\n<p>I dont unterstand the description from <a href=\"http://www.codeproject.com/Members/Bernhard-Elbl\" target=\"_blank\">\r\nBernhard Elbl</a>&nbsp;...<br>\r\nThere are not enough infos to use this tool !!!</p>\r\n<p>Bye<br>\r\nMartin</p>\r\n",
+    "PostedDate": "2010-11-08T14:40:23.09-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "519676",
+    "ThreadId": "233946",
+    "Html": "\r\n<p>We will try to publish a short tutorial soon which will specify the needed steps to use the new tool.<br>\r\nIn the mean time, you can try look at the samples and learn from them.<br>\r\nAs a quick tip I can say that the RibbonGenerator tool is defined as a custom tool on the RibbonMarkup.xml</p>\r\n",
+    "PostedDate": "2010-11-09T16:13:32.48-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "521687",
+    "ThreadId": "233946",
+    "Html": "\r\n<p>Is it still possible to use the ribbon with the Express Editions?</p>\r\n",
+    "PostedDate": "2010-11-14T03:21:20.033-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "521693",
+    "ThreadId": "233946",
+    "Html": "\r\n<p>I don't see a reason why it shouldn't work with the express editions.<br>\r\nJust don't forget to install the Windows 7 SDK.</p>\r\n",
+    "PostedDate": "2010-11-14T03:49:04.667-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "521731",
+    "ThreadId": "233946",
+    "Html": "\r\n<p>I tried now, but got several errors. When I opened the whole solution I got an error complaining about something that has to do with source code management. Ignoring that worked. Building the DLL an the sampled project worked as well.</p>\r\n<p>But there are several other problems:</p>\r\n<p>1. openening one of the sample forms leads to an exception because a ribbon resource was not found. The control is displayed with an error message</p>\r\n<p>2. opening RibbonGenerator.sln has some error messages:</p>\r\n<p style=\"padding-left:30px\">a. project folders (don't know the english term, it says &quot;Projektmappenordner&quot;) are not supported in this version, so &quot;Solution Items&quot; will be displayed as not available</p>\r\n<p style=\"padding-left:30px\">b. RibbonGenerator.Setup.vdproj cannot be loaded because the project type is not supportet (i found out the express edition don't support setup projects)</p>\r\n<p>3. building the RibbonGenerator leads to serveral error messages:</p>\r\n<p style=\"padding-left:30px\">a. type or namespace &quot;ServiceProvider&quot; could not be found (several times)</p>\r\n<p style=\"padding-left:30px\">b. VsShellUtilities and VsConstants are not avaiable in the current context</p>\r\n<p style=\"padding-left:30px\">c. ...\\bin\\Debug\\RibbonGenerator.dll could not be found (isn't that the dl I am trying to build?)</p>\r\n<p style=\"padding-left:30px\">d. a warning about&nbsp; Microsoft.VisualStudio,Shell which could not be found</p>\r\n<p>I have the SDK installed and could use the 2.5 version of Ribon quite successfully, just had to adapt the prebuild pathes because the SDK is not installed at the default location.</p>\r\n<p>So am I doing something wrong in general? <strong><a href=\"http://www.codeproject.com/script/Membership/View.aspx?mid=201317\">Bernhard Elbl</a></strong>s\r\n<a href=\"http://www.codeproject.com/KB/toolbars/RibbonLocalization.aspx\">tutorial</a> wasn't much helpful, except for the fact that in one of the screenshot there is an option to set a custom tool for the XML-file. I don't have that option at my express edition.<strong></strong></p>\r\n<p>By the way: nice work with the ribbon so far, though there are some minor problems which could be caused by some misunderstanding on my side (e.g. setting RibbonButton.enabled property does not work at runtime) the 2.5 work great!<strong><br>\r\n</strong></p>\r\n",
+    "PostedDate": "2010-11-14T06:57:11.67-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "523241",
+    "ThreadId": "233946",
+    "Html": "\r\n<p>There is a new quick start tutorial, written by Bernhard:</p>\r\n<p><a href=\"http://bernhardelbl.wordpress.com/2010/11/17/quickstart-tutorial-windows-ribbon-for-winforms/\">http://bernhardelbl.wordpress.com/2010/11/17/quickstart-tutorial-windows-ribbon-for-winforms/</a></p>\r\n",
+    "PostedDate": "2010-11-17T06:48:18.277-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

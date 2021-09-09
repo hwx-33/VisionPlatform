@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "591082",
+    "ThreadId": "252355",
+    "Html": "\r\n<p>Perhaps I am blind, and excuse my ignorance if that is the case, but I was wondering, how do we save and load the user's preference to minimize the ribbon or show the QAT below the ribbon?</p>\r\n",
+    "PostedDate": "2011-04-03T21:00:05.563-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "592188",
+    "ThreadId": "252355",
+    "Html": "<p>To \"load the user's preference to minimize the ribbon\", do the following. &nbsp;I tested this, and it works. &nbsp;Unfortunately, I haven't experimented with the&nbsp;<strong>QAT - Quick Access Toolbar.</strong>&nbsp;&nbsp;On a side note, it's probably not my place to say given  this isn't my forum, but....... in my experience, it's best to <strong>not</strong> use abbreviations when asking for assistance (eg. QAT). &nbsp;Even if it seems obvious given the context. &nbsp;I'm just sayin'.... my young words of wisdom... :P</p>\n<p><strong>First:</strong> Create a user setting (eg. <strong>RibbonMinimized</strong>). &nbsp;Make the type <strong>Boolean</strong>.</p>\n<p><strong>Then</strong>, when closing the application, in the <strong>FormClosing</strong> Event for example. &nbsp;If the ribbon is minimized (eg.&nbsp;Ribbon1.Minimized = True), then <strong>set the user setting to true</strong> as follows.</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">If</span> Ribbon1.Minimized = <span style=\"color: blue;\">True</span> <span style=\"color: blue;\">Then</span>\n     <span style=\"color: blue;\">My</span>.Settings.RibbonMinimized = <span style=\"color: blue;\">True</span>\n<span style=\"color: blue;\">End</span> <span style=\"color: blue;\">If</span>\n</pre>\n</div>\n<p>&nbsp;</p>\n<p><strong>Finally,</strong> in the <strong>FormLoad </strong>event (for example), if the user setting variable&nbsp;<strong>RibbonMinimized </strong>is true, then assign true to the RibbonMinimized property as follows.</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre><span style=\"color: blue;\">If</span> <span style=\"color: blue;\">My</span>.Settings.RibbonMinimized = <span style=\"color: blue;\">True</span> <span style=\"color: blue;\">Then</span>\n     Ribbon1.Minimized = <span style=\"color: blue;\">True</span>\n<span style=\"color: blue;\">End</span> <span style=\"color: blue;\">If</span>\n</pre>\n</div>\n<p>&nbsp;</p>\n<p>&nbsp;</p>",
+    "PostedDate": "2011-04-05T09:55:58.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "592193",
+    "ThreadId": "252355",
+    "Html": "<p>Thanks for your response.<br />I am currently doing it that way, however there's a bit of flicker before the ribbon state is set to minimized so I wondered if there was a way to do it similar to the quick access toolbar buttons (see prev. thread of mine).</p>",
+    "PostedDate": "2011-04-05T10:00:13.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

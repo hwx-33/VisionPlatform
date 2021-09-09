@@ -28,11 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.ribbon1 = new RibbonLib.Ribbon();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
+            // 
+            // ribbon1
+            // 
+            this.ribbon1.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.Minimized = false;
+            this.ribbon1.Name = "ribbon1";
+            this.ribbon1.ResourceName = null;
+            this.ribbon1.ShortcutTableResourceName = null;
+            this.ribbon1.Size = new System.Drawing.Size(819, 160);
+            this.ribbon1.TabIndex = 0;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 160);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(819, 447);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
             // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(819, 607);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.ribbon1);
             this.Name = "Form1";
             this.Text = "Vison";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -46,6 +70,10 @@
         }
 
         #endregion
+
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private RibbonLib.Ribbon ribbon1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

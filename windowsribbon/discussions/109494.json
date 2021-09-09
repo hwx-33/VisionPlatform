@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "316545",
+    "ThreadId": "109494",
+    "Html": "<p>Hello together,</p>\r\n<p>when i start the&nbsp;sample application i get follow error message for all projects in this solution:</p>\r\n<pre>Fehler\t1\tThe command &quot;&quot;%PROGRAMFILES%\\Microsoft SDKs\\Windows\\v7.0\\Bin\\UICC.exe&quot;  &quot;C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\01-AddingRibbonSupport\\RibbonMarkup.xml&quot; &quot;C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\01-AddingRibbonSupport\\RibbonMarkup.bml&quot; /res:&quot;C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\01-AddingRibbonSupport\\RibbonMarkup.rc&quot;\r\n&quot;%PROGRAMFILES%\\Microsoft SDKs\\Windows\\v7.0\\Bin\\rc.exe&quot; /v &quot;C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\01-AddingRibbonSupport\\RibbonMarkup.rc&quot;\r\ncmd /c &quot;(&quot;C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\Common7\\IDE\\..\\..\\VC\\bin\\vcvars32.bat&quot;) &amp;&amp; (&quot;C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\Common7\\IDE\\..\\..\\VC\\bin\\link.exe&quot; /VERBOSE /NOENTRY /DLL /OUT:&quot;C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\01-AddingRibbonSupport\\bin\\Debug\\01-AddingRibbonSupport.ribbon.dll&quot; &quot;C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\01-AddingRibbonSupport\\RibbonMarkup.res&quot;)&quot;\r\n&quot; exited with code 1.\t01-AddingRibbonSupport\r\n</pre>\r\n<pre>I use Windows7 68Bit and Visual C# 2008 Express Edition. Have anyone an idea why i get this message?&nbsp;</pre>\r\n<pre>Lars</pre>",
+    "PostedDate": "2010-02-21T00:44:58.363-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "316972",
+    "ThreadId": "109494",
+    "Html": "<p>Hi,</p>\r\n<p>you have to install the Windows 7 SDK!</p>\r\n<p>Andr&eacute;</p>",
+    "PostedDate": "2010-02-21T05:34:40.8-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "319096",
+    "ThreadId": "109494",
+    "Html": "<p>Thx for your help,</p>\r\n<p>I have now installed the Window 7 SDK and get 2 new error messages</p>\r\n<p>&nbsp;</p>\r\n<p>First message:</p>\r\n<p>Fehler&nbsp;&nbsp; &nbsp;3&nbsp;&nbsp; &nbsp;cannot open input file 'C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\02-ApplicationMenuButton\\RibbonMarkup.res'&nbsp;&nbsp; &nbsp;C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\02-ApplicationMenuButton\\LINK&nbsp;&nbsp; &nbsp;02-ApplicationMenuButton</p>\r\n<p>&nbsp;</p>\r\n<p>Second message:</p>\r\n<p>Fehler&nbsp;&nbsp; &nbsp;4&nbsp;&nbsp; &nbsp;The command &quot;&quot;%PROGRAMFILES%\\Microsoft SDKs\\Windows\\v7.0\\Bin\\UICC.exe&quot; &quot;C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\02-ApplicationMenuButton\\RibbonMarkup.xml&quot; &quot;C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\02-ApplicationMenuButton\\RibbonMarkup.bml&quot; /res:&quot;C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\02-ApplicationMenuButton\\RibbonMarkup.rc&quot;<br>&quot;%PROGRAMFILES%\\Microsoft SDKs\\Windows\\v7.0\\Bin\\rc.exe&quot; /v &quot;C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\02-ApplicationMenuButton\\RibbonMarkup.rc&quot;<br>cmd /c &quot;(&quot;C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\Common7\\IDE\\..\\..\\VC\\bin\\vcvars32.bat&quot;) &amp;&amp; (&quot;C:\\Program Files (x86)\\Microsoft Visual Studio 9.0\\Common7\\IDE\\..\\..\\VC\\bin\\link.exe&quot; /VERBOSE /NOENTRY /DLL /OUT:&quot;C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\02-ApplicationMenuButton\\bin\\Debug\\02-ApplicationMenuButton.ribbon.dll&quot; &quot;C:\\Users\\Lars\\Desktop\\RibbonLib_v2.0\\Samples\\02-ApplicationMenuButton\\RibbonMarkup.res&quot;)&quot;<br>&quot; exited with code 1181.&nbsp;&nbsp; &nbsp;02-ApplicationMenuButton</p>\r\n<p>Lars</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-02-21T07:25:18.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "352167",
+    "ThreadId": "109494",
+    "Html": "<p>Check this discussion, probably the problem is related to 64bit:</p>\r\n<p><a href=\"http://windowsribbon.codeplex.com/Thread/View.aspx?ThreadId=77456\">http://windowsribbon.codeplex.com/Thread/View.aspx?ThreadId=77456</a></p>",
+    "PostedDate": "2010-02-21T14:39:28.873-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430825",
+    "ThreadId": "109494",
+    "Html": "<p>Hello,<br><br>I have exactly the same problem as <a id=\"ctl00_ctl00_MasterContent_Content_PostRepeater_ctl04_UserNameLink\" href=\"http://www.codeplex.com/site/users/view/LarsThorwald\">LarsThorwald</a> described. <br>It is not caused by 64bit in my case, because I'm running XPsp2 x86.<br><br>Have you got any idea how to solve this?<br><br>Thanks,<br><br>Julo</p>",
+    "PostedDate": "2010-04-14T02:11:55.767-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430850",
+    "ThreadId": "109494",
+    "Html": "<p>Solved,</p>\r\n<p>I didn't have c++ tools installed (in VS and SDK7). And I also didn't have XmlLite.dll, parser required by uicc.exe<br><br>Now ii does work!</p>",
+    "PostedDate": "2010-04-14T03:55:55.433-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

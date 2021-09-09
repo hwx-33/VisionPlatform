@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "1472778",
+    "ThreadId": "654432",
+    "Html": "Hello, I've follow all step to install the RibbonGenerator, Under win 8.1 and vs pro 2013 (pack 4)... I've got a french version.\r<br />\nAnd still have the message that RibbonGenerator is not find on my system...\r<br />\n<br />\nI've installed First the win 8.1 sdk... the visual studio  2013 sdk... I've compiled...\r<br />\nI registred, and use the gacutil exe...\r<br />\n<br />\nDoes anyone has an idea to solve this ?\r<br />\n<br />\nThanks in advance for any help.<br />\n",
+    "PostedDate": "2016-05-08T12:51:58.127-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "1472828",
+    "ThreadId": "654432",
+    "Html": "Hello, It's seems to work now,  I've just reinstall visual studio sdk again after all steps describe in :\r<br />\n <a href=\"https://bernhardelbl.wordpress.com/2013/11/26/windows-ribbon-for-winforms-in-visual-studio-2013/\" rel=\"nofollow\">https://bernhardelbl.wordpress.com/2013/11/26/windows-ribbon-for-winforms-in-visual-studio-2013/</a>\r<br />\n<br />\nI reboot, and now the tool is found !\r<br />\n<br />\nStrange, but this is the way I do...\r<br />\n<br />\nWith best regards,\r<br />\n<br />\nmlcvista<br />\n",
+    "PostedDate": "2016-05-09T01:25:58.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

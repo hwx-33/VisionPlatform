@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "637284",
+    "ThreadId": "263896",
+    "Html": "\r\n<p>Hey all</p>\r\n<p>I was wondering if there is a way a disable or enable a bulk set of ribbon controls at runtime?<br>\r\nFor example if the application is in a state whereby it cannot accept user interactivity (e.g a database not initialized or not connected yet) it would be nice to disable things in the ribbon to hint to the user.</p>\r\n<p><br>\r\nThanks!</p>\r\n",
+    "PostedDate": "2011-07-04T23:22:57.787-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "637676",
+    "ThreadId": "263896",
+    "Html": "<p>I think the correct feature to use is Application Modes.</p>\r\n<p>Check <a href=\"http://blogs.microsoft.co.il/blogs/arik/archive/2009/11/23/windows-ribbon-for-winforms-part-16-applicationmodes.aspx\">this post </a>for more details. ﻿﻿﻿</p>",
+    "PostedDate": "2011-07-05T11:30:43.417-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "639355",
+    "ThreadId": "263896",
+    "Html": "<p>I shall settle for that then. Thanks Arik :)</p>",
+    "PostedDate": "2011-07-08T03:39:13.587-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

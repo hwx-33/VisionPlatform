@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "818687",
+    "ThreadId": "350865",
+    "Html": "<p>Is it possible to put additional buttons together with a FontControl into the same ribbon group? Since the current version of the ribbon framework doesn't feature dialog box launchers I need an extra button to open a character format dialog. It would be nice  to be able to put that next to a FontControl element.</p>\n<p>So far I haven't been able to manage this. No matter what I do (e. g. using a custom GroupSizeDefinition or not setting a group size definition at all) I get unhelpful errors concerning the SizeDefinition \"IntRichFont\" which seems to be an internal part  of the FontControl control.</p>",
+    "PostedDate": "2012-04-02T02:59:03.697-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

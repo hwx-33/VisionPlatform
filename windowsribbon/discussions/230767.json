@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "506706",
+    "ThreadId": "230767",
+    "Html": "<p>Much like MS Paints ribbon i'm looking for a way to select a button to show the current mode/state the application is in. For example paint has a Color 1, and Color 2 button. When one is selected it highlights it. In .net its a simple&nbsp;_btnColor1.Checked = true;</p>\r\n<p>Only other way I can think of&nbsp;is to uses the logic like in the 08-Images example of 2.5.</p>",
+    "PostedDate": "2010-10-13T09:06:53.627-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "507048",
+    "ThreadId": "230767",
+    "Html": "<p>Sorry Example 10. I needed sleep when I posted this.</p>",
+    "PostedDate": "2010-10-13T23:22:10.77-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

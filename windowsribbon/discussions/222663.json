@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "477198",
+    "ThreadId": "222663",
+    "Html": "<p>Can it run in Windows XP?</p>\r\n<p>if it works, under XP does it need Windows 7 SDK runtime?</p>\r\n<p>because, my application also must run in XP.</p>",
+    "PostedDate": "2010-08-05T18:41:25.427-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "477702",
+    "ThreadId": "222663",
+    "Html": "<p>Not this version as this is just a wrapper around what is provided by Microsoft in the Windows 7 SDK, so it requires Win 7 or Vista SP2 with a Platform Upgrade installed.</p>\r\n<p>http://msdn.microsoft.com/en-us/library/dd371191%28v=VS.85%29.aspx</p>",
+    "PostedDate": "2010-08-07T20:03:53.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

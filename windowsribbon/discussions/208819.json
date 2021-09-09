@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "429206",
+    "ThreadId": "208819",
+    "Html": "<p>First of all nice project!</p>\r\n<p>Thanks for the author.</p>\r\n<p>&nbsp;</p>\r\n<p>I do see major issue in the library.</p>\r\n<p>The issue is related to exceptions handling.</p>\r\n<p>&nbsp;</p>\r\n<p>Please open _02_ApplicationMenuButton project and add the following code to void _buttonNew_OnExecute method.</p>\r\n<p>int i = int.Parse(&quot;a&quot;);</p>\r\n<p>this&nbsp; code is just to demonstrate unhandled exception situation.</p>\r\n<p>run the ApplicationMenuButton project&nbsp; click New button and you will see that Unhanded Exception window will not shown at all.</p>\r\n<p>&nbsp;</p>\r\n<p>add the same code into button1_Click event</p>\r\n<p>and you will see difference.</p>\r\n<p>I see big issue in it especially if we have created form object in _buttonNew_OnExecute handler then there is unhanded exception in this form then the form will be closed without any notification.</p>\r\n<p>&nbsp;</p>\r\n<p>Any ideas how to solve this?</p>\r\n<p>&nbsp;</p>\r\n<p>Thank you, Alex</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-04-09T04:05:13.827-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "430657",
+    "ThreadId": "208819",
+    "Html": "<p>Actually there is no real problem.</p>\r\n<p>What happens is that your exception is thrown as usual (you can see it on the outpane pane in Visual Studio), but if you don't handle it (by adding a try-catch block) it will start to unwind the stack.<br>Now, since this event handler originated from the Windows Ribbon Framework <strong>COM based </strong>library, it will silant the exception when it gets to there.<br>This is why the exception doesn't continue all the way up to visual studio.</p>\r\n<p>But, since you can catch it normally, there is no real issue.<br>Anyway, I can't fix it, I can't cancel the internal &quot;catch all&quot; that the Window Ribbon Framework does.</p>\r\n<p>Hope it helps,<br>Arik Poznanski.</p>",
+    "PostedDate": "2010-04-13T14:56:34.1-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "459679",
+    "ThreadId": "217249",
+    "Html": "Hello, Arik!\r\n\r\nI have some trouble using SplitButton in my application...\r\n\r\nThe situation is the following. I have a SplitButton that contains a list of types of the libraries (as Buttons). When the library is being loaded, I need this SplitButton to show, what type is this library of. For example, the default value of this SplitButton is &quot;Generic&quot; (the Button inside SplitButton), and if I load a library of type &quot;Music&quot;, I need it to &quot;select&quot; the needed Button.\r\n\r\nI don't know exactly what to do, but I think I need to call UpdateProperty for my SplitButton... And here's a problem: I don't know how to :)\r\n\r\nCould you help me, please?\r\n\r\nThanks.",
+    "PostedDate": "2010-06-24T13:56:23.177-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "472847",
+    "ThreadId": "217249",
+    "Html": "You don't need to call UpdateProperty, since this is an internal function that is called for you when you changed the value of properties.\r\n\r\nYou can update the properties of the &quot;default&quot; button to the ones of the &quot;selected&quot; button, so it will appear that the first (=default) button is the selected button.\r\nChanging the button properties is done simple by, well, changing the properties.\r\n\r\nOf course you should save the last selection so you can check what to do in case the &quot;default&quot; button was selected.\r\n\r\nGood luck,\r\nArik.",
+    "PostedDate": "2010-07-26T14:25:19.913-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

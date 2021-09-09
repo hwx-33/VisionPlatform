@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1197575",
+    "ThreadId": "526307",
+    "Html": "When I use convert2bmp to convert my transparent ping images, it successfully creates bitmap versions of the images that display on the ribbon.\r<br />\n<br />\n...However, it seems to be converting transparent parts of the image black (which is normal/expected, but it's also converting the color white to black as well.\r<br />\n<br />\nFor example, I have a transparent ping icon image that is a round circle shape with a transparent background, and the symbol inside the circle (a plus sign, +) is colored white. When I convert the image and display it on the blue ribbon, it displays, but the plus sign is blue instead of white.\r<br />\n<br />\nI've tried opening my ping images in photoshop cs5 and placing them over a black colored layer and saving as a bitmap (32 bit), but when I try to use it on my ribbon, it compiles no problem, but simply doesn't show the image at all on the ribbon button.\r<br />\n<br />\nI've been using this ribbon for quite a long time, but previously I've been loading them like this:\r<br />\n_Button_AddItem.LargeImage = Ribbon1.ConvertToUIImage(My.Resources.add_icon) \r<br />\n' where &quot;add_icon&quot; is a transparent ping.  This displays on the ribbon perfectly.\r<br />\nAlthough this method allows me to use transparent ping images directly without converting them to bitmap, they occasionally don't load at all, and I get fully functional ribbon buttons, but no images on them.\r<br />\n<br />\nHow do I convert my transparent ping images and leave the white colored parts alone/leave the white parts white and not make white transparent/black too?\r<br />\n<br />\nPlease help...<br />\n",
+    "PostedDate": "2014-01-25T14:14:41.103-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

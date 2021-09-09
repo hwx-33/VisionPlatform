@@ -1,0 +1,557 @@
+[
+  {
+    "Id": "71808",
+    "Title": "[Info] Support Vista SP2",
+    "LatestDate": "2009-10-17T08:36:13.073-07:00"
+  },
+  {
+    "Id": "75144",
+    "Title": "[Limitation] Can't use library with WPF",
+    "LatestDate": "2009-11-14T16:04:42.34-08:00"
+  },
+  {
+    "Id": "76482",
+    "Title": "[Obsolete] Error when adding event",
+    "LatestDate": "2009-11-29T14:02:55.803-08:00"
+  },
+  {
+    "Id": "77456",
+    "Title": "[Solved] On Windows 7 64bit pre-build events generates errors",
+    "LatestDate": "2010-01-21T14:03:15.557-08:00"
+  },
+  {
+    "Id": "77612",
+    "Title": "[Info] List of compatible target platforms",
+    "LatestDate": "2010-01-30T08:29:21.83-08:00"
+  },
+  {
+    "Id": "78248",
+    "Title": "[Solved] Setting tab title",
+    "LatestDate": "2009-12-16T00:16:07.24-08:00"
+  },
+  {
+    "Id": "78744",
+    "Title": "[Limitation] Library doesn't work on Windows XP",
+    "LatestDate": "2010-01-29T11:26:32.583-08:00"
+  },
+  {
+    "Id": "79145",
+    "Title": "[Limitation] Ribbon doesn't support MDI",
+    "LatestDate": "2009-12-28T11:15:46.223-08:00"
+  },
+  {
+    "Id": "82577",
+    "Title": "[Limitation] TooltipTitle not showing when equals to LabelTitle",
+    "LatestDate": "2010-02-10T14:03:18.753-08:00"
+  },
+  {
+    "Id": "82794",
+    "Title": "[Solved] AccessViolationException when calling Close",
+    "LatestDate": "2010-06-13T14:55:09.81-07:00"
+  },
+  {
+    "Id": "109494",
+    "Title": "[Solved] Missing VC++ tools cause an error message when compiling",
+    "LatestDate": "2010-04-14T03:55:55.433-07:00"
+  },
+  {
+    "Id": "204774",
+    "Title": "[Solved] Get compiled Ribbon.dll",
+    "LatestDate": "2010-03-12T07:29:16.59-08:00"
+  },
+  {
+    "Id": "204852",
+    "Title": "[Solved] How to change the tab name",
+    "LatestDate": "2010-03-19T06:57:59.133-07:00"
+  },
+  {
+    "Id": "205396",
+    "Title": "[Limitation] Can't detect tab change",
+    "LatestDate": "2010-03-19T07:07:09.42-07:00"
+  },
+  {
+    "Id": "206955",
+    "Title": "[Limitation] No Visual Studio Designer for Ribbon XML.",
+    "LatestDate": "2010-03-23T00:27:31.097-07:00"
+  },
+  {
+    "Id": "207041",
+    "Title": "[Info] Why multiple ribbon frameworks? ",
+    "LatestDate": "2010-03-26T17:07:57.277-07:00"
+  },
+  {
+    "Id": "207191",
+    "Title": "[Limitation] Windows Ribbon Framework doesn't run on XP",
+    "LatestDate": "2010-03-24T15:26:08.773-07:00"
+  },
+  {
+    "Id": "207482",
+    "Title": "[Info] Hosting the Ribbon control: SplitContainer or ToolStripContainer?",
+    "LatestDate": "2010-03-27T06:44:45.107-07:00"
+  },
+  {
+    "Id": "207513",
+    "Title": "[Info] Correct way to load a new ribbon from a 2nd assembly?",
+    "LatestDate": "2010-03-29T12:59:52.91-07:00"
+  },
+  {
+    "Id": "207648",
+    "Title": "[Limitation] Windows 7 ribbon Framework doesn't support *merging* of compiled Ribbon XML resources.",
+    "LatestDate": "2010-03-29T13:01:33.173-07:00"
+  },
+  {
+    "Id": "207729",
+    "Title": "[Solved] Where to find Windows 7 Ribbon XML schema file?",
+    "LatestDate": "2010-03-29T21:54:40.307-07:00"
+  },
+  {
+    "Id": "207976",
+    "Title": "[Open] Doesn't run when compiling on VS 2010",
+    "LatestDate": "2010-04-17T06:24:00.257-07:00"
+  },
+  {
+    "Id": "208471",
+    "Title": "[Solved] Problem using Ribbon: Cannot detect the location of VS common tool folder",
+    "LatestDate": "2010-04-07T12:59:21.633-07:00"
+  },
+  {
+    "Id": "208620",
+    "Title": "[Solved] How to change label's title?",
+    "LatestDate": "2010-04-08T11:13:19.507-07:00"
+  },
+  {
+    "Id": "208819",
+    "Title": "[Solved] Exception Handling when using the ribbon",
+    "LatestDate": "2010-04-13T14:56:34.1-07:00"
+  },
+  {
+    "Id": "208960",
+    "Title": "[Solved] What dlls are needed to distribute the application with ribbon?",
+    "LatestDate": "2010-04-17T07:02:42.81-07:00"
+  },
+  {
+    "Id": "209982",
+    "Title": "[Limitation] Window painting issues when using Ribbon with XNA application",
+    "LatestDate": "2010-04-22T16:57:40.843-07:00"
+  },
+  {
+    "Id": "210567",
+    "Title": "[Open] Ribbon Framework and Composite UI Application Block ",
+    "LatestDate": "2010-04-26T07:27:16.44-07:00"
+  },
+  {
+    "Id": "216647",
+    "Title": "[Solved] How to compile markup and create the resource dll in non VS IDE",
+    "LatestDate": "2010-06-29T23:17:25.537-07:00"
+  },
+  {
+    "Id": "217249",
+    "Title": "[Solved] How to change SplitButton header dinamically?",
+    "LatestDate": "2010-07-26T14:25:19.913-07:00"
+  },
+  {
+    "Id": "217460",
+    "Title": "[Limitation] How to invoke a tab.onClick event",
+    "LatestDate": "2010-06-28T13:14:22.347-07:00"
+  },
+  {
+    "Id": "217477",
+    "Title": "[Solved] compile failure",
+    "LatestDate": "2010-06-29T05:21:39.623-07:00"
+  },
+  {
+    "Id": "217600",
+    "Title": "[Solved] Convert image 24bit to 32bit with convert2bmp",
+    "LatestDate": "2013-03-24T00:44:26.357-07:00"
+  },
+  {
+    "Id": "218128",
+    "Title": "[Solved] Event Handler Problem",
+    "LatestDate": "2010-10-08T17:57:27.2-07:00"
+  },
+  {
+    "Id": "219064",
+    "Title": "[Solved] Combox Exception",
+    "LatestDate": "2010-11-07T16:57:22.34-08:00"
+  },
+  {
+    "Id": "222663",
+    "Title": "[Limitation] Can it run in Windows XP?",
+    "LatestDate": "2010-08-07T20:03:53.3-07:00"
+  },
+  {
+    "Id": "222973",
+    "Title": "[Solved] Spinner Control Refresh",
+    "LatestDate": "2010-08-09T15:16:54.23-07:00"
+  },
+  {
+    "Id": "225183",
+    "Title": "[Solved] Windows 7 theme problem",
+    "LatestDate": "2010-08-28T15:53:03.813-07:00"
+  },
+  {
+    "Id": "227999",
+    "Title": "How to find item in DropDownGallery (commands)",
+    "LatestDate": "2010-10-21T15:59:20.037-07:00"
+  },
+  {
+    "Id": "228473",
+    "Title": "Spinner set DecimalValue ",
+    "LatestDate": "2010-09-24T06:56:29.183-07:00"
+  },
+  {
+    "Id": "230516",
+    "Title": "Event Build Error 255",
+    "LatestDate": "2012-02-09T09:08:14.85-08:00"
+  },
+  {
+    "Id": "230709",
+    "Title": "Hotkey problems",
+    "LatestDate": "2010-10-14T00:29:52.95-07:00"
+  },
+  {
+    "Id": "230767",
+    "Title": "Selecting A Button",
+    "LatestDate": "2010-10-13T23:22:10.77-07:00"
+  },
+  {
+    "Id": "232582",
+    "Title": "Bug in GalleryPropertiesProvider",
+    "LatestDate": "2010-11-08T10:14:36.14-08:00"
+  },
+  {
+    "Id": "233653",
+    "Title": "Ribbon-Button/Group/Tab",
+    "LatestDate": "2010-11-06T07:37:36.507-07:00"
+  },
+  {
+    "Id": "233727",
+    "Title": "Color-Setting",
+    "LatestDate": "2010-11-06T07:31:15.293-07:00"
+  },
+  {
+    "Id": "233946",
+    "Title": "Ribbon 2.6 with RibbonGenerator",
+    "LatestDate": "2010-11-17T06:48:18.277-08:00"
+  },
+  {
+    "Id": "235237",
+    "Title": "Make a tab take focus",
+    "LatestDate": "2010-11-18T14:37:09.577-08:00"
+  },
+  {
+    "Id": "236613",
+    "Title": "UICC fails to generate .bml or .rc file",
+    "LatestDate": "2010-12-22T02:13:10.18-08:00"
+  },
+  {
+    "Id": "238293",
+    "Title": "Change at runtime?",
+    "LatestDate": "2010-12-14T02:59:12.993-08:00"
+  },
+  {
+    "Id": "238392",
+    "Title": "Backstage view (as in Office 2010)",
+    "LatestDate": "2010-12-18T00:25:39.833-08:00"
+  },
+  {
+    "Id": "238711",
+    "Title": "TextBox on Ribbon Control",
+    "LatestDate": "2010-12-27T12:35:24.407-08:00"
+  },
+  {
+    "Id": "240773",
+    "Title": "Problem/Glitch with Minimizing and Maximizing",
+    "LatestDate": "2013-06-07T21:36:03.963-07:00"
+  },
+  {
+    "Id": "241306",
+    "Title": "Problem/Glitch with Hide Method",
+    "LatestDate": "2011-01-12T22:47:23.51-08:00"
+  },
+  {
+    "Id": "242735",
+    "Title": "Problem Creating Ribbon at Runtime",
+    "LatestDate": "2011-04-05T11:31:47.69-07:00"
+  },
+  {
+    "Id": "245314",
+    "Title": "Dynamic Ribbon Menu",
+    "LatestDate": "2011-06-04T18:49:51.38-07:00"
+  },
+  {
+    "Id": "245750",
+    "Title": "Error in displaying Ribbon?",
+    "LatestDate": "2011-02-17T09:43:15.243-08:00"
+  },
+  {
+    "Id": "248479",
+    "Title": ".ribbon error \"cannot find the file specified\"",
+    "LatestDate": "2013-05-31T11:19:40.757-07:00"
+  },
+  {
+    "Id": "249059",
+    "Title": "DatePicker Control",
+    "LatestDate": "2011-03-09T11:22:52.71-08:00"
+  },
+  {
+    "Id": "251352",
+    "Title": "Flicker when form is maximized",
+    "LatestDate": "2011-03-31T07:47:42.87-07:00"
+  },
+  {
+    "Id": "252255",
+    "Title": "Saving users quick access toolbar",
+    "LatestDate": "2011-04-13T20:15:26.893-07:00"
+  },
+  {
+    "Id": "252355",
+    "Title": "Minimized state/QAT location",
+    "LatestDate": "2011-04-05T10:00:13.26-07:00"
+  },
+  {
+    "Id": "252612",
+    "Title": "AccessViolationException - me.close from ribbon button (VB and CS)",
+    "LatestDate": "2011-04-05T13:49:48.877-07:00"
+  },
+  {
+    "Id": "253449",
+    "Title": "Disable \"Minimize the Ribbon\" and \"Show below the Ribbon\"",
+    "LatestDate": "2011-04-11T12:24:40.107-07:00"
+  },
+  {
+    "Id": "253837",
+    "Title": "Contextual tab color",
+    "LatestDate": "2011-10-05T01:02:58.757-07:00"
+  },
+  {
+    "Id": "255952",
+    "Title": "Localize command labels",
+    "LatestDate": "2011-05-02T00:39:29.487-07:00"
+  },
+  {
+    "Id": "257291",
+    "Title": "RibbonLib support in MDI Application",
+    "LatestDate": "2013-08-15T03:02:45.923-07:00"
+  },
+  {
+    "Id": "259927",
+    "Title": "ComboBox: Set Default Text",
+    "LatestDate": "2011-06-02T18:26:59.2-07:00"
+  },
+  {
+    "Id": "260475",
+    "Title": "Error when compiling ribbon.xml with VS2010",
+    "LatestDate": "2011-06-07T23:33:59.953-07:00"
+  },
+  {
+    "Id": "261031",
+    "Title": "Designtime IDE problem",
+    "LatestDate": "2011-06-16T11:39:13.523-07:00"
+  },
+  {
+    "Id": "262467",
+    "Title": "How to change the Text or Image of the Ribbon ApplicationButton?",
+    "LatestDate": "2011-06-23T05:58:11.22-07:00"
+  },
+  {
+    "Id": "263896",
+    "Title": "Disabling/Enabling bulk controls",
+    "LatestDate": "2011-07-08T03:39:13.587-07:00"
+  },
+  {
+    "Id": "263914",
+    "Title": "RibbonGenerator an Express Editions",
+    "LatestDate": "2011-07-05T05:18:22.14-07:00"
+  },
+  {
+    "Id": "266900",
+    "Title": "Scroll Bar displayed in wrong location",
+    "LatestDate": "2011-07-28T06:23:15.743-07:00"
+  },
+  {
+    "Id": "274251",
+    "Title": "Ribbon for 64 bit",
+    "LatestDate": "2011-09-29T06:56:23.387-07:00"
+  },
+  {
+    "Id": "274733",
+    "Title": "Ribbon Works only in windows 7?",
+    "LatestDate": "2011-10-04T17:15:58.853-07:00"
+  },
+  {
+    "Id": "274811",
+    "Title": "Crash when minimizing to tray",
+    "LatestDate": "2011-10-05T02:51:48.71-07:00"
+  },
+  {
+    "Id": "281282",
+    "Title": "Display different user controls below the ribbon on tab change",
+    "LatestDate": "2011-11-30T03:43:53.473-08:00"
+  },
+  {
+    "Id": "285635",
+    "Title": "Strange ribbon behaviour",
+    "LatestDate": "2016-11-16T23:08:09.677-08:00"
+  },
+  {
+    "Id": "291013",
+    "Title": "Windows Ribbon for WinForms in VB.net",
+    "LatestDate": "2012-02-02T15:24:24.347-08:00"
+  },
+  {
+    "Id": "346631",
+    "Title": "Ribbon with Plugins",
+    "LatestDate": "2012-02-28T16:02:02.253-08:00"
+  },
+  {
+    "Id": "347081",
+    "Title": "Get Button Image",
+    "LatestDate": "2012-03-02T10:57:25.137-08:00"
+  },
+  {
+    "Id": "348598",
+    "Title": "Select gallery item programmatically",
+    "LatestDate": "2012-03-15T08:45:14.42-07:00"
+  },
+  {
+    "Id": "350865",
+    "Title": "Additional Buttons next to a FontControl",
+    "LatestDate": "2012-04-02T02:59:03.697-07:00"
+  },
+  {
+    "Id": "360307",
+    "Title": "How to dynamically switch between different tabs ",
+    "LatestDate": "2012-06-21T16:02:23.807-07:00"
+  },
+  {
+    "Id": "393035",
+    "Title": "Ribbon for VB Express 10",
+    "LatestDate": "2012-08-25T03:56:55.79-07:00"
+  },
+  {
+    "Id": "397885",
+    "Title": "Where can i create ControleBox in the ribbon",
+    "LatestDate": "2012-10-03T06:56:37.547-07:00"
+  },
+  {
+    "Id": "405921",
+    "Title": "Ribbon Error when mouse wheel",
+    "LatestDate": "2012-12-06T23:03:42.573-08:00"
+  },
+  {
+    "Id": "406051",
+    "Title": "RibbonGenerator.Setup project incompatible with VisualStudio 2012",
+    "LatestDate": "2012-12-08T02:45:21.117-08:00"
+  },
+  {
+    "Id": "407329",
+    "Title": "Requesting permission",
+    "LatestDate": "2013-02-06T04:07:19.163-08:00"
+  },
+  {
+    "Id": "432571",
+    "Title": "Dynamic Database Driven Menu",
+    "LatestDate": "2013-02-09T08:30:33.62-08:00"
+  },
+  {
+    "Id": "432810",
+    "Title": "VS 2012",
+    "LatestDate": "2013-09-17T09:03:41.303-07:00"
+  },
+  {
+    "Id": "435435",
+    "Title": "Can this Ribbon work with MDI application",
+    "LatestDate": "2013-03-05T06:35:20.513-08:00"
+  },
+  {
+    "Id": "436001",
+    "Title": "Problem with .ribbon file",
+    "LatestDate": "2013-03-09T07:44:29.743-08:00"
+  },
+  {
+    "Id": "436649",
+    "Title": "Support XP",
+    "LatestDate": "2013-03-15T05:31:58.057-07:00"
+  },
+  {
+    "Id": "437056",
+    "Title": "Show Image with Combo Box on Ribbon Framework ",
+    "LatestDate": "2013-03-18T07:34:48.057-07:00"
+  },
+  {
+    "Id": "437921",
+    "Title": "Changing Selected RibbonTab from code during runtime",
+    "LatestDate": "2013-03-25T10:06:21.63-07:00"
+  },
+  {
+    "Id": "438867",
+    "Title": "loading Ribbons Different Version of Implementation Agreement.",
+    "LatestDate": "2013-04-02T17:09:31.967-07:00"
+  },
+  {
+    "Id": "446688",
+    "Title": "Change colour of the application menu.",
+    "LatestDate": "2013-06-11T07:43:04.983-07:00"
+  },
+  {
+    "Id": "450148",
+    "Title": "RibbonGenerator Not Compiling in Visual Studio 2012",
+    "LatestDate": "2013-07-16T02:10:47.433-07:00"
+  },
+  {
+    "Id": "455891",
+    "Title": "InitFramework and DestroyFramework problem",
+    "LatestDate": "2013-09-07T00:53:53.703-07:00"
+  },
+  {
+    "Id": "456380",
+    "Title": "Label above Combobox",
+    "LatestDate": "2013-09-10T08:22:21.313-07:00"
+  },
+  {
+    "Id": "526307",
+    "Title": "help with convert2bmp - been waiting for some feedback for a while",
+    "LatestDate": "2014-01-25T14:14:41.103-08:00"
+  },
+  {
+    "Id": "528550",
+    "Title": "How to hide/show all Ribbontabs?",
+    "LatestDate": "2015-07-27T03:18:54.923-07:00"
+  },
+  {
+    "Id": "560915",
+    "Title": "Windows Ribbon for User Control",
+    "LatestDate": "2014-08-11T22:39:25.273-07:00"
+  },
+  {
+    "Id": "642230",
+    "Title": "Is it possible to contribute to this project?",
+    "LatestDate": "2015-08-01T14:31:39.3-07:00"
+  },
+  {
+    "Id": "654432",
+    "Title": "install the tool on visual studio pro 2013 (French version)",
+    "LatestDate": "2016-05-09T01:25:58.177-07:00"
+  },
+  {
+    "Id": "658382",
+    "Title": "UpdateProperty API",
+    "LatestDate": "2016-09-30T04:59:34.817-07:00"
+  },
+  {
+    "Id": "659494",
+    "Title": "Ribbon localization at run time",
+    "LatestDate": "2016-11-16T22:06:25.297-08:00"
+  },
+  {
+    "Id": "660855",
+    "Title": "Catching Add and remove buttons from quick access toolbar",
+    "LatestDate": "2017-01-22T00:38:21.743-08:00"
+  },
+  {
+    "Id": "662275",
+    "Title": "How to catch events",
+    "LatestDate": "2017-03-29T02:30:11.267-07:00"
+  }
+]

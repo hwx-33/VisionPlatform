@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "535844",
+    "ThreadId": "238392",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>It's a great library, But will it support the Office 2010 backstage view?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks,</p>\r\n<p>Robert</p>\r\n",
+    "PostedDate": "2010-12-14T15:38:35.607-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "537653",
+    "ThreadId": "238392",
+    "Html": "\r\n<p>Not sure what is the backstage view that you are refereing to.</p>\r\n<p>But I'm afraid that it doesn't support it.<br>\r\nWindows Ribbon Framework has a similar but different implementation from the Office 2010 ribbon.</p>\r\n",
+    "PostedDate": "2010-12-18T00:25:39.833-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

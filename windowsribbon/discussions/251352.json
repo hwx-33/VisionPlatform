@@ -1,0 +1,58 @@
+[
+  {
+    "Id": "587106",
+    "ThreadId": "251352",
+    "Html": "\r\n<p>Hi There,</p>\r\n<p>I am having an issue where the ribbon seems to flicker as it is displayed if the form window state is set to maximized by default.</p>\r\n<p>The flicker does not occur if the state is normal.</p>\r\n<p>This is quite ugly, and if you look at apps such as Wordpad or Paint on Win 7, you see that the very same ribbon framework does not have this flickering behaviour when their windows are opened as maximized....</p>\r\n<p>Is there any way I can solve this?</p>\r\n<p>&nbsp;</p>\r\n<p>Thanks!</p>\r\n",
+    "PostedDate": "2011-03-26T22:29:30.717-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "588054",
+    "ThreadId": "251352",
+    "Html": "<p>I cannot reproduce that with the sample applications. When I set the WindowState to Maximized and start the application for example 03-MenuDropDown the flicker does not occur.</p>\r\n<p>&nbsp;</p>\r\n<p>Please, could you provide a sample?</p>",
+    "PostedDate": "2011-03-29T00:33:26.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "588298",
+    "ThreadId": "251352",
+    "Html": "<p>Weird - I managed to reproduce it with the sample applications also.</p>\r\n<p>Unfortunately I can't provide a sample, however, I did create a blank application and set the window state to maximized... sure enough flicker occured.</p>\r\n<p>Its quite subtle and you need to watch very closely for it, perhaps my eye is more sensitive.</p>",
+    "PostedDate": "2011-03-29T09:10:00.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "588902",
+    "ThreadId": "251352",
+    "Html": "<div>\n<p><span lang=\"EN-US\">Ah, now I can see it. You mean the single flicker after startup. You are really having good eyes.</span></p>\n<p><span lang=\"EN-US\">&nbsp;</span></p>\n<p><span lang=\"EN-US\">The reason is because the Ribbon is created during HandleCreated event of the Ribbon(Wrapper) control after the form.</span></p>\n<p><span lang=\"EN-US\">&nbsp;</span></p>\n<p style=\"text-autospace: none;\"><span lang=\"EN-US\">I don&rsquo;t know why it is happening only in WindowState-Maximized state. I think the Form implementation of .NET is doing something different here. Maybe the HandleCreated of the form and ribbon wrapper control  is done in separate window messages. </span></p>\n<p style=\"text-autospace: none;\">&nbsp;</p>\nI'm sorry, I don't have a working fix for this at the moment.\n<p style=\"text-autospace: none;\"><span lang=\"EN-US\">&nbsp;</span></p>\n</div>",
+    "PostedDate": "2011-03-30T09:01:21.313-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "589197",
+    "ThreadId": "251352",
+    "Html": "<p>Indeed i do mean the single flicker after start up.</p>\n<p>&nbsp;</p>\n<p>\"<span lang=\"EN-US\">We can fix this as we create the ribbon during HandleCreated event of the form&hellip;\"</span></p>\n<p><span lang=\"EN-US\">Was that a tyo and should have been \"can't fix this\" or does the following code after that actually implement the fix?</span></p>\n<p><span lang=\"EN-US\">Thanks for your help on this :)</span></p>\n<p><span lang=\"EN-US\">Edit: With that code, you cant click the ribbon :( The Maximized state is really friggen annoying - its the reason I have to use Viewable = false, true ... to get everything to dock properly which causes more flicker!!</span></p>\n<p><span lang=\"EN-US\">Your code FIXES the dock issue too! (But then you can't click the ribbon... why is there always a catch??)<br />Is then an entirely diffferent way that the ribbon can be initialized?<br /></span></p>",
+    "PostedDate": "2011-03-30T19:57:30.993-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "589533",
+    "ThreadId": "251352",
+    "Html": "<p>Because the problem relies on the .NET Form implementation it is not posssible to fix this. But you can try the following workaround.</p>\n<p>- Download the latest source from Source Code tab. Ribbon.cs now contains the new ViewCreated event, that will be raised after the ribbon is created by Ribbon Framework. You need to get the latest Ribbon.cs and RibbonUIApplication.cs</p>\n<p>- Set the default WindowState of your Form to Minimized.</p>\n<p>- Include the following code in your Form...</p>\n<p>&nbsp;</p>\n<div style=\"color: black; background-color: white;\">\n<pre>    <span style=\"color: blue;\">public</span> Form1()\n        {\n            InitializeComponent();\n\n            <span style=\"color: blue;\">this</span>._ribbon.ViewCreated += <span style=\"color: blue;\">new</span> EventHandler(_ribbon_ViewCreated);\n        }\n\n        <span style=\"color: blue;\">void</span> _ribbon_ViewCreated(<span style=\"color: blue;\">object</span> sender, EventArgs e)\n        {\n            <span style=\"color: blue;\">this</span>.WindowState = FormWindowState.Maximized;\n        }\n</pre>\n</div>",
+    "PostedDate": "2011-03-31T07:37:39.8-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "589547",
+    "ThreadId": "251352",
+    "Html": "<p>It works, but it breaks dynamic assigning of ribbon controls.</p>\r\n<p>I.e. setting buttons to disabled stops working, and setting execute action event handlers don't fire.</p>\r\n<p>I think I will just live with the flicker :)</p>\r\n<p>Thanks for you help though.</p>",
+    "PostedDate": "2011-03-31T07:47:42.87-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

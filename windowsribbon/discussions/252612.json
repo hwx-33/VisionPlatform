@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "592148",
+    "ThreadId": "252612",
+    "Html": "\r\n<p>When attempting to close/exit the application using <strong>me.close()</strong> on any ribbonButton, the following error occurs. &nbsp;This happens in\r\n<strong>both VB and CS</strong>. &nbsp;This was tested with consistent results using the\r\n<strong>sample application <span style=\"color:#0000ff\">03-MenuDropDown</span>, and other projects I created.</strong></p>\r\n<p><strong>In debug mode in Visual Studio, the error is:</strong></p>\r\n<p><span style=\"color:#ff0000\">AccessViolationException was unhandled</span></p>\r\n<p><span style=\"color:#ff0000\">Attempted to read or write protected memory. &nbsp;This is often an indication that other memory is corrupt.</span></p>\r\n<p>&nbsp;</p>\r\n<p><strong>When running the application from Windows, the error is:</strong></p>\r\n<p><span style=\"color:#ff0000\">_03_MenuDropDown has stopped working</span></p>\r\n<p><span style=\"color:#ff0000\">-&gt; Check online for a solution</span></p>\r\n<p><span style=\"color:#ff0000\">-&gt; Close the program</span></p>\r\n<p><span style=\"color:#ff0000\">-&gt; Debug the program</span></p>\r\n<p>&nbsp;</p>\r\n",
+    "PostedDate": "2011-04-05T09:11:11.82-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "592356",
+    "ThreadId": "252612",
+    "Html": "<p>Asked and answered :)</p>\r\n<p><a href=\"http://blogs.microsoft.co.il/blogs/arik/archive/2010/04/14/crash-while-closing-application-that-uses-windows-ribbon-framework.aspx\">http://blogs.microsoft.co.il/blogs/arik/archive/2010/04/14/crash-while-closing-application-that-uses-windows-ribbon-framework.aspx</a></p>",
+    "PostedDate": "2011-04-05T13:39:18.067-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "592368",
+    "ThreadId": "252612",
+    "Html": "<p>Beautiful!</p>\r\n<p>Thank you. &nbsp;Sorry I missed that.</p>",
+    "PostedDate": "2011-04-05T13:49:48.877-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

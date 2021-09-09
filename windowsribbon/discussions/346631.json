@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "802846",
+    "ThreadId": "346631",
+    "Html": "\r\n<p>I read about application modes and contextual tabs but all these are predefined templates and compiled into the same ribbon. What I wonder is if I can have a dynamically loaded dll that has it's own contextual tab definition and combining it with the main\r\n ribbon? I haven't checked this but I assume that Office can do this using add-ins.</p>\r\n",
+    "PostedDate": "2012-02-28T13:42:06.97-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "802907",
+    "ThreadId": "346631",
+    "Html": "\r\n<div>\r\n<p style=\"line-height:125%\"><span style=\"font-size:11.0pt; line-height:125%; font-family:\">As far as I know you cannot do this…. Office doesn’t use the Windows Ribbon Framework, but rather its own one.</span><span style=\"font-size:11.0pt; line-height:125%; font-family:\"></span></p>\r\n<p><span style=\"font-size:11.0pt; font-family:\"></span></p>\r\n<div>\r\n<div style=\"border:none; border-top:solid #B5C4DF 1.0pt; padding:3.0pt 0in 0in 0in\">\r\n<p><b><span style=\"font-size:10.0pt; font-family:\">From:</span></b><span style=\"font-size:10.0pt; font-family:\"> naleksiev [email removed]\r\n<br>\r\n<b>Sent:</b> Wednesday, February 29, 2012 5:42 AM<br>\r\n<b>To:</b> Michael Scidone<br>\r\n<b>Subject:</b> Ribbon with Plugins [windowsribbon:346631]</span></p>\r\n</div>\r\n</div>\r\n<p></p>\r\n<p><span style=\"font-size:9.0pt; font-family:\">From: naleksiev</span></p>\r\n<div id=\"ThreadNotificationPostBody\" style=\"margin-bottom:24.0pt\">\r\n<p><span style=\"font-size:9.0pt; font-family:\">I read about application modes and contextual tabs but all these are predefined templates and compiled into the same ribbon. What I wonder is if I can have a dynamically loaded dll that has it's own contextual\r\n tab definition and combining it with the main ribbon? I haven't checked this but I assume that Office can do this using add-ins.</span></p>\r\n</div>\r\n</div>\r\n",
+    "PostedDate": "2012-02-28T16:02:02.253-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

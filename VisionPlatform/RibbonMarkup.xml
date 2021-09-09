@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns='http://schemas.microsoft.com/windows/2009/Ribbon'>
+	<Application.Commands>
+		<Command Name="TabHome" Id="20000" LabelTitle="主页" />
+		<Command Name="TabView" Id="30000" LabelTitle="查看" />
+	</Application.Commands>
+	<Application.Views>
+		<Ribbon>
+			<Ribbon.Tabs>
+				<Tab CommandName="TabHome"></Tab>
+				<Tab CommandName="TabView"></Tab>
+			</Ribbon.Tabs>
+		</Ribbon>
+	</Application.Views>
+</Application>

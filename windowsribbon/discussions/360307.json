@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "851520",
+    "ThreadId": "360307",
+    "Html": "\r\n<p>I saw there is a way to do this is to use&nbsp;ContextualTabs; but that means it will have to display the tabgroup name on the title bar.</p>\r\n<p>Is it possible that I can do the same that switching between tabs in the code without displaying tabgroup name on the title bar.</p>\r\n",
+    "PostedDate": "2012-06-20T06:23:18.33-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "852384",
+    "ThreadId": "360307",
+    "Html": "<p>Or maybe I should put this way, is it possible to dynamically set the active tab?</p>",
+    "PostedDate": "2012-06-21T16:02:23.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

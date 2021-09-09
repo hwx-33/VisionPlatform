@@ -1,0 +1,50 @@
+[
+  {
+    "Id": "429723",
+    "ThreadId": "208960",
+    "Html": "<p>Hi, I tried ribbonlib and it's great, but it works only on my developer machine with Windows 7 SDK installed. Do I have to install that 1.5GB SDK on every machine where the program will be executed? When I execute it on another Windows 7 PC, I get the following exception:</p>\r\n<p>See the end of this message for details on invoking <br>just-in-time (JIT) debugging instead of this dialog box.</p>\r\n<p>************** Exception Text **************<br>System.Runtime.InteropServices.COMException (0x80004005): Error HRESULT E_FAIL has been returned from a call to a COM component.<br>&nbsp;&nbsp; at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)<br>&nbsp;&nbsp; at RibbonLib.Ribbon.InitFramework(IRibbonForm form, String resourceName, IntPtr hInstance)<br>&nbsp;&nbsp; at RibbonLib.Ribbon.InitFramework(IRibbonForm form, String resourceName, Module resourceModule)<br>&nbsp;&nbsp; at RibbonLib.Ribbon.InitFramework(IRibbonForm form)<br>&nbsp;&nbsp; at ApplicationRibbon.FormMain.FormMain_Load(Object sender, EventArgs e)<br>&nbsp;&nbsp; at System.Windows.Forms.Form.OnLoad(EventArgs e)<br>&nbsp;&nbsp; at System.Windows.Forms.Form.OnCreateControl()<br>&nbsp;&nbsp; at System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)<br>&nbsp;&nbsp; at System.Windows.Forms.Control.CreateControl()<br>&nbsp;&nbsp; at System.Windows.Forms.Control.WmShowWindow(Message&amp; m)<br>&nbsp;&nbsp; at System.Windows.Forms.Control.WndProc(Message&amp; m)<br>&nbsp;&nbsp; at System.Windows.Forms.ScrollableControl.WndProc(Message&amp; m)<br>&nbsp;&nbsp; at System.Windows.Forms.ContainerControl.WndProc(Message&amp; m)<br>&nbsp;&nbsp; at System.Windows.Forms.Form.WmShowWindow(Message&amp; m)<br>&nbsp;&nbsp; at System.Windows.Forms.Form.WndProc(Message&amp; m)<br>&nbsp;&nbsp; at System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message&amp; m)<br>&nbsp;&nbsp; at System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message&amp; m)<br>&nbsp;&nbsp; at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)</p>\r\n<p><br>************** Loaded Assemblies **************<br>mscorlib<br>&nbsp;&nbsp;&nbsp; Assembly Version: 2.0.0.0<br>&nbsp;&nbsp;&nbsp; Win32 Version: 2.0.50727.4927 (NetFXspW7.050727-4900)<br>&nbsp;&nbsp;&nbsp; CodeBase: <a>file:///C:/Windows/Microsoft.NET/Framework/v2.0.50727/mscorlib.dll</a><br>----------------------------------------<br>ApplicationRibbon<br>&nbsp;&nbsp;&nbsp; Assembly Version: 1.0.0.0<br>&nbsp;&nbsp;&nbsp; Win32 Version: 1.0.0.0<br>&nbsp;&nbsp;&nbsp; CodeBase: <a>file:///K:/ApplicationRibbon.exe</a><br>----------------------------------------<br>System.Windows.Forms<br>&nbsp;&nbsp;&nbsp; Assembly Version: 2.0.0.0<br>&nbsp;&nbsp;&nbsp; Win32 Version: 2.0.50727.4927 (NetFXspW7.050727-4900)<br>&nbsp;&nbsp;&nbsp; CodeBase: <a>file:///C:/Windows/assembly/GAC_MSIL/System.Windows.Forms/2.0.0.0__b77a5c561934e089/System.Windows.Forms.dll</a><br>----------------------------------------<br>System<br>&nbsp;&nbsp;&nbsp; Assembly Version: 2.0.0.0<br>&nbsp;&nbsp;&nbsp; Win32 Version: 2.0.50727.4927 (NetFXspW7.050727-4900)<br>&nbsp;&nbsp;&nbsp; CodeBase: <a>file:///C:/Windows/assembly/GAC_MSIL/System/2.0.0.0__b77a5c561934e089/System.dll</a><br>----------------------------------------<br>System.Drawing<br>&nbsp;&nbsp;&nbsp; Assembly Version: 2.0.0.0<br>&nbsp;&nbsp;&nbsp; Win32 Version: 2.0.50727.4927 (NetFXspW7.050727-4900)<br>&nbsp;&nbsp;&nbsp; CodeBase: <a>file:///C:/Windows/assembly/GAC_MSIL/System.Drawing/2.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll</a><br>----------------------------------------<br>Ribbon<br>&nbsp;&nbsp;&nbsp; Assembly Version: 1.0.0.0<br>&nbsp;&nbsp;&nbsp; Win32 Version: 1.0.0.0<br>&nbsp;&nbsp;&nbsp; CodeBase: <a>file:///K:/Ribbon.DLL</a><br>----------------------------------------</p>\r\n<p>************** JIT Debugging **************<br>To enable just-in-time (JIT) debugging, the .config file for this<br>application or computer (machine.config) must have the<br>jitDebugging value set in the system.windows.forms section.<br>The application must also be compiled with debugging<br>enabled.</p>\r\n<p>For example:</p>\r\n<p>&lt;configuration&gt;<br>&nbsp;&nbsp;&nbsp; &lt;system.windows.forms jitDebugging=&quot;true&quot; /&gt;<br>&lt;/configuration&gt;</p>\r\n<p>When JIT debugging is enabled, any unhandled exception<br>will be sent to the JIT debugger registered on the computer<br>rather than be handled by this dialog box.</p>\r\n<p>Is there any solution for this? I thought that needed COM should be directly in Windows 7, but it seems it isn't. Both PC's (my developing machine and the client workstation) are running Windows 7 Ultimate x64. Thanks very much for any help.</p>",
+    "PostedDate": "2010-04-11T07:43:27.407-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "431518",
+    "ThreadId": "208960",
+    "Html": "<p>I'm also seeing this same error on Windows 7 x86. It runs&nbsp;ok in debu on my development machine, but when the app is installed on the dev machine I get this error.&nbsp;Has anyone got any idea why?</p>",
+    "PostedDate": "2010-04-15T08:53:14.593-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432115",
+    "ThreadId": "208960",
+    "Html": "<p>Have you copied the ribbon resource dll? (the one the pre-build steps generates)</p>",
+    "PostedDate": "2010-04-16T15:57:13.98-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432117",
+    "ThreadId": "208960",
+    "Html": "<p>Yes, I put it in the same folder as my exe. I tried running of&nbsp;included samples as well and I've got the same result - if Windows 7 SDK is present, everything works fine, otherwise I get an exception.</p>",
+    "PostedDate": "2010-04-16T16:02:20.26-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432129",
+    "ThreadId": "208960",
+    "Html": "<p>Make sure that the the called overload of InitFramework is the one that gets the ribbon dll name (set a breakpoint inside ribbon.cs).</p>\r\n<p>I've uploaded a small update to the code that prints to the output if the dll isn't found. Also if the dll couldn't be loaded it thorws an exception.</p>\r\n<p>I tried the samples on another Win7 machine I got which doesn't have the SDK installed and it worked.</p>",
+    "PostedDate": "2010-04-16T17:06:14.147-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "432243",
+    "ThreadId": "208960",
+    "Html": "<p>Ok, I found out where the problem is - final application needs two dlls - Ribbon.dll and ApplicationName.ribbon.dll - I didn't include ApplicationName.ribbon.dll which was the reason it didn't work. Thanks very much for your help and for the great managed ribbon wrapper.</p>",
+    "PostedDate": "2010-04-17T07:02:42.81-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

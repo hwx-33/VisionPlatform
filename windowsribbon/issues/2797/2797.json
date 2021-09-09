@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "You are right, it was all in on file from historical reasons.Files are not splitted.",
+    "ClosedDate": "2009-10-17T14:30:08.883-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi, could you split IRibbonForm, RibbonUIApplication and Ribbon into different files?\n \nI think this is better for overviewing the code.",
+    "LastUpdatedDate": "2013-05-16T03:57:07.477-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "windowsribbon",
+    "ReportedDate": "2009-10-13T05:45:36.39-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Create a new file for each class, Interface",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2797
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

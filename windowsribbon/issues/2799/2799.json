@@ -1,0 +1,70 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Removed and reorganized. Let me know if there still a problem with the files.",
+    "ClosedDate": "2009-10-17T14:27:48.247-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Hi,\n \ncould you please remove the Ribbon.suo and .user files from the version system. Those are user files and differ from each system.\n \nCould you set both files and the obj and bin folder to to be expluded? TortoiseSVN displays them are unversioned. It would be better to display them as ignored.",
+    "LastUpdatedDate": "2013-05-16T03:57:07.19-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "windowsribbon",
+    "ReportedDate": "2009-10-13T05:54:20.18-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Remove some files from source version",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 2799
+  },
+  "FileAttachments": [],
+  "Comments": [
+    {
+      "Message": "Removed and reorganized. Let me know if there still a problem with the files.",
+      "PostedDate": "2009-10-17T14:27:38.12-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2009-10-17T14:27:48.247-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "the ignore settings are not applied to the new samples. I think you should set the ignore pattern at the top level and select \"apply recursive\"",
+      "PostedDate": "2009-10-19T15:43:30.603-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "Should be OK now.",
+      "PostedDate": "2009-10-20T17:05:40.01-07:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-02-21T16:15:50.473-08:00",
+      "Id": -2147483648
+    },
+    {
+      "Message": "",
+      "PostedDate": "2013-05-16T03:57:07.19-07:00",
+      "Id": -2147483648
+    }
+  ]
+}

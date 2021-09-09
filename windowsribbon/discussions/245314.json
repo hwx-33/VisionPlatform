@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "563444",
+    "ThreadId": "245314",
+    "Html": "\r\n<p>Hi,</p>\r\n<p>I'm using this component Ribbon in my new applications, I like to know if someone create a dynamyc menu with ribbon?</p>\r\n<p>fo example I have roles of user: administrator, auditor, query, bookepper, etc...</p>\r\n<p>when the user with specific role login to the system, then menu ribbon load with options of role?</p>\r\n<p>If someone has ti?</p>\r\n<p>&nbsp;</p>\r\n<p>Regards</p>\r\n<p>Ricardo</p>\r\n",
+    "PostedDate": "2011-02-09T10:38:01.34-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "623043",
+    "ThreadId": "245314",
+    "Html": "<p>The ribbon has support for 'application modes' which defines which controls show for different users.</p>\r\n<p>see: http://blogs.microsoft.co.il/blogs/arik/archive/2009/11/23/windows-ribbon-for-winforms-part-16-applicationmodes.aspx</p>",
+    "PostedDate": "2011-06-04T18:49:51.38-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

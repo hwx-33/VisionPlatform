@@ -1,0 +1,10 @@
+[
+  {
+    "Id": "1020744",
+    "ThreadId": "437921",
+    "Html": "Hi, I'm working on a project using the Windows Ribbon for WinForms control and have not been able to find a means of changing the selected RibbonTab from code during runtime.  For the particular application in which I aspire to use this functionality I will be defaulting the RibbonTab that is selected upon opening the program to the RibbonTab that corresponds with the department in which the current user is employed in (it is an application hub and human resources type application).  Is there any means of doing this with the control as it currently is?  Thanks ahead of time for any help!<br />\n",
+    "PostedDate": "2013-03-25T10:06:21.63-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

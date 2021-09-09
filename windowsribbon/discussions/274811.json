@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "680163",
+    "ThreadId": "274811",
+    "Html": "<p>Hi, I would like to say, thats this wrapper ist very very useful. I love it.</p>\n<p>But there is a crash, when trying to minimize the Application to the tray area. It says \"out of memory\". Is there a solution for this?</p>\n<p>I am doing this:</p>\n<p>\n<div><span style=\"font-size: x-small;\"></span></div>\n&nbsp;</p>\n<p><span style=\"font-size: x-small;\">\n<p><span style=\"color: #0000ff; font-size: x-small;\"><span style=\"color: #0000ff; font-size: x-small;\">if</span></span><span style=\"font-size: x-small;\"> (</span><span style=\"color: #2b91af; font-size: x-small;\"><span style=\"color: #2b91af; font-size: x-small;\">FormWindowState</span></span><span style=\"font-size: x-small;\">.Normal == WindowState)</span></p>\n<p>&nbsp;&nbsp;&nbsp; Hide();</p>\n</span></p>\n<p><span style=\"font-size: x-small;\">\n<p>ShowInTaskbar = <span style=\"color: #0000ff; font-size: x-small;\"><span style=\"color: #0000ff; font-size: x-small;\">false</span></span><span style=\"font-size: x-small;\">;</span></p>\n<p><span style=\"font-size: x-small;\">&nbsp;</span>Then the application crashes. I haven&acute;t seen anything wrong in the sorces. So, is there anybody, who can help?</p>\n<p><span style=\"font-size: x-small;\"><span style=\"font-size: x-small;\"><span style=\"font-size: x-small;\">﻿Regards <br /></span></span></span><span style=\"font-size: x-small;\"><span style=\"font-size: x-small;\"><span style=\"font-size: x-small;\">hullihulli</span></span></span></p>\n</span></p>\n<p>&nbsp;</p>",
+    "PostedDate": "2011-10-05T00:59:47.677-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "680167",
+    "ThreadId": "274811",
+    "Html": "\r\n<div>\r\n<p><span style=\"font-size:10.0pt; font-family:\">That’s interesting….</span></p>\r\n<p><span style=\"font-size:10.0pt; font-family:\">I’m not entirely sure how that code will minimize your application to the notification area…</span></p>\r\n<p><span style=\"font-size:10.0pt; font-family:\">A simple way to minimize to tray is to handle the Resize event on your form and check the WindowState is equal to Minimized.</span></p>\r\n<p><span style=\"font-size:10.0pt; font-family:\">If so, set ShowInTaskbar to false. There is no need to call Hide() on the window.</span></p>\r\n</div>\r\n",
+    "PostedDate": "2011-10-05T01:03:48.807-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "680200",
+    "ThreadId": "274811",
+    "Html": "<p>Hi tompsonn, thanks for the reply.</p>\r\n<p>I thought I needed that Hide(), because i want to minimize my main window to the tray by clicking a ribbon button (its like a start button for more things to do and one part is hiding the window).</p>\r\n<p>But you are right. when you do ﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿</p>\r\n<p>﻿﻿﻿﻿﻿﻿﻿﻿﻿this.WindowState = FormWindowState.Minimzied;</p>\r\n<p>then it will do the same.</p>\r\n<p>﻿Thanks</p>\r\n<p>hullihulli</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2011-10-05T02:44:26.06-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "680203",
+    "ThreadId": "274811",
+    "Html": "\r\n<div>\r\n<p><span style=\"font-size:9.0pt; font-family:\">Ah I see now. Yes, that will suffice. May as well let Windows take care of the window hiding for you\r\n</span><span style=\"font-size:9.0pt; font-family:Wingdings; color:#1F497D\">J</span><span style=\"font-size:9.0pt; font-family:\"></span></p>\r\n</div>\r\n",
+    "PostedDate": "2011-10-05T02:51:48.71-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

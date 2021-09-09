@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "422652",
+    "ThreadId": "207041",
+    "Html": "<p>Windows 7 has one.</p>\r\n<p>Office 2010 has one.</p>\r\n<p>SharePoint 2010 has one.</p>\r\n<p>Why are there do so many?&nbsp;Which one is going to win?&nbsp; Office 2010 seems to be the leader because it includes a designer in Visual Studio but it is only useful for extending Office ribbons.</p>\r\n<p>Michael</p>",
+    "PostedDate": "2010-03-23T10:04:06.193-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422653",
+    "ThreadId": "207041",
+    "Html": "<p>Correction: Microsoft has 4 competing Ribbon XML schemas: the 4th is WPF/XAML.</p>\r\n<p>Why are there do so many?&nbsp;Which one is going to win?</p>",
+    "PostedDate": "2010-03-23T10:14:28.823-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "422782",
+    "ThreadId": "207041",
+    "Html": "<p><span style=\"font-family:'Segoe UI','sans-serif';color:black;font-size:10pt\">Actually you forgot another Ribbon, the MFC version.</span></p>\r\n<p><span style=\"font-family:'Segoe UI','sans-serif';color:black;font-size:10pt\">There is no competition between them because each ribbon has it on purpose and users and provides a familiar programming experience for their users.</span></p>\r\n<p><span style=\"font-family:'Segoe UI','sans-serif';color:black;font-size:10pt\">WPF provides a ribbon with XAML syntax and other WPF properties.<br>MFC version provides a ribbon that uses the familiar MFC object model.<br>Office ribbon is useful only for office add-on.<br>Windows 7 is used by native win32 developers and WinForms developers (using my wrapper library) <br>I didn't heard about SharePoint Ribbon, but I assume it has its own benefits.</span></p>\r\n<p><span style=\"font-family:'Segoe UI','sans-serif';color:black;font-size:10pt\">Hopefully, this clarifies the mess.</span></p>",
+    "PostedDate": "2010-03-23T15:01:38.37-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "424301",
+    "ThreadId": "207041",
+    "Html": "<p>The need for multiple implementations is obvious ...the need for multiple XML scehmas is not.</p>",
+    "PostedDate": "2010-03-26T17:07:57.277-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

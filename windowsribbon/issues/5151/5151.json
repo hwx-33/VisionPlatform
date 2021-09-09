@@ -1,0 +1,39 @@
+{
+  "WorkItem": {
+    "AffectedComponent": {
+      "Name": "",
+      "DisplayName": ""
+    },
+    "ClosedComment": "Added to v2.5",
+    "ClosedDate": "2010-10-08T17:57:34.803-07:00",
+    "CommentCount": 0,
+    "Custom": null,
+    "Description": "Provide a wrapper for the COM event handling model so that events will be handled in the usual .NET way, ie:\n \nPublic Sub cmdCommand_onExecute(Sender as Object, E as EventArgs)\n \ninstead of \n \nPublic Sub cmdCommand_OnExecute(ByVal key As RibbonLib.Interop.PropertyKeyRef, ByVal currentValue As RibbonLib.Interop.PropVariantRef, ByVal commandExecutionProperties As RibbonLib.Interop.IUISimplePropertySet) Handles cmdCommand.OnExecute",
+    "LastUpdatedDate": "2013-05-16T03:57:05.9-07:00",
+    "PlannedForRelease": "",
+    "ReleaseVisibleToPublic": false,
+    "Priority": {
+      "Name": "Low",
+      "Severity": 50,
+      "Id": 1
+    },
+    "ProjectName": "windowsribbon",
+    "ReportedDate": "2010-09-14T05:14:44.51-07:00",
+    "Status": {
+      "Name": "Closed",
+      "Id": 4
+    },
+    "ReasonClosed": {
+      "Name": "Unassigned"
+    },
+    "Summary": "Standard event handling",
+    "Type": {
+      "Name": "Issue",
+      "Id": 3
+    },
+    "VoteCount": 1,
+    "Id": 5151
+  },
+  "FileAttachments": [],
+  "Comments": []
+}

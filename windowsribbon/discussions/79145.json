@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "270994",
+    "ThreadId": "79145",
+    "Html": "<p>I mean i want to use it in MDIParent Form.</p>\r\n<p>Situation:</p>\r\n<p>I use sample02-ApplicationMenuButton and add a line &quot;this.IsMdiContainer = true;&quot; in Form1.Designer.cs</p>\r\n<p>And I add a Form2 and change Form1.cs</p>\r\n<p>void _buttonNew_OnExecute(PropertyKeyRef key, PropVariantRef currentValue, IUISimplePropertySet commandExecutionProperties)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Form2 form = new Form2();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; form.ShowDialog();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>Up is OK and Open a new Form;</p>\r\n<p>But I change Form1.cs</p>\r\n<p>void _buttonNew_OnExecute(PropertyKeyRef key, PropVariantRef currentValue, IUISimplePropertySet commandExecutionProperties)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Form2 form = new Form2();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; form.MdiParent = this;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; form.Show();<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p>\r\n<p>It can't create a Childform.</p>\r\n<p>Plz tell me how can i use with MDIParent.</p>\r\n<p>ex. Sorry my bad english.</p>",
+    "PostedDate": "2009-12-27T10:12:51.803-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "271220",
+    "ThreadId": "79145",
+    "Html": "<p>Unfortunately&nbsp;it doesn't.&nbsp;<br>The windows ribbon framework does not support MDI windows and&nbsp;so is the ribbon wrapper library.</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2009-12-28T11:15:46.223-08:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

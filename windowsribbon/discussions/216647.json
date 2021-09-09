@@ -1,0 +1,74 @@
+[
+  {
+    "Id": "457678",
+    "ThreadId": "216647",
+    "Html": "<p>Hi,</p>\r\n<p>I develop winfrom app in the Eclipse IDE where I can add the RibbonLib dll as local assembly. My question how i can compile markup and create the resource dll in non VS IDE as shown step 3 in your Part 3 documentation.&nbsp;Are&nbsp;there any commands to achieve that from the SDK.</p>\r\n<p>Thanks</p>",
+    "PostedDate": "2010-06-19T21:21:25.953-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "459004",
+    "ThreadId": "216647",
+    "Html": "<p dir=ltr><span style=\"color:black;font-size:10pt\">To compile the ribbon markup xml into a dll you need the following steps:</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">XML -&gt; RC -&gt; RES -&gt; DLL</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">The three transitions are done using the commands which I mention in the part 3 blog post:</span></p>\r\n<p dir=ltr><em><span style=\"color:black;font-size:10pt\">&quot;%PROGRAMFILES%\\Microsoft SDKs\\Windows\\v7.0\\Bin\\UICC.exe&quot; &quot;$(ProjectDir)RibbonMarkup.xml&quot; &quot;$(ProjectDir)RibbonMarkup.bml&quot; /res:&quot;$(ProjectDir)RibbonMarkup.rc&quot; </span></em><em><span style=\"color:black;font-size:10pt\"><br><br></span></em><span style=\"color:black;font-size:10pt\">&quot;%PROGRAMFILES%\\Microsoft SDKs\\Windows\\v7.0\\Bin\\rc.exe&quot; /v &quot;$(ProjectDir)RibbonMarkup.rc&quot; <br><br>cmd /c &quot;(&quot;$(DevEnvDir)..\\..\\VC\\bin\\vcvars32.bat&quot;) &amp;&amp; (&quot;$(DevEnvDir)..\\..\\VC\\bin\\link.exe&quot; /VERBOSE /NOENTRY /DLL /OUT:&quot;$(ProjectDir)$(OutDir)$(TargetName).ribbon.dll&quot; &quot;$(ProjectDir)RibbonMarkup.res&quot;)&quot;</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">The first two utilities come with the Windows 7 SDK.</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">The link.exe is just the visual C++ linker, that knows how to create a DLL with nothing but resources from and RES file.<br>I'm not familiar with eclipse environment, but I'm sure this can be done somehow. Otherwise you can try to get the link.exe file, I would expect it to be available on the web.</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">Hope this helps,<br>Arik Poznanski.</span></p>\r\n<p dir=rtl>&nbsp;</p>",
+    "PostedDate": "2010-06-23T08:35:38.157-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "459919",
+    "ThreadId": "216647",
+    "Html": "<p>Thanks Arik,</p>\r\n<p>How do you interpret &quot;$(OutDir)$(TargetName).ribbon.dll&quot;? I guess ribbon.dll is the one I reference to your library but not to be created by the C++ linker, am i correct?</p>\r\n<p>Regards</p>\r\n<p>Kevin</p>",
+    "PostedDate": "2010-06-25T05:37:34.383-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "459974",
+    "ThreadId": "216647",
+    "Html": "<p dir=ltr><span style=\"color:black;font-size:10pt\">OK, I think I understand the confusion.</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">First there is a Ribbon.Dll which is my wrapper library you should reference to have any ribbon support.</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">Another DLL is the actual ribbon definition for your application.<br>You write is as an XML file, also known as Ribbon﻿Markup.xml and then compile it with the following commands:</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">uicc.exe RibbonMarkup.xml RibbonMarkup.bml /res:RibbonMarkup.rc</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">This takes the input file RibbonMarkup.xml and generates two files, RibbonMarkup.bml which is a compact binary representation of the ribbon markup, and RibbonMarkup.rc which is a resource definition file, which defines the binary file (RibbonMarkup.bml) as a resource.</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">rc.exe /v RibbonMarkup.rc</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">This takes the input RibbonMarkup.rc and generates a compiled resource, that is, a RibbonMarkup.res file.</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">Finally, we create a native DLL which contains only these resources:</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">link.exe /VERBOSE /NOENTRY /DLL /OUT:MyApplication.ribbon.dll RibbonMarkup.res</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">This takes the input file RibbonMarkup.res and generates a new dll named MyApplication.ribbon.dll (not to be confused with the managed Ribbon.dll).</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">Hope this clarify the process,</span></p>\r\n<p dir=ltr><span style=\"color:black;font-size:10pt\">Arik Poznanski</span>&nbsp;</p>",
+    "PostedDate": "2010-06-25T08:37:38.3-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460317",
+    "ThreadId": "216647",
+    "Html": "<p>Thanks Arik, that's exactly what i was looking for.</p>\r\n<p>Regards</p>",
+    "PostedDate": "2010-06-27T01:25:42.153-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "460618",
+    "ThreadId": "216647",
+    "Html": "<p>Hi Arik,</p>\r\n<p>I think I am still having problems with the resource dll. In your VS .Net examples, the resource dll is created under the bin\\debug directory (i guess this is what the $(OutDir) points to); I don't have the same structure in my Eclipse example, everything is put under the project directory, i.e c:\\workspace\\projects\\myRibbon, so the resource dll I created is myRibbon.ribbon.dll under the project dir.</p>\r\n<p>I am not sure if your wrapper find the .res file and the resource dll correct, when I called myRibbon:InitFramework(this-object) (myRibbon is an instance of RibbonLib.Ribbon, this-object is the form class, that implements the RibbonLib.IRibbonForm interface in my Eclipse example), I got &quot;System.NullReferenceException: Object reference not set to an instance of an object.&quot; error.</p>\r\n<p>I realised there are other overloaded InitFramework methods, so I tried myRibbon:InitFramework(this-object, &quot;RibbonMarkup.res&quot;, &quot;myRibbon.ribbon.dll&quot;), but I got &quot;System.runtime.interopservices.COMException: error HRESULT_FAIL has been returned from a call to a COM component.&quot; error; the .Net stack Trace gave me this:<br>--&gt;&nbsp;&nbsp; at System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)<br>&nbsp;&nbsp; at System.Runtime.InteropServices.Marshal.ThrowExceptionForHR(Int32 errorCode)<br>&nbsp;&nbsp; at RibbonLib.Ribbon.InitFramework(IRibbonForm form, String resourceName, IntPtr hInstance)<br>&nbsp;&nbsp; at RibbonLib.Ribbon.InitFramework(IRibbonForm form, String resourceName, String ribbonDllName)</p>\r\n<p>Do you think I still miss anything else? the RibbonMarkup.xml, .rc, .res and&nbsp;.bml files were all created under the project directory.</p>\r\n<p>Thank you very much</p>\r\n<p>Ruan</p>",
+    "PostedDate": "2010-06-28T05:27:11.463-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461162",
+    "ThreadId": "216647",
+    "Html": "<p>Try something like:</p>\r\n<p>myRibbon.InitFramework(form, &quot;APPLICATION_RIBBON&quot;, &quot;yourApplication.ribbon.dll&quot;);</p>\r\n<p>The first parameter is the IRibbonForm, which your form should implement.</p>\r\n<p>the second parameter is what you set when you use the UICC, it is the native resource name in the dll.<br>If you don't change it the default is &quot;APPLICATION_RIBBON&quot;.</p>\r\n<p>The third parameter is the ribbon dll name that has the ribbon resources.</p>\r\n<p><span style=\"color:#a31515;font-size:x-small\"><span style=\"color:#a31515;font-size:x-small\"></span></span></p>\r\n&nbsp;",
+    "PostedDate": "2010-06-29T06:06:18.16-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461442",
+    "ThreadId": "216647",
+    "Html": "<p>Thanks Arik,</p>\r\n<p>That's awesome, myRibbon.InitFramework(This-object, &quot;APPLICATION_RIBBON&quot;, &quot;myRibbon.ribbon.dll&quot;) worked!</p>\r\n<p>One last question for this thread, can I give the .xml a different name, such as myRibbonDef.xml and generate the resource dll with a different name too, such as myribbon.newribbon.dll? and then I just pass the correct name to InitFramework method like above.</p>\r\n<p>Once again, Thank you&nbsp;very much indeed!</p>\r\n<p>&nbsp;</p>",
+    "PostedDate": "2010-06-29T19:40:44.18-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "461482",
+    "ThreadId": "216647",
+    "Html": "<p>Of course you can change both the xml and dll file names.</p>\r\n<p>Good luck.<br>Arik Poznanski.</p>",
+    "PostedDate": "2010-06-29T23:17:25.537-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]

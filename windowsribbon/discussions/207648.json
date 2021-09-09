@@ -1,0 +1,18 @@
+[
+  {
+    "Id": "424954",
+    "ThreadId": "207648",
+    "Html": "<p>Related to my earlier postings (e.g. <a href=\"http://windowsribbon.codeplex.com/Thread/View.aspx?ThreadId=207513\">http://windowsribbon.codeplex.com/Thread/View.aspx?ThreadId=207513</a>), it is possible to load to Ribbon objects and merge them?&nbsp; Is there a builtin method (in the Framework or the Windows 7&nbsp;ribbon control) for any type of merging&nbsp;of Ribbon objects?</p>\r\n<p>Scenario: Ribbon A has groups A1, A2 and A3.&nbsp; Ribbon B has A1, A2, B2 and B3.&nbsp;&nbsp; merge(Ribbon A, Ribbon B) has groups A1, A2, A3, B2, B3.&nbsp; ...that is, merging at the integroup group level.&nbsp; Merging of commands within 2&nbsp;groups with the same name&nbsp;would be nice to have.</p>\r\n<p>Michael Herman (Toronto)</p>",
+    "PostedDate": "2010-03-29T07:56:25.547-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  },
+  {
+    "Id": "425076",
+    "ThreadId": "207648",
+    "Html": "<p>There is no way of merging two Ribbon XML resources.</p>",
+    "PostedDate": "2010-03-29T13:01:33.173-07:00",
+    "UserRole": null,
+    "MarkedAsAnswerDate": null
+  }
+]
